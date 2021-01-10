@@ -14,18 +14,22 @@ import CustomButton from '../custom-button/custom-button.component';
 import { auth } from '../../firebase/firebase.utils';
 
 const SignInOrSignUpCard = () => {
-  const currentUser = useContext(CurrentUserContext);
+  const { currentUser, logOut } = useContext(CurrentUserContext);
   return (
     <>
       <SlidesContainer>
         <ContentsContainer>
           {currentUser ? (
             <>
-              <HeaderContainerTop>You're Signed In!</HeaderContainerTop>
+              <HeaderContainerTop>
+                Hello {currentUser.displayName}!
+              </HeaderContainerTop>
               <FormContainer>
+                <h2>You're signed in</h2>
                 <CustomButton
-                  onClick={() => {
-                    auth.signOut();
+                  onClick={async () => {
+                    await auth.signOut();
+                    logOut();
                   }}
                 >
                   Sign Out

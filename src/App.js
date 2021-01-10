@@ -8,7 +8,7 @@ import CurrentUserContext from './contexts/current-user/current-user.context';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
-
+  const logOut = () => setCurrentUser(null);
   useEffect(() => {
     const unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
@@ -28,7 +28,7 @@ function App() {
 
   return (
     <Router>
-      <CurrentUserContext.Provider value={currentUser}>
+      <CurrentUserContext.Provider value={{ currentUser, logOut }}>
         <Route path='/' component={Main} />
       </CurrentUserContext.Provider>
     </Router>

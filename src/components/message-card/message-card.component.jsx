@@ -9,7 +9,7 @@ import {
   TextContainer,
 } from './message-card.styles';
 const MessageCard = () => {
-  const currentUser = useContext(CurrentUserContext);
+  const { currentUser } = useContext(CurrentUserContext);
   return (
     <>
       <SlidesContainer>

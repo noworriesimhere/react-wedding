@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
+import {
+  auth,
+  signInWithGoogle,
+  createUserProfileDocument,
+} from '../../firebase/firebase.utils';
 
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
@@ -7,7 +11,7 @@ import CustomButton from '../custom-button/custom-button.component';
 import { SignUpContainer } from './sign-up.styles';
 import { ButtonsBarContainer } from '../sign-in/sign-in.styles';
 
-const SignUp = ({ signUpStart }) => {
+const SignUp = () => {
   const [userCredentials, setUserCredentials] = useState({
     displayName: '',
     email: '',
@@ -25,7 +29,23 @@ const SignUp = ({ signUpStart }) => {
       return;
     }
     console.log('submitted!');
-    // signUpStart({ displayName, email, password });
+    try {
+      const { user } = await auth.createUserWithEmailAndPassword(
+        email,
+        password
+      );
+
+      await createUserProfileDocument(user, { displayName });
+
+      // setUserCredentials({
+      //   displayName: '',
+      //   email: '',
+      //   password: '',
+      //   confirmPassword: '',
+      // });
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const handleChange = (event) => {
