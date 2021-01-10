@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-// import { connect } from 'react-redux';
-// import { signUpStart } from '../../redux/user/user.actions';
+import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
 
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
@@ -8,7 +7,7 @@ import CustomButton from '../custom-button/custom-button.component';
 import { SignUpContainer } from './sign-up.styles';
 import { ButtonsBarContainer } from '../sign-in/sign-in.styles';
 
-const SignUp = ({ signUpStart, googleSignInStart }) => {
+const SignUp = ({ signUpStart }) => {
   const [userCredentials, setUserCredentials] = useState({
     displayName: '',
     email: '',
@@ -72,11 +71,7 @@ const SignUp = ({ signUpStart, googleSignInStart }) => {
         />
         <ButtonsBarContainer>
           <CustomButton type='submit'>Sign Up</CustomButton>
-          <CustomButton
-            onClick={googleSignInStart}
-            type='button'
-            isGoogleSignIn
-          >
+          <CustomButton onClick={signInWithGoogle} type='button' isGoogleSignIn>
             Sign Up With <span></span>
             <span className='google-logo'>
               G<span className='red'>o</span>

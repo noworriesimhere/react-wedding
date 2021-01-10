@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import CurrentUserContext from '../../contexts/current-user/current-user.context';
+
 import {
   SlidesContainer,
   ContentsContainer,
@@ -7,6 +9,7 @@ import {
   TextContainer,
 } from './message-card.styles';
 const MessageCard = () => {
+  const currentUser = useContext(CurrentUserContext);
   return (
     <>
       <SlidesContainer>
@@ -14,7 +17,12 @@ const MessageCard = () => {
           <ImageContainerLeft />
           <TextContainer>
             <h1>
-              Hello <br /> Friend!
+              Hello <br />{' '}
+              {!currentUser ? (
+                <span>Friend!</span>
+              ) : (
+                <span>{currentUser.displayName}!</span>
+              )}
             </h1>
             <p>
               Thank you for stopping by. We're excited and honored to have you
