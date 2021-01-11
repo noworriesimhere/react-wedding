@@ -10,7 +10,7 @@ export const ContentsContainer = styled.div`
   min-width: 1000px;
   max-width: 1000px;
   height: 600px;
-  margin: auto 15rem auto 3rem;
+  margin: auto 0 auto 3rem;
   box-shadow: -17px 26px 50px 10px rgba(0, 0, 0, 0.45);
   border-radius: 40px;
   overflow: hidden;
@@ -47,7 +47,7 @@ export const FormContainer = styled.div`
   padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   color: white;
 `;

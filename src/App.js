@@ -1,23 +1,25 @@
-import { useEffect, useState } from 'react';
-import './App.css';
+import { useEffect, useContext } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Main from './pages/main/main.component';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
-
-import CurrentUserContext from './contexts/current-user/current-user.context';
+import { CurrentUserContext } from './providers/user/user.provider';
 
 function App() {
-  const [currentUser, setCurrentUser] = useState(null);
-  const logOut = () => setCurrentUser(null);
+  const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
+
   useEffect(() => {
     const unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+      console.log(userAuth);
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
+        console.log(userRef);
         userRef.onSnapshot((snapShot) => {
+          console.log(snapShot);
           setCurrentUser({
             id: snapShot.id,
             ...snapShot.data(),
           });
+          console.log(currentUser);
         });
       }
       return function cleanup() {
@@ -28,9 +30,7 @@ function App() {
 
   return (
     <Router>
-      <CurrentUserContext.Provider value={{ currentUser, logOut }}>
-        <Route path='/' component={Main} />
-      </CurrentUserContext.Provider>
+      <Route path='/' component={Main} />
     </Router>
   );
 }

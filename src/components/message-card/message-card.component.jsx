@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import CurrentUserContext from '../../contexts/current-user/current-user.context';
+import { CurrentUserContext } from '../../providers/user/user.provider';
 
 import {
   SlidesContainer,
@@ -7,6 +7,7 @@ import {
   ImageContainerLeft,
   ImageContainerRight,
   TextContainer,
+  TitleContainer,
 } from './message-card.styles';
 const MessageCard = () => {
   const { currentUser } = useContext(CurrentUserContext);
@@ -16,14 +17,14 @@ const MessageCard = () => {
         <ContentsContainer>
           <ImageContainerLeft />
           <TextContainer>
-            <h1>
+            <TitleContainer>
               Hello <br />{' '}
               {!currentUser ? (
                 <span>Friend!</span>
               ) : (
                 <span>{currentUser.displayName}!</span>
               )}
-            </h1>
+            </TitleContainer>
             <p>
               Thank you for stopping by. We're excited and honored to have you
               and the rest of our friends and family join us for our special
@@ -32,8 +33,8 @@ const MessageCard = () => {
             <p>
               Circumstances haven't allowed us to personally share our story
               with you, so we figured that we'd do it now!
-              <i className='fas fa-chevron-circle-right'></i>
             </p>
+            <i className='fas fa-chevron-circle-right fa-5x'></i>
           </TextContainer>
           <ImageContainerRight />
         </ContentsContainer>

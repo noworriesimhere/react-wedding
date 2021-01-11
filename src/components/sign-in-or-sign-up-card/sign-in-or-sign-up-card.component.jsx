@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import SignIn from '../sign-in/sign-in.component';
 import SignUp from '../sign-up/sign-up.component';
 import {
@@ -9,9 +9,9 @@ import {
   DoubleFormContainer,
 } from './sign-in-or-sign-up-card.styles';
 
-import CurrentUserContext from '../../contexts/current-user/current-user.context';
 import CustomButton from '../custom-button/custom-button.component';
 import { auth } from '../../firebase/firebase.utils';
+import { CurrentUserContext } from '../../providers/user/user.provider';
 
 const SignInOrSignUpCard = () => {
   const { currentUser, logOut } = useContext(CurrentUserContext);
@@ -26,6 +26,8 @@ const SignInOrSignUpCard = () => {
               </HeaderContainerTop>
               <FormContainer>
                 <h2>You're signed in</h2>
+                <p>Please proceed to RSVP and sign our Guestbook</p>
+                <i className='fas fa-chevron-circle-right fa-5x'></i>
                 <CustomButton
                   onClick={async () => {
                     await auth.signOut();
