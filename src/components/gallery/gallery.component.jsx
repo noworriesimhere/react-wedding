@@ -1,23 +1,21 @@
 import React from 'react';
-import GalleryRectangleVertical from '../gallery-rectangle-vertical/gallery-rectangle-vertical.component.jsx';
-import GallerySquare from '../gallery-square/gallery-square.component.jsx';
-import GalleryRectangleHorizontal from '../galley-rectangle-horizontal/gallery-rectangle-horizontal.component.jsx';
+import GalleryItem from '../gallery-item/gallery-item.component.jsx';
 import { GalleryContainer } from './gallery.styles.jsx';
 
 const Gallery = () => {
   return (
     <GalleryContainer>
-      <GalleryRectangleHorizontal gridArea={'一'} />
-      <GallerySquare gridArea={'二'} />
-      <GallerySquare gridArea={'三'} />
-      <GalleryRectangleVertical gridArea={'四'} />
-      <GallerySquare gridArea={'五'} />
-      <GallerySquare gridArea={'六'} />
-      <GalleryRectangleHorizontal gridArea={'七'} />
-      <GallerySquare gridArea={'八'} />
-      <GalleryRectangleHorizontal gridArea={'九'} />
-      <GallerySquare gridArea={'十'} />
-      <GalleryRectangleVertical gridArea={'十一'} />
+      <GalleryItem boxSize='horizontal' gridArea={'一'} />
+      <GalleryItem boxSize='square' gridArea={'二'} />
+      <GalleryItem boxSize='square' gridArea={'三'} />
+      <GalleryItem boxSize='vertical' gridArea={'四'} />
+      <GalleryItem boxSize='square' gridArea={'五'} />
+      <GalleryItem boxSize='square' gridArea={'六'} />
+      <GalleryItem boxSize='horizontal' gridArea={'七'} />
+      <GalleryItem boxSize='square' gridArea={'八'} />
+      <GalleryItem boxSize='horizontal' gridArea={'九'} />
+      <GalleryItem boxSize='square' gridArea={'十'} />
+      <GalleryItem boxSize='vertical' gridArea={'十一'} />
     </GalleryContainer>
   );
 };

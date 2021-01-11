@@ -29,6 +29,10 @@ export const InnerWrapper = styled.div`
   transform-origin: top left;
 `;
 
-export const SpacerDiv = styled.div`
-  margin-right: 0;
+export const FooterContainer = styled.p`
+  color: #800020;
+  font-size: 1rem;
+  position: fixed;
+  bottom: 0px;
+  left: 20px;
 `;

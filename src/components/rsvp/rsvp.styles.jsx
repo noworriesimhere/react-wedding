@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const SlidesContainer = styled.div`
   height: 100vh;
@@ -6,11 +6,25 @@ export const SlidesContainer = styled.div`
   justify-content: center;
 `;
 
+const invisible = css`
+  visibility: hidden;
+`;
+
+const isCurrentUser = (props) => {
+  if (!props.currentUser) {
+    return invisible;
+  } else {
+    return;
+  }
+};
+
 export const ContentsContainer = styled.div`
+  ${isCurrentUser};
+
   min-width: 850px;
   max-width: 850px;
   height: 600px;
-  margin: auto 0 auto 3rem;
+  margin: auto 15rem auto 3rem;
   box-shadow: -17px 26px 50px 10px rgba(0, 0, 0, 0.45);
   border-radius: 40px;
   background-color: whitesmoke;
