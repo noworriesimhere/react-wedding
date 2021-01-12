@@ -5,12 +5,15 @@ import {
   ImageContainer,
   TextContainer,
 } from './intro-card.styles';
+
+export const homeRef = React.createRef();
+
 const IntroCard = () => {
   return (
     <>
       <SlidesContainer>
         <ContentsContainer>
-          <ImageContainer />
+          <ImageContainer ref={homeRef} />
           <TextContainer>
             <h1>Georgia & Alan</h1>
             <p>Are Getting Married On</p>

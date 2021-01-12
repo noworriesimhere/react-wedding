@@ -13,12 +13,14 @@ import CustomButton from '../custom-button/custom-button.component';
 import { auth } from '../../firebase/firebase.utils';
 import { CurrentUserContext } from '../../providers/user/user.provider';
 
+export const signInRef = React.createRef();
+
 const SignInOrSignUpCard = () => {
   const { currentUser, logOut } = useContext(CurrentUserContext);
   return (
     <>
       <SlidesContainer>
-        <ContentsContainer>
+        <ContentsContainer ref={signInRef}>
           {currentUser ? (
             <>
               <HeaderContainerTop>

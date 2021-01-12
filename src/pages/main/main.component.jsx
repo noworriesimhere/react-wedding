@@ -5,28 +5,16 @@ import OurStoryCard from '../../components/our-story-card/our-story-card.compone
 import SignInOrSignUpCard from '../../components/sign-in-or-sign-up-card/sign-in-or-sign-up-card.component';
 import RsvpCard from '../../components/rsvp/rsvp.component';
 
-import { FooterContainer, InnerWrapper, OuterWrapper } from './main.styles';
-
-const Wrapper = () => {
+const Main = () => {
   return (
     <>
-      <OuterWrapper>
-        <InnerWrapper>
-          <IntroCard />
-          <MessageCard />
-          <OurStoryCard />
-          <SignInOrSignUpCard />
-          <RsvpCard />
-        </InnerWrapper>
-      </OuterWrapper>
-      <FooterContainer>
-        Designed and Developed by Alan Tran 2021 &copy;{' '}
-        <a href='https://alantran.netlify.app' target='blank'>
-          Learn More.
-        </a>
-      </FooterContainer>
+      <IntroCard />
+      <MessageCard />
+      <OurStoryCard />
+      <SignInOrSignUpCard />
+      <RsvpCard />
     </>
   );
 };
 
-export default Wrapper;
+export default Main;

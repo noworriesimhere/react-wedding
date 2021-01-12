@@ -6,12 +6,15 @@ import {
   TextContainerRight,
   TextContainerLeft,
 } from './our-story-card.styles';
+
+export const ourStoryRef = React.createRef();
+
 const OurStoryCard = () => {
   return (
     <>
       <SlidesContainer>
         <ContentsContainer>
-          <TextContainerLeft>
+          <TextContainerLeft ref={ourStoryRef}>
             <h1>Our Story</h1>
             <p>Click Any Image For a Chapter</p>
           </TextContainerLeft>
