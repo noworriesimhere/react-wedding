@@ -23,3 +23,9 @@ p {
   line-height: 2rem;
   font-family: 'Montserrat', sans-serif;
 }
+
+a {
+  font-family: 'Sacramento', cursive;
+  color: #800020;
+  font-size: 1.5rem;
+}

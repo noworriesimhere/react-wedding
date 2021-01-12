@@ -19,9 +19,5 @@ export const ListContainer = styled.ul`
 `;
 
 export const ListItem = styled.li`
-  transition: all 1s ease-in-out;
-  margin-left: 13vw;
-  :hover {
-    cursor: pointer;
-  }
+  margin-left: 11vw;
 `;

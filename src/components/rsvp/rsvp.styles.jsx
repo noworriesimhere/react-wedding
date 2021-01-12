@@ -24,10 +24,9 @@ export const ContentsContainer = styled.div`
   min-width: 850px;
   max-width: 850px;
   height: 600px;
-  margin: auto 15rem auto 3rem;
+  margin: auto 0 auto 3rem;
   box-shadow: -17px 26px 50px 10px rgba(0, 0, 0, 0.45);
   border-radius: 40px;
-  background-color: whitesmoke;
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -56,4 +55,32 @@ export const TextContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   text-align: center;
+`;
+
+export const SideContainer = styled.div`
+  ${isCurrentUser};
+
+  min-width: 700px;
+  max-width: 700px;
+  height: 600px;
+  box-sizing: border-box;
+  margin: auto 10rem auto 3rem;
+  padding: 1rem 1rem 2rem;
+  text-align: center;
+  box-shadow: -17px 26px 50px 10px rgba(0, 0, 0, 0.45);
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background: rgb(223, 223, 223);
+  background: linear-gradient(
+    370deg,
+    rgba(202, 202, 202, 0.1) 20%,
+    rgba(128, 0, 32, 0.3) 84%
+  );
+`;
+
+export const LinksContainer = styled.p`
+  display: flex;
+  justify-content: space-around;
 `;
