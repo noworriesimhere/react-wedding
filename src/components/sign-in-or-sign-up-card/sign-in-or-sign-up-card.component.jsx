@@ -19,40 +19,38 @@ const SignInOrSignUpCard = () => {
   const { currentUser, logOut } = useContext(CurrentUserContext);
   return (
     <>
-      <SlidesContainer>
-        <ContentsContainer ref={signInRef}>
-          {currentUser ? (
-            <>
-              <HeaderContainerTop>
-                Hello {currentUser.displayName}!
-              </HeaderContainerTop>
-              <FormContainer>
-                <h2>You're signed in</h2>
-                <p>Please proceed to RSVP and sign our Guestbook</p>
-                <i className='fas fa-chevron-circle-right fa-5x'></i>
-                <CustomButton
-                  onClick={async () => {
-                    await auth.signOut();
-                    logOut();
-                  }}
-                >
-                  Sign Out
-                </CustomButton>
-              </FormContainer>
-            </>
-          ) : (
-            <>
-              <HeaderContainerTop>
-                Sign Up <span>or</span> Log In
-              </HeaderContainerTop>
-              <DoubleFormContainer>
-                <SignUp />
-                <SignIn />
-              </DoubleFormContainer>
-            </>
-          )}
-        </ContentsContainer>
-      </SlidesContainer>
+      <ContentsContainer ref={signInRef}>
+        {currentUser ? (
+          <>
+            <HeaderContainerTop>
+              Hello {currentUser.displayName}!
+            </HeaderContainerTop>
+            <FormContainer>
+              <h2>You're signed in</h2>
+              <p>Please proceed to RSVP and sign our Guestbook</p>
+              <i className='fas fa-chevron-circle-right fa-5x'></i>
+              <CustomButton
+                onClick={async () => {
+                  await auth.signOut();
+                  logOut();
+                }}
+              >
+                Sign Out
+              </CustomButton>
+            </FormContainer>
+          </>
+        ) : (
+          <>
+            <HeaderContainerTop>
+              Sign Up <span>or</span> Log In
+            </HeaderContainerTop>
+            <DoubleFormContainer>
+              <SignUp />
+              <SignIn />
+            </DoubleFormContainer>
+          </>
+        )}
+      </ContentsContainer>
     </>
   );
 };

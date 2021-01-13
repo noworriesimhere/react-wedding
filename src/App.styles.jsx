@@ -25,14 +25,8 @@ export const OuterWrapper = styled.div`
 export const InnerWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
   transform: rotate(90deg) translateY(-100vh);
   transform-origin: top left;
-`;
-
-export const FooterContainer = styled.p`
-  color: #800020;
-  font-size: 1rem;
-  position: fixed;
-  bottom: 0px;
-  left: 20px;
+  height: 100vh;
 `;

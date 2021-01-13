@@ -1,10 +1,21 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const HoverButton = styled.span`
+const bigButtonStyles = css`
+  font-size: 50px;
+`;
+const getButtonStyles = (props) => {
+  if (props.big) {
+    return bigButtonStyles;
+  }
+};
+
+export const HoverButtonContainer = styled.span`
   cursor: pointer;
   position: relative;
+  color: white;
   padding: 10px 10px;
   transition: all 1s;
+  ${getButtonStyles}
   &:after,
   &:before {
     content: ' ';
@@ -13,7 +24,8 @@ export const HoverButton = styled.span`
     position: absolute;
     border-top-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    transition: all 0.5s;
+    transition: width 0.5s, height 0.5s, border-color 0.5s,
+      border-radius 1.5s ease;
   }
   &:after {
     top: -2px;

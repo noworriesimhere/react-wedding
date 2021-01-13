@@ -1,12 +1,6 @@
 import styled, { css } from 'styled-components';
 import ZoomInfo from '../zoom-info/zoom-info.component';
 
-export const SlidesContainer = styled.div`
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-`;
-
 const invisible = css`
   visibility: hidden;
 `;

@@ -1,12 +1,8 @@
 import React from 'react';
-import { HoverButton } from './hover-button.styles';
+import { HoverButtonContainer } from './hover-button.styles';
 
-const ListItem = ({ children }) => {
-  return (
-    <>
-      <HoverButton>{children} </HoverButton>
-    </>
-  );
+const HoverButton = ({ children, big }) => {
+  return <HoverButtonContainer big={big}>{children} </HoverButtonContainer>;
 };
 
-export default ListItem;
+export default HoverButton;

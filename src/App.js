@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Main from './pages/main/main.component';
-import { FooterContainer, InnerWrapper, OuterWrapper } from './App.styles';
 import Header from './components/header/header.component';
+import Footer from './components/footer/footer.component';
+import { InnerWrapper, OuterWrapper } from './App.styles';
 
 function App() {
   return (
@@ -14,12 +15,7 @@ function App() {
           </Router>
         </InnerWrapper>
       </OuterWrapper>
-      <FooterContainer>
-        Designed and Developed by Alan Tran 2021 &copy;{' '}
-        <a href='https://alantran.netlify.app' target='blank'>
-          Learn More.
-        </a>
-      </FooterContainer>
+      <Footer />
     </>
   );
 }

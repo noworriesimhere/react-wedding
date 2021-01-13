@@ -1,11 +1,5 @@
 import styled from 'styled-components';
 
-export const SlidesContainer = styled.div`
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-`;
-
 export const TextContainer = styled.div`
   grid-column: 2 / 3;
   padding: 0 2rem;

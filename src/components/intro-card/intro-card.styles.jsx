@@ -1,11 +1,5 @@
 import styled from 'styled-components';
 
-export const SlidesContainer = styled.div`
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-`;
-
 export const ContentsContainer = styled.div`
   min-width: 850px;
   max-width: 850px;
