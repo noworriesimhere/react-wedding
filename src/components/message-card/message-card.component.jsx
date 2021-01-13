@@ -9,11 +9,14 @@ import {
   TextContainer,
   TitleContainer,
 } from './message-card.styles';
+
+export const messageRef = React.createRef();
+
 const MessageCard = () => {
   const { currentUser } = useContext(CurrentUserContext);
   return (
     <>
-      <SlidesContainer>
+      <SlidesContainer ref={messageRef}>
         <ContentsContainer>
           <ImageContainerLeft />
           <TextContainer>

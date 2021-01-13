@@ -7,19 +7,9 @@ import { homeRef } from '../intro-card/intro-card.component';
 import { ourStoryRef } from '../our-story-card/our-story-card.component';
 import { signInRef } from '../sign-in-or-sign-up-card/sign-in-or-sign-up-card.component';
 import { rsvpRef } from '../rsvp/rsvp.component';
+import { handleOnClick } from '../../utils/util-functions';
 
 import HoverButton from '../hover-button/hover-button.component';
-
-const handleOnClick = (ref) => {
-  return () => {
-    if (ref.current) {
-      ref.current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center',
-      });
-    }
-  };
-};
 
 const Header = () => {
   const { currentUser } = useContext(CurrentUserContext);

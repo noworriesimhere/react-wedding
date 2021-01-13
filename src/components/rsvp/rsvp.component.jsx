@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { CurrentUserContext } from '../../providers/user/user.provider';
 import Checkbox from '../checkbox/checkbox.component';
+
 import {
   SlidesContainer,
   ContentsContainer,
@@ -8,17 +9,23 @@ import {
   TextContainer,
   SideContainer,
   LinksContainer,
+  ZoomContainer,
 } from './rsvp.styles';
 
 export const rsvpRef = React.createRef();
 
 const RsvpCard = () => {
   const { currentUser } = useContext(CurrentUserContext);
+
   return (
     <>
       <SlidesContainer>
         <ContentsContainer ref={rsvpRef} currentUser={currentUser}>
-          <ImageContainer />
+          {currentUser && currentUser.isRsvpd ? (
+            <ZoomContainer />
+          ) : (
+            <ImageContainer />
+          )}
           <TextContainer>
             <h2>R.S.V.P.</h2>
             <Checkbox>I'd love to come!</Checkbox>

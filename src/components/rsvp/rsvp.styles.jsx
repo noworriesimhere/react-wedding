@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import ZoomInfo from '../zoom-info/zoom-info.component';
 
 export const SlidesContainer = styled.div`
   height: 100vh;
@@ -48,6 +49,11 @@ export const ImageContainer = styled.div`
   z-index: -1;
 `;
 
+export const ZoomContainer = styled(ZoomInfo)`
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+`;
+
 export const TextContainer = styled.div`
   padding: 1rem;
   color: white;
@@ -55,6 +61,8 @@ export const TextContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
 `;
 
 export const SideContainer = styled.div`
