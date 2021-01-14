@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ListContainer, ListItem, NavContainer } from './header.styles';
+import { ListContainer, NavContainer } from './header.styles';
 
 import { CurrentUserContext } from '../../providers/user/user.provider';
 
@@ -26,9 +26,7 @@ const Header = () => {
           {currentUser ? 'Log Out' : 'Sign Up / Log In'}
         </HoverButton>
         {currentUser ? (
-          <HoverButton onClick={handleOnClick(rsvpRef)}>
-            RSVP / Guestbook
-          </HoverButton>
+          <HoverButton onClick={handleOnClick(rsvpRef)}>RSVP</HoverButton>
         ) : (
           ''
         )}

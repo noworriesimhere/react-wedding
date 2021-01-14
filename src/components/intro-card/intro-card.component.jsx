@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  SlidesContainer,
   ContentsContainer,
   ImageContainer,
   TextContainer,
@@ -8,12 +7,13 @@ import {
 
 import { handleOnClick } from '../../utils/util-functions';
 import { messageRef } from '../message-card/message-card.component';
+import FloatWrapper from '../float-wrapper/float-wrapper.component';
 
 export const homeRef = React.createRef();
 
 const IntroCard = () => {
   return (
-    <>
+    <FloatWrapper>
       <ContentsContainer>
         <ImageContainer ref={homeRef} />
         <TextContainer>
@@ -27,7 +27,7 @@ const IntroCard = () => {
           <i className='fas fa-chevron-circle-down fa-5x'></i>
         </TextContainer>
       </ContentsContainer>
-    </>
+    </FloatWrapper>
   );
 };
 

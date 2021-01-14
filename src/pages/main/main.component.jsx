@@ -4,7 +4,6 @@ import MessageCard from '../../components/message-card/message-card.component';
 import OurStoryCard from '../../components/our-story-card/our-story-card.component';
 import SignInOrSignUpCard from '../../components/sign-in-or-sign-up-card/sign-in-or-sign-up-card.component';
 import RsvpCard from '../../components/rsvp/rsvp.component';
-import FloatCard from '../../components/float-card/float-card.component';
 
 const Main = () => {
   return (
@@ -14,7 +13,6 @@ const Main = () => {
       <OurStoryCard />
       <SignInOrSignUpCard />
       <RsvpCard />
-      <FloatCard />
     </>
   );
 };

@@ -1,7 +1,6 @@
 import React from 'react';
 import Gallery from '../gallery/gallery.component';
 import {
-  SlidesContainer,
   ContentsContainer,
   TextContainerRight,
   TextContainerLeft,

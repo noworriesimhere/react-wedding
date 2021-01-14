@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { CurrentUserContext } from '../../providers/user/user.provider';
+import FloatWrapper from '../float-wrapper/float-wrapper.component';
 
 import {
-  SlidesContainer,
   ContentsContainer,
   ImageContainerLeft,
   ImageContainerRight,
@@ -15,7 +15,7 @@ export const messageRef = React.createRef();
 const MessageCard = () => {
   const { currentUser } = useContext(CurrentUserContext);
   return (
-    <>
+    <FloatWrapper>
       <ContentsContainer ref={messageRef}>
         <ImageContainerLeft />
         <TextContainer>
@@ -39,7 +39,7 @@ const MessageCard = () => {
         </TextContainer>
         <ImageContainerRight />
       </ContentsContainer>
-    </>
+    </FloatWrapper>
   );
 };
 
