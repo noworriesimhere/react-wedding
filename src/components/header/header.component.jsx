@@ -16,21 +16,19 @@ const Header = () => {
   return (
     <NavContainer>
       <ListContainer>
-        <ListItem onClick={handleOnClick(homeRef)}>
-          <HoverButton>Home</HoverButton>
-        </ListItem>
-        <ListItem onClick={handleOnClick(ourStoryRef)}>
-          <HoverButton>Our Story</HoverButton>
-        </ListItem>
-        <ListItem onClick={handleOnClick(signInRef)}>
-          <HoverButton>
-            {currentUser ? 'Log Out' : 'Sign Up / Log In'}
-          </HoverButton>
-        </ListItem>
+        <HoverButton onClick={handleOnClick(homeRef)}>Home</HoverButton>
+
+        <HoverButton onClick={handleOnClick(ourStoryRef)}>
+          Our Story
+        </HoverButton>
+
+        <HoverButton onClick={handleOnClick(signInRef)}>
+          {currentUser ? 'Log Out' : 'Sign Up / Log In'}
+        </HoverButton>
         {currentUser ? (
-          <ListItem onClick={handleOnClick(rsvpRef)}>
-            <HoverButton>RSVP / Guestbook</HoverButton>
-          </ListItem>
+          <HoverButton onClick={handleOnClick(rsvpRef)}>
+            RSVP / Guestbook
+          </HoverButton>
         ) : (
           ''
         )}

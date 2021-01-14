@@ -5,7 +5,7 @@ import { FixedFooter, FooterContainer } from './footer.styles';
 const Footer = () => {
   return (
     <FooterContainer>
-      <HoverButton big>Guestbook</HoverButton>
+      <HoverButton big>Sign Our Guestbook</HoverButton>
       <FixedFooter>
         Designed and Developed by Alan Tran 2021 &copy;{' '}
         <a href='https://alantran.netlify.app' target='blank'>

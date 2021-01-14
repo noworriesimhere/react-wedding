@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 const bigButtonStyles = css`
-  font-size: 50px;
+  font-size: 40px;
 `;
 const getButtonStyles = (props) => {
   if (props.big) {

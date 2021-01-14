@@ -3,7 +3,6 @@ import { CurrentUserContext } from '../../providers/user/user.provider';
 import Checkbox from '../checkbox/checkbox.component';
 
 import {
-  SlidesContainer,
   ContentsContainer,
   ImageContainer,
   TextContainer,

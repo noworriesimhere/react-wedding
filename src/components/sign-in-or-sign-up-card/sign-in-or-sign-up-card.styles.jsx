@@ -16,6 +16,7 @@ export const ContentsContainer = styled.div`
     rgba(202, 202, 202, 0.1) 20%,
     rgba(128, 0, 32, 0.3) 84%
   );
+  will-change: transform;
 `;
 
 export const HeaderContainerTop = styled.h1`
