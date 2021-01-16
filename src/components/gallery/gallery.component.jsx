@@ -6,66 +6,60 @@ const Gallery = () => {
   return (
     <GalleryContainer>
       <GalleryItem
-        boxSize='square'
         gridArea={'一'}
-        urlSrc='img/story1.jpg'
+        urlSrc='img/5yearparty.jpg'
         altSrc="Alan's 5 year Bethel Party"
       />
       <GalleryItem
-        boxSize='horizontal'
         gridArea={'二'}
-        urlSrc='img/story2.jpg'
+        urlSrc='img/firstdate.jpg'
         altSrc='First Date!'
+        scaleAmount={1.3}
       />
       <GalleryItem
-        boxSize='square'
         gridArea={'三'}
-        urlSrc='img/story3.jpg'
-        altSrc='First Date!'
+        urlSrc='img/familyday2019.jpg'
+        altSrc='Family Day 2019'
       />
       <GalleryItem
-        boxSize='vertical'
         gridArea={'四'}
-        urlSrc='img/story4.jpg'
-        altSrc='First Date!'
+        urlSrc='img/bibletourday.jpg'
+        altSrc='Day in the city with the Met Bible Tour'
+        scaleAmount={1.4}
       />
       <GalleryItem
-        boxSize='square'
         gridArea={'五'}
-        urlSrc='img/story5.jpg'
-        altSrc='First Date!'
+        urlSrc='img/queensday.jpg'
+        altSrc='Georgia accompanying Alan for a public talk in Queens'
       />
       <GalleryItem
-        boxSize='square'
         gridArea={'六'}
-        urlSrc='img/story6.jpg'
-        altSrc='First Date!'
+        urlSrc='img/momaday.jpg'
+        altSrc='Another city day at the MoMA, before Alan went to Argentina International'
       />
       <GalleryItem
-        boxSize='horizontal'
         gridArea={'七'}
-        urlSrc='img/story7.jpg'
-        altSrc='First Date!'
+        urlSrc='img/outsidekh.jpg'
+        altSrc='Georgia at Alans meeting ... with crutches!!'
+        scaleAmount={1.4}
       />
       <GalleryItem
-        boxSize='square'
         gridArea={'八'}
-        urlSrc='img/story8.jpg'
-        altSrc='First Date!'
+        urlSrc='img/lastday.png'
+        altSrc='The day of lockdown... Last time hanging out at the Saenz'
       />
       <GalleryItem
-        boxSize='horizontal'
         gridArea={'九'}
-        urlSrc='img/story9.png'
-        altSrc='First Date!'
+        urlSrc='img/zoomconvention.png'
+        altSrc='Watching 2020 regional convention together'
       />
       <GalleryItem
-        boxSize='square'
         gridArea={'十'}
-        urlSrc='img/story10.png'
-        altSrc='First Date!'
+        urlSrc='img/zoomshenanigans.png'
+        altSrc='Dressing up'
+        scaleAmount={1.4}
       />
-      <GalleryItem boxSize='vertical' gridArea={'十一'} />
+      <GalleryItem gridArea={'十一'} scaleAmount={1.25} />
     </GalleryContainer>
   );
 };

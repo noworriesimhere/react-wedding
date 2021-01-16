@@ -4,9 +4,9 @@ export const ContentsContainer = styled.div`
   min-width: 850px;
   max-width: 850px;
   height: 600px;
-  margin: auto 4rem auto 10rem;
+  margin: auto 2rem auto 10rem;
   box-shadow: -17px 26px 50px 10px rgba(0, 0, 0, 0.45);
-  border-radius: 40px;
+  border-radius: 30px;
   background-color: whitesmoke;
   overflow: hidden;
   display: grid;

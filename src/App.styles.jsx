@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+export const AppWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+`;
+
 export const OuterWrapper = styled.div`
   width: 100vh;
   height: 100vw;
@@ -28,5 +34,12 @@ export const InnerWrapper = styled.div`
   align-items: center;
   transform: rotate(90deg) translateY(-100vh);
   transform-origin: top left;
-  height: 100vh;
+
+  @supports (-webkit-touch-callout: none) {
+    height: calc(var(--vh, 1vh) * 100);
+  }
+
+  @supports not (-webkit-touch-callout: none) {
+    height: 100vh;
+  }
 `;

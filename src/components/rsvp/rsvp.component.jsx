@@ -38,17 +38,27 @@ const RsvpCard = () => {
           <p>Things are hard for everyone right now. </p>{' '}
           <p>
             We don't want to "impose an expensive burden on any one of you" (2
-            Thess 3:8). Yet, we gratefully recognize the joy that result from
-            giving and don't wish to deny anyone that either. (Acts 20:35)
+            Thess 3:8). Yet, we gratefully recognize the joy that results from
+            giving and don't wish to deny anyone that joy. (Acts 20:35)
           </p>
-          <p>
-            If you still feel inclined to help us in any way, we'd still want to
-            keep it simple and modest.
-          </p>
+          <p>If you feel inclined to help us, please use the links below.</p>
           <LinksContainer>
-            <a href='https://cash.app/$itsaniceday'>Cash App</a>
-            <a href='https://paypal.me/contactalantran'>Paypal</a>
+            <a
+              href='https://cash.app/$itsaniceday'
+              rel='noreferrer'
+              target='_blank'
+            >
+              Cash App
+            </a>
+            <a
+              href='https://paypal.me/contactalantran'
+              rel='noreferrer'
+              target='_blank'
+            >
+              Paypal
+            </a>
           </LinksContainer>
+          <p>We deeply appreciate and love every one of you!!</p>
         </SideContainer>
       </FloatWrapper>
     </>

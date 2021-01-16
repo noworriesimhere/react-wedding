@@ -12,6 +12,11 @@ export const TextContainerLeft = styled.div`
   background-image: url('../../img/our-story-background.jpg');
   background-position: -180px 0px;
   z-index: 3;
+  border-radius: 30px;
+  overflow: hidden;
+  height: 600px;
+  box-sizing: border-box;
+  box-shadow: -17px 26px 50px 10px rgba(0, 0, 0, 0.45);
 `;
 export const TextContainerRight = styled.div`
   grid-column: 3 / 4;
@@ -21,6 +26,10 @@ export const TextContainerRight = styled.div`
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  box-shadow: -17px 26px 50px 10px rgba(0, 0, 0, 0.45);
+  border-radius: 30px;
+  height: 600px;
+  box-sizing: border-box;
 
   h1 {
     margin-top: 2rem;
@@ -29,26 +38,13 @@ export const TextContainerRight = styled.div`
 `;
 
 export const ContentsContainer = styled.div`
-  min-width: 3250px;
-  max-width: 3250px;
   height: 600px;
-  margin: auto 4rem;
-  box-shadow: -17px 26px 50px 10px rgba(0, 0, 0, 0.45);
-  border-radius: 40px;
-  overflow: hidden;
+  margin: auto 2rem;
+
   display: grid;
-  grid-template-columns: 400px 2400px 450px;
-  background: rgb(223, 223, 223);
-  background: linear-gradient(
-    370deg,
-    rgba(202, 202, 202, 0.1) 20%,
-    rgba(128, 0, 32, 0.3) 84%
-  );
+  grid-template-columns: 400px 1fr 450px;
 `;
 
-export const ImagesContainer = styled.div`
+export const MiddleContainer = styled.div`
   grid-column: 2 / 3;
-  background-size: cover;
-  background-image: url('../../img/IMG_6922.jpg');
-  z-index: -1;
 `;

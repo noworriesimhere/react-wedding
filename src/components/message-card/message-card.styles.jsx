@@ -19,9 +19,9 @@ export const ContentsContainer = styled.div`
   min-width: 900px;
   max-width: 900px;
   height: 600px;
-  margin: auto 4rem;
+  margin: auto 2rem;
   box-shadow: -17px 26px 50px 10px rgba(0, 0, 0, 0.45);
-  border-radius: 40px;
+  border-radius: 30px;
   overflow: hidden;
   display: grid;
   grid-template-columns: 3fr 6fr 3fr;

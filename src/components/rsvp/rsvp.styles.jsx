@@ -19,9 +19,9 @@ export const ContentsContainer = styled.div`
   min-width: 850px;
   max-width: 850px;
   height: 600px;
-  margin: auto 4rem;
+  margin: auto 2rem;
   box-shadow: -17px 26px 50px 10px rgba(0, 0, 0, 0.45);
-  border-radius: 40px;
+  border-radius: 30px;
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -66,11 +66,11 @@ export const SideContainer = styled.div`
   max-width: 700px;
   height: 600px;
   box-sizing: border-box;
-  margin: auto 6rem auto 4rem;
+  margin: auto 10rem auto 2rem;
   padding: 1rem 1rem 2rem;
   text-align: center;
   box-shadow: -17px 26px 50px 10px rgba(0, 0, 0, 0.45);
-  border-radius: 40px;
+  border-radius: 30px;
   display: flex;
   flex-direction: column;
   color: white;
