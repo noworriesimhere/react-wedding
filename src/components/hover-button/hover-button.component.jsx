@@ -1,11 +1,9 @@
 import React from 'react';
 import { HoverButtonContainer } from './hover-button.styles';
 
-const HoverButton = ({ children, big, onClick }) => {
+const HoverButton = ({ children, ...otherProps }) => {
   return (
-    <HoverButtonContainer big={big} onClick={onClick}>
-      {children}{' '}
-    </HoverButtonContainer>
+    <HoverButtonContainer {...otherProps}>{children} </HoverButtonContainer>
   );
 };
 

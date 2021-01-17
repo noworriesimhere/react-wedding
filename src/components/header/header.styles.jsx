@@ -6,13 +6,17 @@ export const NavContainer = styled.nav`
   left: 0;
   z-index: 1;
   width: 100vw;
-  margin-top: calc((25vh - 220px) / 2);
+  margin-top: calc((50vh - 362.4px) / 2);
   font-size: 20px;
   color: white;
   font-family: 'Montserrat', sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media screen and (max-height: 800px) {
+    margin-top: calc((25vh - 200px) / 2);
+    font-size: 1rem;
+  }
 `;
 
 export const ListContainer = styled.ul`

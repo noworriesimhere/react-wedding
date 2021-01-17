@@ -8,9 +8,18 @@ const bigButtonStyles = css`
     display: none;
   }
 `;
-const getButtonStyles = (props) => {
-  if (props.big) {
+
+const guestbookStyles = css`
+  @media screen and (min-height: 900px) {
+    display: none;
+  }
+`;
+
+const getButtonStyles = ({ big, guestbook }) => {
+  if (big) {
     return bigButtonStyles;
+  } else if (guestbook) {
+    return guestbookStyles;
   }
 };
 

@@ -31,7 +31,6 @@ const OurStoryCard = () => {
               Please sign up to RSVP, access Zoom details, and sign our
               guestbook
             </p>
-            <i className='fas fa-chevron-circle-right fa-5x'></i>
           </TextContainerRight>
         </FloatWrapper>
       </ContentsContainer>

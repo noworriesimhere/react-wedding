@@ -1,4 +1,4 @@
-export const handleOnClick = (ref) => {
+export const handleRefClick = (ref) => {
   return () => {
     if (ref.current) {
       ref.current.scrollIntoView({
@@ -7,4 +7,9 @@ export const handleOnClick = (ref) => {
       });
     }
   };
+};
+
+export const handleResize = () => {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
 };

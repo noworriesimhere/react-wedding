@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const FooterContainer = styled.div`
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100vw;
@@ -10,8 +10,11 @@ export const FooterContainer = styled.div`
   justify-content: space-between;
   color: white;
 
-  .fas {
-    margin: 0 2rem;
+  .fa-chevron-circle-left {
+    margin-left: 10vw;
+  }
+  .fa-chevron-circle-right {
+    margin-right: 10vw;
   }
 `;
 
@@ -25,8 +28,8 @@ export const FixedFooter = styled.p`
 
   @media screen and (max-height: 900px) {
     font-size: 0.85rem;
-    bottom: -15px;
-    left: 5px;
+    text-align: center;
+    width: 100vw;
     a {
       font-size: 1rem;
     }
