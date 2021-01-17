@@ -5,10 +5,14 @@ export const FooterContainer = styled.div`
   bottom: 0;
   left: 0;
   width: 100vw;
-  margin-top: calc((50vh - 362.4px) / 2);
-  margin-bottom: calc((50vh - 362.4px) / 2);
+  margin-bottom: calc((50vh - 370px) / 2);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  color: white;
+
+  .fas {
+    margin: 0 2rem;
+  }
 `;
 
 export const FixedFooter = styled.p`
@@ -17,4 +21,14 @@ export const FixedFooter = styled.p`
   position: fixed;
   bottom: 0px;
   left: 20px;
+  transition: all 1s ease;
+
+  @media screen and (max-height: 900px) {
+    font-size: 0.85rem;
+    bottom: -15px;
+    left: 5px;
+    a {
+      font-size: 1rem;
+    }
+  }
 `;

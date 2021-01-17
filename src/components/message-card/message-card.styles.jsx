@@ -16,8 +16,7 @@ export const TitleContainer = styled.h2`
 `;
 
 export const ContentsContainer = styled.div`
-  min-width: 900px;
-  max-width: 900px;
+  width: 1000px;
   height: 600px;
   margin: auto 2rem;
   box-shadow: -17px 26px 50px 10px rgba(0, 0, 0, 0.45);
@@ -37,15 +36,15 @@ export const ContentsContainer = styled.div`
 export const ImageContainerLeft = styled.div`
   grid-column: 1 / 2;
   background-size: cover;
-  background-position: -180px 0px;
-  background-image: url('../../img/IMG_6922.jpg');
+  background-position: -60px 0px;
+  background-image: url('../../img/georgiawave.jpeg');
   z-index: -1;
 `;
 
 export const ImageContainerRight = styled.div`
   grid-column: 3 / 4;
   background-size: cover;
-  background-position: -180px 0px;
-  background-image: url('../../img/IMG_6922.jpg');
+  background-position: -50px 0px;
+  background-image: url('../../img/alanwave.jpeg');
   z-index: -1;
 `;

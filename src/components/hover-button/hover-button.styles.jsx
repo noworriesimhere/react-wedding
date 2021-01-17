@@ -1,7 +1,12 @@
 import styled, { css } from 'styled-components';
 
 const bigButtonStyles = css`
-  font-size: 40px;
+  font-size: 50px;
+
+  @media screen and (max-height: 900px) {
+    font-size: 30px;
+    display: none;
+  }
 `;
 const getButtonStyles = (props) => {
   if (props.big) {

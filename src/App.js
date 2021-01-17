@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Main from './pages/main/main.component';
 import Header from './components/header/header.component';
 import Footer from './components/footer/footer.component';
-import { AppWrapper, InnerWrapper, OuterWrapper } from './App.styles';
+import { AppWrapper, InnerWrapper } from './App.styles';
+import useHorizontalScroll from './components/use-horizontal-scroll/use-horizontal-scroll.component';
 
 function App() {
   useEffect(() => {
@@ -17,16 +18,15 @@ function App() {
       return () => window.removeEventListener('resize', handleResize);
     });
   }, []);
+  const scrollRef = useHorizontalScroll();
   return (
     <AppWrapper>
       <Header />
-      <OuterWrapper>
-        <InnerWrapper>
-          <Router>
-            <Route path='/' component={Main} />
-          </Router>
-        </InnerWrapper>
-      </OuterWrapper>
+      <InnerWrapper ref={scrollRef}>
+        <Router>
+          <Route path='/' component={Main} />
+        </Router>
+      </InnerWrapper>
       <Footer />
     </AppWrapper>
   );

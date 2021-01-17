@@ -6,8 +6,7 @@ export const NavContainer = styled.nav`
   left: 0;
   z-index: 1;
   width: 100vw;
-  margin-top: calc((50vh - 362.4px) / 2);
-  margin-bottom: calc((50vh - 362.4px) / 2);
+  margin-top: calc((25vh - 220px) / 2);
   font-size: 20px;
   color: white;
   font-family: 'Montserrat', sans-serif;
