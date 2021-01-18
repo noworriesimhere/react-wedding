@@ -13,9 +13,14 @@ export const NavContainer = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   @media screen and (max-height: 800px) {
     margin-top: calc((25vh - 200px) / 2);
     font-size: 1rem;
+  }
+
+  @media screen and (max-width: 700px) {
+    display: none;
   }
 `;
 

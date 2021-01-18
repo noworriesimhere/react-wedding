@@ -8,24 +8,33 @@ const calc = (x, y, scaleAmount) => [
   scaleAmount,
   5,
 ];
-const trans = (x, y, s, z) =>
-  `perspective(700px) rotateX(${x}deg) rotateY(${y}deg) scale(${s}) translate3d(0, 0, ${z}px)`;
+const trans = (x, y, s) =>
+  `perspective(700px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
-const GalleryItem = ({ gridArea, scaleAmount = 1.6, urlSrc, altSrc }) => {
+const GalleryItem = ({ gridArea, scaleAmount = 1.7, urlSrc, altSrc }) => {
   const [props, set] = useSpring(() => ({
-    xys: [0, 0, 1, 0],
+    xysz: [0, 0, 1, 0],
     zIndex: 0,
+    transformOrigin: 'center',
     config: { mass: 5, tension: 350, friction: 40 },
     immediate: (key) => key === 'zIndex',
   }));
 
   return (
     <FloatStyled
-      onMouseMove={({ clientX: x, clientY: y }) =>
-        set({ xys: calc(x, y, scaleAmount), zIndex: 5 })
-      }
-      onMouseLeave={() => set({ xys: [0, 0, 1, 0], zIndex: 0 })}
-      style={{ transform: props.xys.interpolate(trans), zIndex: props.zIndex }}
+      onMouseMove={({ clientX: x, clientY: y, screenX, screenY }) => {
+        set({
+          xysz: calc(x, y, scaleAmount),
+          zIndex: 5,
+          transformOrigin: `${screenX}% ${screenY}%`,
+        });
+      }}
+      onMouseLeave={() => set({ xysz: [0, 0, 1, 0], zIndex: 0 })}
+      style={{
+        transform: props.xysz.interpolate(trans),
+        zIndex: props.zIndex,
+        transformOrigin: props.transformOrigin,
+      }}
       gridarea={gridArea}
     >
       <ItemContainer>

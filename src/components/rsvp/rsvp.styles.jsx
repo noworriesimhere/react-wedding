@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { CardContainer } from '../card/card.styles';
 import ZoomInfo from '../zoom-info/zoom-info.component';
 
 const invisible = css`
@@ -13,25 +14,11 @@ const isCurrentUser = (props) => {
   }
 };
 
-export const ContentsContainer = styled.div`
+export const ContentsContainer = styled(CardContainer)`
   ${isCurrentUser};
-
-  min-width: 850px;
-  max-width: 850px;
-  height: 600px;
-  margin: auto 2rem;
-  box-shadow: -17px 26px 50px 10px rgba(0, 0, 0, 0.45);
-  border-radius: 30px;
-  overflow: hidden;
-  display: grid;
+  width: 850px;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  background: rgb(223, 223, 223);
-  background: linear-gradient(
-    370deg,
-    rgba(202, 202, 202, 0.1) 20%,
-    rgba(128, 0, 32, 0.3) 84%
-  );
 `;
 
 export const ImageContainer = styled.div`
@@ -59,29 +46,16 @@ export const TextContainer = styled.div`
   grid-row: 1 / 2;
 `;
 
-export const SideContainer = styled.div`
+export const SideContainer = styled(CardContainer)`
   ${isCurrentUser};
 
-  min-width: 700px;
-  max-width: 700px;
-  height: 600px;
-  box-sizing: border-box;
+  width: 700px;
   margin: auto 10rem auto 2rem;
   padding: 1rem 1rem 2rem;
   text-align: center;
-  box-shadow: -17px 26px 50px 10px rgba(0, 0, 0, 0.45);
-  border-radius: 30px;
   display: flex;
   flex-direction: column;
   color: white;
-  background: rgb(223, 223, 223);
-  background: linear-gradient(
-    370deg,
-    rgba(202, 202, 202, 0.1) 20%,
-    rgba(128, 0, 32, 0.3) 84%
-  );
-
-  will-change: transform;
 `;
 
 export const LinksContainer = styled.p`

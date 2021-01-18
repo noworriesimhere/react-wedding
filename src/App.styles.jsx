@@ -6,7 +6,7 @@ export const AppWrapper = styled.div`
   left: 0;
 `;
 
-export const InnerWrapper = styled.div`
+export const ScrollWrapper = styled.div`
   overflow-y: scroll;
   width: 100vw;
   display: flex;
@@ -17,7 +17,7 @@ export const InnerWrapper = styled.div`
   background: linear-gradient(
     58deg,
     rgba(212, 223, 216, 1) 3%,
-    rgba(128, 0, 32, 1) 90%
+    rgba(128, 0, 32, 1) 75%
   );
   ::-webkit-scrollbar {
     display: none;
@@ -28,5 +28,17 @@ export const InnerWrapper = styled.div`
 
   @supports not (-webkit-touch-callout: none) {
     height: 100vh;
+  }
+
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
+    overflow-x: hidden;
+    padding-top: 2rem;
+
+    background: linear-gradient(
+      58deg,
+      rgba(212, 223, 216, 1) 1%,
+      rgba(128, 0, 32, 1) 75%
+    );
   }
 `;

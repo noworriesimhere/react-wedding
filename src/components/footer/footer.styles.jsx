@@ -16,6 +16,10 @@ export const FooterContainer = styled.div`
   .fa-chevron-circle-right {
     margin-right: 10vw;
   }
+
+  @media screen and (max-width: 650px) {
+    display: none;
+  }
 `;
 
 export const FixedFooter = styled.p`

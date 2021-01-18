@@ -18,7 +18,7 @@ const MessageCard = () => {
         <ImageContainerLeft />
         <TextContainer>
           <TitleContainer>
-            Hello <br />{' '}
+            Hello{' '}
             {!currentUser ? (
               <span>Friend!</span>
             ) : (
