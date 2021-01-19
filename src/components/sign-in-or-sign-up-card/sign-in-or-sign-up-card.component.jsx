@@ -35,7 +35,7 @@ const SignInOrSignUpCard = () => {
         </ContentsContainer>
       ) : (
         <ContentsContainer ref={signInRef}>
-          <Radio option1='Sign Up' option2='Log In' />
+          <Radio option1='Log In' option2='Sign Up' />
           {isLogIn ? <SignIn /> : <SignUp />}
         </ContentsContainer>
       )}

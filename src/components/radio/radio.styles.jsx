@@ -31,7 +31,7 @@ export const ToggleSwitchContainer = styled.div`
   }
   span {
     position: absolute;
-    background-color: #9bae98;
+    background-color: var(--color-lightmint);
     border-radius: 30px;
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
