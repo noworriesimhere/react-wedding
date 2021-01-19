@@ -2,56 +2,43 @@ import React, { useContext } from 'react';
 import SignIn from '../sign-in/sign-in.component';
 import SignUp from '../sign-up/sign-up.component';
 import FloatWrapper from '../float-wrapper/float-wrapper.component';
-import CustomButton from '../custom-button/custom-button.component';
 import {
   ContentsContainer,
   HeaderContainerTop,
-  FormContainer,
   DoubleFormContainer,
 } from './sign-in-or-sign-up-card.styles';
 
-import { auth } from '../../firebase/firebase.utils';
 import { CurrentUserContext } from '../../providers/user/user.provider';
+import SignInSuccess from '../sign-in-success/sign-in-success.component';
+import Radio from '../radio/radio.component';
 
 export const signInRef = React.createRef();
 
 const SignInOrSignUpCard = () => {
-  const { currentUser, logOut } = useContext(CurrentUserContext);
+  const { currentUser, isLogIn } = useContext(CurrentUserContext);
 
   return (
     <FloatWrapper>
-      <ContentsContainer ref={signInRef}>
-        {currentUser ? (
-          <>
-            <HeaderContainerTop>
-              Hello {currentUser.displayName}!
-            </HeaderContainerTop>
-            <FormContainer>
-              <h2>You're signed in</h2>
-              <p>Please proceed to RSVP and sign our Guestbook</p>
-              <i className='fas fa-chevron-circle-right fa-5x'></i>
-              <CustomButton
-                onClick={async () => {
-                  await auth.signOut();
-                  logOut();
-                }}
-              >
-                Sign Out
-              </CustomButton>
-            </FormContainer>
-          </>
-        ) : (
-          <>
-            <HeaderContainerTop>
-              Sign Up <span>or</span> Log In
-            </HeaderContainerTop>
-            <DoubleFormContainer>
-              <SignUp />
-              <SignIn />
-            </DoubleFormContainer>
-          </>
-        )}
-      </ContentsContainer>
+      {currentUser ? (
+        <ContentsContainer ref={signInRef}>
+          <SignInSuccess />
+        </ContentsContainer>
+      ) : window.innerWidth > 780 ? (
+        <ContentsContainer ref={signInRef}>
+          <HeaderContainerTop>
+            Sign Up <span>or</span> Log In
+          </HeaderContainerTop>
+          <DoubleFormContainer>
+            <SignUp />
+            <SignIn />
+          </DoubleFormContainer>
+        </ContentsContainer>
+      ) : (
+        <ContentsContainer ref={signInRef}>
+          <Radio option1='Sign Up' option2='Log In' />
+          {isLogIn ? <SignIn /> : <SignUp />}
+        </ContentsContainer>
+      )}
     </FloatWrapper>
   );
 };

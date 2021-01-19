@@ -19,7 +19,7 @@ function App() {
     });
 
     const el = appRef.current;
-    if (el && window.innerWidth > 700) {
+    if (el && window.innerWidth > 780) {
       const onWheel = (event) => {
         const toLeft = event.deltaY < 0 && el.scrollLeft > 0;
         const toRight =

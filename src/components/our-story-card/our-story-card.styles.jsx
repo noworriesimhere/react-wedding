@@ -6,12 +6,12 @@ export const ContentsContainer = styled.div`
   display: grid;
   grid-template-columns: 400px 1fr 450px;
 
-  @media screen and (max-width: 650px) {
-    height: 619vw;
+  @media screen and (max-width: 780px) {
+    height: calc(429vw + 600px);
     width: 88vw;
     margin: 2rem 6vw;
     grid-template-columns: 88vw;
-    grid-template-rows: 80vw 429vw 110vw;
+    grid-template-rows: 200px 429vw 400px;
   }
 `;
 
@@ -33,15 +33,12 @@ export const TextContainerLeft = styled.div`
   box-sizing: border-box;
   margin: 0;
 
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 780px) {
     grid-row: 1 / 2;
     background-position: -80px 0px;
     background-size: 150%;
     width: 88vw;
     padding: 3rem 0.5rem;
-    h1 {
-      font-size: 3rem;
-    }
     p {
       margin: 0;
     }
@@ -50,7 +47,7 @@ export const TextContainerLeft = styled.div`
 
 export const MiddleContainer = styled.div`
   grid-column: 2 / 3;
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 780px) {
     grid-row: 2 / 3;
     grid-column: 1 / 2;
   }
@@ -69,7 +66,6 @@ export const TextContainerRight = styled.div`
   height: 600px;
   grid-column: 3 / 4;
   padding: 1rem 1rem;
-  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -82,9 +78,9 @@ export const TextContainerRight = styled.div`
     line-height: 3.5rem;
   }
 
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 780px) {
     grid-row: 3 / 4;
     padding: 0 1rem;
-    height: 110vw;
+    height: 400px;
   }
 `;

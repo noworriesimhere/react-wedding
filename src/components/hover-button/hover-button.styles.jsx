@@ -26,7 +26,6 @@ const getButtonStyles = ({ big, guestbook }) => {
 export const HoverButtonContainer = styled.span`
   cursor: pointer;
   position: relative;
-  color: white;
   padding: 10px 10px;
   transition: all 1s;
   ${getButtonStyles}
@@ -44,14 +43,14 @@ export const HoverButtonContainer = styled.span`
   &:after {
     top: -2px;
     left: -2px;
-    border-top: 3px solid pink;
-    border-left: 3px solid pink;
+    border-top: 3px solid var(--color-pink);
+    border-left: 3px solid var(--color-pink);
   }
   &:before {
     bottom: -2px;
     right: -2px;
-    border-bottom: 3px solid pink;
-    border-right: 3px solid pink;
+    border-bottom: 3px solid var(--color-pink);
+    border-right: 3px solid var(--color-pink);
   }
   &:hover {
     &:before,

@@ -9,11 +9,14 @@ export const CurrentUserContext = createContext({
     isRsvpd: false,
   },
   logOut: () => {},
+  isLogIn: false,
 });
 
 const CurrentUserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
+  const [isLogIn, setIsLogIn] = useState(false);
   const logOut = () => setCurrentUser(null);
+  const toggleForm = () => setIsLogIn(!isLogIn);
 
   useEffect(() => {
     const unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
@@ -38,7 +41,7 @@ const CurrentUserProvider = ({ children }) => {
 
   return (
     <CurrentUserContext.Provider
-      value={{ currentUser, logOut, setCurrentUser }}
+      value={{ currentUser, logOut, setCurrentUser, isLogIn, toggleForm }}
     >
       {children}
     </CurrentUserContext.Provider>

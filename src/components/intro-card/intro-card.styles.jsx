@@ -7,7 +7,7 @@ export const ContentsContainer = styled(CardContainer)`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
 
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 780px) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
   }
@@ -21,28 +21,15 @@ export const ImageContainer = styled.div`
   background-image: url('../../img/IMG_6922.jpg');
   z-index: -1;
 
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 780px) {
     background-position: -40px 0px;
   }
 `;
 
 export const TextContainer = styled.div`
   padding: 1rem;
-  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-
-  @media screen and (max-width: 650px) {
-    h1 {
-      font-size: 2.6rem;
-    }
-    p {
-      font-size: 1rem;
-    }
-    h2 {
-      font-size: 1.8rem;
-    }
-  }
 `;

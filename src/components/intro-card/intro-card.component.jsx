@@ -17,7 +17,7 @@ const IntroCard = () => {
         <TextContainer>
           <h1>Georgia & Alan</h1>
           <p>Are Getting Married On</p>
-          <h2>June (something) 2021</h2>
+          <h3>June (something) 2021</h3>
         </TextContainer>
       </ContentsContainer>
     </FloatWrapper>

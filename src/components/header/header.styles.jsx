@@ -7,8 +7,7 @@ export const NavContainer = styled.nav`
   z-index: 1;
   width: 100vw;
   margin-top: calc((50vh - 362.4px) / 2);
-  font-size: 20px;
-  color: white;
+  font-size: 1.5rem;
   font-family: 'Montserrat', sans-serif;
   display: flex;
   flex-direction: column;
@@ -19,7 +18,7 @@ export const NavContainer = styled.nav`
     font-size: 1rem;
   }
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 780px) {
     display: none;
   }
 `;

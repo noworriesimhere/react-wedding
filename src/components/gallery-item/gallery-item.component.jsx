@@ -40,7 +40,7 @@ const GalleryItem = ({
           clientHeight: targetHeight,
         }, //top left coordinate of target
       }) => {
-        if (window.innerWidth < 650) {
+        if (window.innerWidth < 780) {
           const targetCenterX = targetTopLeftX + targetWidth / 2;
           const targetCenterY = targetTopLeftY + targetHeight / 2;
 

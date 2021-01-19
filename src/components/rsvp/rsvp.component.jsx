@@ -20,9 +20,14 @@ const RsvpCard = () => {
   return (
     <>
       <FloatWrapper>
-        <ContentsContainer ref={rsvpRef} currentUser={currentUser}>
+        <ContentsContainer ref={rsvpRef}>
           {currentUser && currentUser.isRsvpd ? (
-            <ZoomContainer />
+            <ZoomContainer>
+              <h2>Zoom Credentials</h2>
+              <p>Meeting ID: 123 4567 1234</p>
+              <p>Password: 123456</p>
+              <a href={'https://google.com'}>Direct Link</a>
+            </ZoomContainer>
           ) : (
             <ImageContainer />
           )}
@@ -33,7 +38,7 @@ const RsvpCard = () => {
         </ContentsContainer>
       </FloatWrapper>
       <FloatWrapper>
-        <SideContainer currentUser={currentUser}>
+        <SideContainer>
           <h1>Registry?</h1>
           <p>Things are hard for everyone right now. </p>{' '}
           <p>

@@ -70,10 +70,11 @@ export const CustomButtonContainer = styled.button`
   letter-spacing: 0.5px;
   line-height: 50px;
   padding: 0 25px 0 25px;
-  font-size: 14px;
+  font-size: 0.8rem;
   border-radius: 10px;
   transition: all 0.5s ease-in-out;
   font-family: 'Montserrat', sans-serif;
+  margin: 0.5rem 0;
 
   cursor: pointer;
   display: flex;

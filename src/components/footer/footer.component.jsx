@@ -28,7 +28,7 @@ const Footer = () => {
       />
       <FixedFooter>
         Designed and Developed by Alan Tran 2021 &copy;{' '}
-        <a href='https://alantran.netlify.app' target='blank'>
+        <a href='https://alantran.tech' target='blank'>
           Learn More.
         </a>
       </FixedFooter>

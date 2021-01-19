@@ -8,7 +8,6 @@ export const FooterContainer = styled.div`
   margin-bottom: calc((50vh - 370px) / 2);
   display: flex;
   justify-content: space-between;
-  color: white;
 
   .fa-chevron-circle-left {
     margin-left: 10vw;
@@ -17,7 +16,7 @@ export const FooterContainer = styled.div`
     margin-right: 10vw;
   }
 
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 780px) {
     display: none;
   }
 `;
@@ -34,8 +33,5 @@ export const FixedFooter = styled.p`
     font-size: 0.85rem;
     text-align: center;
     width: 100vw;
-    a {
-      font-size: 1rem;
-    }
   }
 `;

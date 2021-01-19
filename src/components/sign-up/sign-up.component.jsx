@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
-import {
-  auth,
-  signInWithGoogle,
-  createUserProfileDocument,
-} from '../../firebase/firebase.utils';
+import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
@@ -84,23 +80,10 @@ const SignUp = () => {
         />
         <ButtonsBarContainer>
           <CustomButton type='submit'>Sign Up</CustomButton>
-          <CustomButton onClick={signInWithGoogle} type='button' isGoogleSignIn>
-            Sign Up With <span></span>
-            <span className='google-logo'>
-              G<span className='red'>o</span>
-              <span className='yellow'>o</span>g<span className='green'>l</span>
-              <span className='red'>e</span>
-            </span>
-          </CustomButton>
         </ButtonsBarContainer>
       </form>
     </SignUpContainer>
   );
 };
 
-// const mapDispatchToProps = (dispatch) => ({
-//   signUpStart: (userCredentials) => dispatch(signUpStart(userCredentials)),
-// });
-
 export default SignUp;
-// export default connect(null, mapDispatchToProps)(SignUp);

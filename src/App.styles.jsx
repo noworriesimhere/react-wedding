@@ -16,8 +16,9 @@ export const ScrollWrapper = styled.div`
   background: rgb(212, 223, 216);
   background: linear-gradient(
     58deg,
-    rgba(212, 223, 216, 1) 3%,
-    rgba(128, 0, 32, 1) 75%
+    var(--color-pink) 2%,
+    var(--color-burgundy) 70%,
+    var(--color-darkbrown) 100%
   );
   ::-webkit-scrollbar {
     display: none;
@@ -30,7 +31,7 @@ export const ScrollWrapper = styled.div`
     height: 100vh;
   }
 
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 780px) {
     flex-direction: column;
     overflow-x: hidden;
     padding-top: 2rem;
