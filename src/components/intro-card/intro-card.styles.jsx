@@ -19,7 +19,6 @@ export const ImageContainer = styled.div`
   background-size: cover;
   background-position: -180px 0px;
   background-image: url('../../img/IMG_6922.jpg');
-  z-index: -1;
 
   @media screen and (max-width: 780px) {
     background-position: -40px 0px;

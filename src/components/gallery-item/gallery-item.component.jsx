@@ -1,60 +1,50 @@
-import React from 'react';
-import { FloatStyled, ItemContainer } from './gallery-item.styles';
+import React, { useState } from 'react';
+import { FloatStyled } from './gallery-item.styles';
 import { useSpring } from 'react-spring';
 
-const calc = (x, y, scaleAmount) => [
-  -(y - window.innerHeight / 2) / 60,
-  (x - window.innerWidth / 2) / 60,
-  scaleAmount,
-  5,
-];
-const trans = (x, y, s) =>
-  `perspective(700px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
+const trans = (s) => `scale(${s})`;
 
 const GalleryItem = ({
   gridArea,
-  scaleAmount = 1.7,
-  transformOrigin = '50% 50%',
+  scaleAmount = 1.8,
+  transformOrigin = 'center',
   urlSrc,
   altSrc,
   date,
   story,
 }) => {
-  // const [isFlipped, setIsFlipped] = useState(false);
-
-  // const { transform, opacity } = useSpring({
-  //   opacity: isFlipped ? 1 : 0,
-  //   transform: `rotateX(${isFlipped ? 180 : 0}deg)`,
-  //   config: { mass: 5, tension: 500, friction: 80 },
-  // });
+  const [isClicked, setIsClicked] = useState(false);
 
   const [props, set] = useSpring(() => ({
-    xysz: [0, 0, 1, 0],
+    scale: 1,
     zIndex: 0,
     transformOrigin: transformOrigin,
     willChange: 'transform',
-    config: { mass: 5, tension: 350, friction: 40 },
+    config: { mass: 4, tension: 400, friction: 40 },
     immediate: (key) => key === 'zIndex',
   }));
 
   return (
     <FloatStyled
-      // onClick={() => {
-      //   setIsFlipped((state) => !state);
-      //   console.log('clicked!');
-      // }}
-      onMouseMove={({
-        clientX: x,
-        clientY: y,
+      onMouseMove={() => {
+        if (window.innerWidth > 780) {
+          set({
+            scale: scaleAmount,
+            zIndex: 5,
+          });
+          setIsClicked(true);
+        }
+      }}
+      onClick={({
         view: { innerHeight, innerWidth },
         target: {
           x: targetTopLeftX,
           y: targetTopLeftY,
-          clientWidth: targetWidth,
+          clientWidth: targetWidth, //top left coordinate of target
           clientHeight: targetHeight,
-        }, //top left coordinate of target
+        },
       }) => {
-        if (window.innerWidth < 780) {
+        if (window.innerWidth < 780 && !isClicked) {
           const targetCenterX = targetTopLeftX + targetWidth / 2;
           const targetCenterY = targetTopLeftY + targetHeight / 2;
 
@@ -84,38 +74,32 @@ const GalleryItem = ({
           const calculatedTransform = `${transformPercentageX}% ${transformPercentageY}%`;
 
           set({
-            xysz: calc(x, y, scaleAmount),
+            scale: scaleAmount,
             zIndex: 5,
             transformOrigin: calculatedTransform,
           });
-        } else {
-          set({
-            xysz: calc(x, y, scaleAmount),
-            zIndex: 5,
-          });
+          setIsClicked(true);
+        } else if (window.innerWidth < 780 && isClicked) {
+          set({ scale: 1, zIndex: 0 });
+          setIsClicked(false);
         }
       }}
-      onMouseLeave={() => set({ xysz: [0, 0, 1, 0], zIndex: 0 })}
+      onMouseLeave={() => {
+        set({ scale: 1, zIndex: 0 });
+        setIsClicked(false);
+      }}
       style={{
-        transform: props.xysz.interpolate(trans),
+        transform: props.scale.interpolate(trans),
         zIndex: props.zIndex,
         transformOrigin: props.transformOrigin,
       }}
       gridarea={gridArea}
+      isClicked={isClicked}
     >
-      <ItemContainer>
-        <h4>{date}</h4>
-        <div />
-        <i className='fas fa-sync-alt fa-3x'></i>
-        <img
-          src={urlSrc}
-          alt={altSrc}
-          // style={{
-          //   opacity,
-          //   transform: transform.interpolate((t) => `${t} rotateX(180deg)`),
-          // }}
-        />
-      </ItemContainer>
+      <h4>{date}</h4>
+      <i className='far fa-comment-dots fa-3x'></i>
+      <div />
+      <img src={urlSrc} alt={altSrc} />
     </FloatStyled>
   );
 };

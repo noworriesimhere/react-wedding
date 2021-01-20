@@ -16,15 +16,19 @@ const FloatWrapper = ({ children }) => {
     config: { mass: 5, tension: 350, friction: 40 },
   }));
 
-  return (
-    <FloatContainer
-      onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
-      onMouseLeave={() => set({ xys: [0, 0, 1] })}
-      style={{ transform: props.xys.interpolate(trans) }}
-    >
-      {children}
-    </FloatContainer>
-  );
+  if (window.innerWidth > 780) {
+    return (
+      <FloatContainer
+        onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
+        onMouseLeave={() => set({ xys: [0, 0, 1] })}
+        style={{ transform: props.xys.interpolate(trans) }}
+      >
+        {children}
+      </FloatContainer>
+    );
+  } else {
+    return <div>{children}</div>;
+  }
 };
 
 export default FloatWrapper;
