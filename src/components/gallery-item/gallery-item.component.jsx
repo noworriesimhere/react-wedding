@@ -17,7 +17,17 @@ const GalleryItem = ({
   transformOrigin = '50% 50%',
   urlSrc,
   altSrc,
+  date,
+  story,
 }) => {
+  // const [isFlipped, setIsFlipped] = useState(false);
+
+  // const { transform, opacity } = useSpring({
+  //   opacity: isFlipped ? 1 : 0,
+  //   transform: `rotateX(${isFlipped ? 180 : 0}deg)`,
+  //   config: { mass: 5, tension: 500, friction: 80 },
+  // });
+
   const [props, set] = useSpring(() => ({
     xysz: [0, 0, 1, 0],
     zIndex: 0,
@@ -29,6 +39,10 @@ const GalleryItem = ({
 
   return (
     <FloatStyled
+      // onClick={() => {
+      //   setIsFlipped((state) => !state);
+      //   console.log('clicked!');
+      // }}
       onMouseMove={({
         clientX: x,
         clientY: y,
@@ -90,7 +104,17 @@ const GalleryItem = ({
       gridarea={gridArea}
     >
       <ItemContainer>
-        <img src={urlSrc} alt={altSrc}></img>
+        <h4>{date}</h4>
+        <div />
+        <i className='fas fa-sync-alt fa-3x'></i>
+        <img
+          src={urlSrc}
+          alt={altSrc}
+          // style={{
+          //   opacity,
+          //   transform: transform.interpolate((t) => `${t} rotateX(180deg)`),
+          // }}
+        />
       </ItemContainer>
     </FloatStyled>
   );

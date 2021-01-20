@@ -30,6 +30,10 @@ h3 {
   font-size: 2.5rem;
 }
 
+h4 {
+  font-size: 2rem;
+}
+
 p {
   font-size: 1.25rem;
   line-height: 2rem;
