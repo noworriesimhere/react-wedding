@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { FloatStyled } from './gallery-item.styles';
 import { useSpring } from 'react-spring';
 
-const trans = (s) => `scale(${s})`;
+const trans = (scale) => `scale(${scale})`;
 
 const GalleryItem = ({
   gridArea,
   scaleAmount = 1.8,
-  transformOrigin = 'center',
+  transformOrigin = '50% 50%',
   urlSrc,
   altSrc,
   date,
@@ -19,8 +19,7 @@ const GalleryItem = ({
     scale: 1,
     zIndex: 0,
     transformOrigin: transformOrigin,
-    willChange: 'transform',
-    config: { mass: 4, tension: 400, friction: 40 },
+    config: { mass: 5, tension: 300, friction: 40 },
     immediate: (key) => key === 'zIndex',
   }));
 
@@ -35,16 +34,18 @@ const GalleryItem = ({
           setIsClicked(true);
         }
       }}
-      onClick={({
+      onTouchStart={({
         view: { innerHeight, innerWidth },
         target: {
-          x: targetTopLeftX,
-          y: targetTopLeftY,
-          clientWidth: targetWidth, //top left coordinate of target
-          clientHeight: targetHeight,
+          parentElement: {
+            children: [, , , { x: targetTopLeftX, y: targetTopLeftY }],
+            clientWidth: targetWidth,
+            clientHeight: targetHeight,
+          },
         },
       }) => {
-        if (window.innerWidth < 780 && !isClicked) {
+        console.table({ targetTopLeftX, targetTopLeftY });
+        if (window.innerWidth < 780) {
           const targetCenterX = targetTopLeftX + targetWidth / 2;
           const targetCenterY = targetTopLeftY + targetHeight / 2;
 
@@ -79,9 +80,7 @@ const GalleryItem = ({
             transformOrigin: calculatedTransform,
           });
           setIsClicked(true);
-        } else if (window.innerWidth < 780 && isClicked) {
-          set({ scale: 1, zIndex: 0 });
-          setIsClicked(false);
+          console.log(calculatedTransform);
         }
       }}
       onMouseLeave={() => {
@@ -96,10 +95,17 @@ const GalleryItem = ({
       gridarea={gridArea}
       isClicked={isClicked}
     >
-      <h4>{date}</h4>
-      <i className='far fa-comment-dots fa-3x'></i>
+      <h5>{date}</h5>
+      <i className='far fa-comment-dots'></i>
       <div />
       <img src={urlSrc} alt={altSrc} />
+      <i
+        className='fas fa-times'
+        onClick={() => {
+          set({ scale: 1, zIndex: 0 });
+          setIsClicked(false);
+        }}
+      ></i>
     </FloatStyled>
   );
 };

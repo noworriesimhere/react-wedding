@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
 :root {
   --color-burgundy: #84223b;
+  --color-burgundy-transparent: rgba(132, 34, 59, .75);
   --color-lightmint: #9bae98;
   --color-darkmint: #274006;
   --color-darkbrown: #27060f;
