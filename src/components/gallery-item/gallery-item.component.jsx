@@ -6,7 +6,7 @@ const trans = (scale) => `scale(${scale})`;
 
 const GalleryItem = ({
   gridArea,
-  scaleAmount = 1.8,
+  scaleAmount = 2,
   transformOrigin = '50% 50%',
   urlSrc,
   altSrc,
@@ -23,17 +23,22 @@ const GalleryItem = ({
     immediate: (key) => key === 'zIndex',
   }));
 
+  if (!isHovered) {
+    set({ scale: 1, zIndex: 0 });
+  }
+
   return (
     <FloatStyled
       onMouseMove={() => {
-        if (window.innerWidth > 780) {
-          set({
-            scale: scaleAmount,
-            zIndex: 5,
-          });
-        }
+        set({
+          scale: scaleAmount,
+          zIndex: 5,
+        });
       }}
-      onTouchStart={({
+      onTouchMove={(e) => {
+        e.stopPropagation();
+      }}
+      onClick={({
         view: { innerHeight, innerWidth },
         target: {
           parentElement: {
@@ -43,7 +48,7 @@ const GalleryItem = ({
           },
         },
       }) => {
-        if (window.innerWidth < 780) {
+        if (navigator.maxTouchPoints > 0 && !isHovered) {
           const targetCenterX = targetTopLeftX + targetWidth / 2;
           const targetCenterY = targetTopLeftY + targetHeight / 2;
 
@@ -78,14 +83,16 @@ const GalleryItem = ({
             transformOrigin: calculatedTransform,
           });
           setIsHovered(true);
+        } else {
+          console.log('click');
         }
       }}
       onMouseLeave={() => {
-        set({ scale: 1, zIndex: 0 });
         setIsHovered(false);
+        set({ scale: 1, zIndex: 0 });
       }}
       style={{
-        transform: props.scale.interpolate(trans),
+        transform: props.scale.to(trans),
         zIndex: props.zIndex,
         transformOrigin: props.transformOrigin,
       }}
@@ -98,8 +105,9 @@ const GalleryItem = ({
       <img src={urlSrc} alt={altSrc} />
       <i
         className='fas fa-times'
-        onTouchEnd={() => {
-          set({ scale: 1, zIndex: 0 });
+        onTouchEnd={(e) => {
+          console.log(e);
+          e.preventDefault();
           setIsHovered(false);
         }}
       ></i>

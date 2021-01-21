@@ -9,8 +9,8 @@ export const CardContainer = styled.div`
   background: rgb(223, 223, 223);
   background: linear-gradient(
     370deg,
-    rgba(202, 202, 202, 0.1) 20%,
-    rgba(128, 0, 32, 0.3) 84%
+    rgba(202, 202, 202, 0.5) 20%,
+    rgba(128, 0, 32, 0.5) 84%
   );
   height: 600px;
   box-sizing: border-box;

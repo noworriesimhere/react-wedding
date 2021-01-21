@@ -5,7 +5,9 @@ export const GlobalStyle = createGlobalStyle`
   --color-burgundy: #84223b;
   --color-burgundy-transparent: rgba(132, 34, 59, .75);
   --color-lightmint: #9bae98;
+  --color-lightmint-transparent: rgba(155, 174, 152, .75);
   --color-darkmint: #274006;
+  --color-darkmint-transparent: rgba(39, 64, 6, .75);
   --color-darkbrown: #27060f;
   --color-pink: #f7c9cc;
 }
@@ -33,6 +35,10 @@ h3 {
 
 h4 {
   font-size: 2rem;
+}
+
+h5{
+  font-size: 1.5rem;
 }
 
 p {
@@ -67,6 +73,10 @@ a {
 
   h4 {
     font-size: 1.2rem;
+  }
+
+  h5{
+    font-size: .9rem;
   }
   
   p {

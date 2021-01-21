@@ -63,29 +63,27 @@ export const FloatStyled = styled(animated.div)`
     border-radius: 30px;
   }
 
-  .fa-comment-dots {
+  i {
     position: absolute;
+    opacity: 0;
+    z-index: 1;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+  }
+
+  .fa-comment-dots {
     width: 100%;
     top: 60%;
     text-align: center;
-    cursor: pointer;
-    transition: all 0.5s ease-in-out;
-    opacity: 0;
-    z-index: 1;
   }
 
   .fa-times {
     display: none;
-    opacity: 0;
-    position: absolute;
     top: 10%;
     left: 10%;
-    cursor: pointer;
-    transition: all 0.5s ease-in-out;
-    z-index: 1;
   }
 
-  @media (hover: hover) {
+  @media (pointer: fine) {
     :hover {
       div {
         opacity: 1;
@@ -99,13 +97,21 @@ export const FloatStyled = styled(animated.div)`
     }
   }
 
-  @media screen and (max-width: 780px) {
+  @media (pointer: coarse) {
     .fa-times {
       display: block;
     }
+  }
 
+  @media screen and (max-width: 780px) {
     h5 {
       top: 15%;
+    }
+  }
+
+  @media screen and (min-width: 780px) {
+    i {
+      font-size: 3rem;
     }
   }
 `;
