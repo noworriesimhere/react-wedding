@@ -13,7 +13,7 @@ const GalleryItem = ({
   date,
   story,
 }) => {
-  const [isClicked, setIsClicked] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const [props, set] = useSpring(() => ({
     scale: 1,
@@ -31,7 +31,6 @@ const GalleryItem = ({
             scale: scaleAmount,
             zIndex: 5,
           });
-          setIsClicked(true);
         }
       }}
       onTouchStart={({
@@ -44,7 +43,6 @@ const GalleryItem = ({
           },
         },
       }) => {
-        console.table({ targetTopLeftX, targetTopLeftY });
         if (window.innerWidth < 780) {
           const targetCenterX = targetTopLeftX + targetWidth / 2;
           const targetCenterY = targetTopLeftY + targetHeight / 2;
@@ -79,13 +77,12 @@ const GalleryItem = ({
             zIndex: 5,
             transformOrigin: calculatedTransform,
           });
-          setIsClicked(true);
-          console.log(calculatedTransform);
+          setIsHovered(true);
         }
       }}
       onMouseLeave={() => {
         set({ scale: 1, zIndex: 0 });
-        setIsClicked(false);
+        setIsHovered(false);
       }}
       style={{
         transform: props.scale.interpolate(trans),
@@ -93,7 +90,7 @@ const GalleryItem = ({
         transformOrigin: props.transformOrigin,
       }}
       gridarea={gridArea}
-      isClicked={isClicked}
+      ishovered={isHovered ? 'true' : ''}
     >
       <h5>{date}</h5>
       <i className='far fa-comment-dots'></i>
@@ -101,9 +98,9 @@ const GalleryItem = ({
       <img src={urlSrc} alt={altSrc} />
       <i
         className='fas fa-times'
-        onClick={() => {
+        onTouchEnd={() => {
           set({ scale: 1, zIndex: 0 });
-          setIsClicked(false);
+          setIsHovered(false);
         }}
       ></i>
     </FloatStyled>

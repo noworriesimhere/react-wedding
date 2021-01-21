@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { animated } from 'react-spring';
 
 const getGridArea = (props) => {
@@ -6,6 +6,24 @@ const getGridArea = (props) => {
     return props.gridarea;
   }
 };
+
+const getHoverState = ({ ishovered }) => {
+  if (ishovered === 'true') {
+    return hoveredState;
+  }
+};
+
+const hoveredState = css`
+  div {
+    opacity: 1 !important;
+  }
+  h5 {
+    opacity: 1 !important;
+  }
+  i {
+    opacity: 1 !important;
+  }
+`;
 
 export const FloatStyled = styled(animated.div)`
   grid-area: ${getGridArea};
@@ -15,6 +33,7 @@ export const FloatStyled = styled(animated.div)`
   border-radius: 30px;
   overflow: hidden;
   box-shadow: -17px 26px 50px 10px rgba(0, 0, 0, 0.45);
+  ${getHoverState}
 
   img {
     object-fit: cover;
@@ -66,15 +85,17 @@ export const FloatStyled = styled(animated.div)`
     z-index: 1;
   }
 
-  :hover {
-    div {
-      opacity: 1;
-    }
-    h5 {
-      opacity: 1;
-    }
-    i {
-      opacity: 1;
+  @media (hover: hover) {
+    :hover {
+      div {
+        opacity: 1;
+      }
+      h5 {
+        opacity: 1;
+      }
+      i {
+        opacity: 1;
+      }
     }
   }
 
