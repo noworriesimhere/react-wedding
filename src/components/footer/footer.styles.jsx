@@ -9,6 +9,12 @@ export const FooterContainer = styled.div`
   display: flex;
   justify-content: space-between;
 
+  i {
+    :hover {
+      cursor: pointer;
+    }
+  }
+
   .fa-chevron-circle-left {
     margin-left: 10vw;
   }

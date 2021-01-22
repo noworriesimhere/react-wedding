@@ -26,7 +26,8 @@ const hoveredState = css`
   .story {
     opacity: 1;
   }
-  .fa-comment-dots {
+  .fa-chevron-circle-down,
+  .fa-chevron-circle-up {
     display: block;
   }
 `;
@@ -40,6 +41,7 @@ export const FloatStyled = styled(animated.div)`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   box-shadow: -17px 26px 50px 10px rgba(0, 0, 0, 0.45);
 
   img {
@@ -87,9 +89,13 @@ export const FloatStyled = styled(animated.div)`
     overflow: scroll;
     max-height: 285px;
     max-width: 285px;
-    margin: 0 auto;
     opacity: 0;
     transition: all 0.5s ease-in-out;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    ::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   i {
@@ -101,13 +107,14 @@ export const FloatStyled = styled(animated.div)`
 
   p {
     font-size: 0.9rem;
+    line-height: 1.5rem;
   }
 
-  .fa-comment-dots {
+  .fa-chevron-circle-down,
+  .fa-chevron-circle-up {
     width: 100%;
-    top: 60%;
     text-align: center;
-    padding-bottom: 40px;
+    padding-bottom: 15px;
     display: none;
   }
 
@@ -134,7 +141,8 @@ export const FloatStyled = styled(animated.div)`
       h5 {
         opacity: 1;
       }
-      .fa-comment-dots {
+      .fa-chevron-circle-down,
+      .fa-chevron-circle-up {
         display: block;
         opacity: 1;
       }
@@ -142,12 +150,18 @@ export const FloatStyled = styled(animated.div)`
   }
 
   @media (pointer: coarse) {
+    i {
+      font-size: 1.5rem;
+    }
     .fa-times {
-      display: inline;
+      display: block;
       position: absolute;
+      top: 5%;
+      left: 5%;
     }
     .container {
       opacity: 1;
+      position: relative;
     }
     ${getHoverState}
   }
@@ -162,6 +176,7 @@ export const FloatStyled = styled(animated.div)`
     }
     p {
       font-size: 0.6rem;
+      line-height: 1.1rem;
     }
   }
 

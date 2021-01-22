@@ -35,7 +35,7 @@ const GalleryItem = ({
     <FloatStyled
       onMouseMove={() => {
         set({
-          scale: 2,
+          scale: scaleAmount,
           zIndex: 5,
         });
       }}
@@ -79,7 +79,7 @@ const GalleryItem = ({
           const calculatedTransform = `${transformPercentageX}% ${transformPercentageY}%`;
           console.log(calculatedTransform);
           set({
-            scale: 2,
+            scale: scaleAmount,
             zIndex: 5,
             transformOrigin: calculatedTransform,
           });
@@ -101,7 +101,7 @@ const GalleryItem = ({
     >
       <div className='container'>
         <i
-          className='fas fa-times fa-2x'
+          className='fas fa-times'
           onTouchEnd={(e) => {
             console.log(e);
             e.preventDefault();
@@ -110,15 +110,24 @@ const GalleryItem = ({
         />
         <h5>{date}</h5>
         <i
-          className='far fa-comment-dots'
+          className='fas fa-chevron-circle-down'
           onClick={(e) =>
-            e.target.nextSibling.scrollIntoView({
+            e.target.parentElement.scrollBy({
+              top: e.target.parentElement.clientHeight - 10,
               behavior: 'smooth',
-              block: 'center',
             })
           }
         />
         <div className='story'>{story}</div>
+        <i
+          class='fas fa-chevron-circle-up'
+          onClick={(e) =>
+            e.target.parentElement.scrollTo({
+              top: 0,
+              behavior: 'smooth',
+            })
+          }
+        />
       </div>
       <div className='story-overlay' />
       <img src={urlSrc} alt={altSrc} />

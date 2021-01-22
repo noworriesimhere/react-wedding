@@ -54,7 +54,7 @@ const Gallery = () => {
             </p>
           </>
         }
-        scaleAmount={1.6}
+        scaleAmount={1.9}
         transformOrigin='50% -10%'
       />
       <GalleryItem
@@ -100,7 +100,7 @@ const Gallery = () => {
             </p>
           </>
         }
-        scaleAmount={1.6}
+        scaleAmount={1.9}
       />
       <GalleryItem
         gridArea={'五'}
@@ -171,7 +171,7 @@ const Gallery = () => {
             </p>
           </>
         }
-        scaleAmount={1.6}
+        scaleAmount={1.9}
         transformOrigin='50% -10%'
       />
       <GalleryItem
@@ -250,7 +250,7 @@ const Gallery = () => {
             </p>
           </>
         }
-        scaleAmount={1.6}
+        scaleAmount={1.9}
         transformOrigin='50% 110%'
       />
       <GalleryItem gridArea={'十一'} scaleAmount={1.15} />

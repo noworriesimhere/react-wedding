@@ -9,7 +9,12 @@ import {
 } from './our-story-card.styles';
 
 export const ourStoryRef = React.createRef();
-
+let instructions;
+if (navigator.maxTouchPoints > 0) {
+  instructions = 'Tap and Swipe';
+} else {
+  instructions = 'Hover and Scroll';
+}
 const OurStoryCard = () => {
   return (
     <>
@@ -17,7 +22,7 @@ const OurStoryCard = () => {
         <FloatWrapper>
           <TextContainerLeft ref={ourStoryRef}>
             <h1>Our Story</h1>
-            <p>Click Any Image For a Chapter</p>
+            <p>{`${instructions}`} Each Chapter</p>
           </TextContainerLeft>
         </FloatWrapper>
         <MiddleContainer>
