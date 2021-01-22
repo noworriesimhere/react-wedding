@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
 :root {
   --color-burgundy: #84223b;
-  --color-burgundy-transparent: rgba(132, 34, 59, .75);
+  --color-burgundy-transparent: rgba(132, 34, 59, .9);
   --color-lightmint: #9bae98;
   --color-lightmint-transparent: rgba(155, 174, 152, .75);
   --color-darkmint: #274006;
@@ -38,7 +38,7 @@ h4 {
 }
 
 h5{
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
 
 p {

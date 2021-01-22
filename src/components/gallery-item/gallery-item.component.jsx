@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { FloatStyled } from './gallery-item.styles';
 import { useSpring } from 'react-spring';
 
+export const storyContainerRef = React.createRef();
+
 const trans = (scale) => `scale(${scale})`;
 
 const GalleryItem = ({
@@ -25,29 +27,28 @@ const GalleryItem = ({
 
   if (!isHovered) {
     set({ scale: 1, zIndex: 0 });
+  } else {
+    console.log(isHovered);
   }
 
   return (
     <FloatStyled
       onMouseMove={() => {
         set({
-          scale: scaleAmount,
+          scale: 2,
           zIndex: 5,
         });
       }}
-      onTouchMove={(e) => {
-        e.stopPropagation();
-      }}
-      onClick={({
-        view: { innerHeight, innerWidth },
-        target: {
-          parentElement: {
-            children: [, , , { x: targetTopLeftX, y: targetTopLeftY }],
-            clientWidth: targetWidth,
-            clientHeight: targetHeight,
-          },
-        },
-      }) => {
+      onClick={({ view: { innerHeight, innerWidth }, nativeEvent }) => {
+        const {
+          x: targetTopLeftX,
+          y: targetTopLeftY,
+          clientWidth: targetWidth,
+          clientHeight: targetHeight,
+        } = nativeEvent
+          .composedPath()
+          .find((e) => e.id === 'selectMe').lastChild;
+
         if (navigator.maxTouchPoints > 0 && !isHovered) {
           const targetCenterX = targetTopLeftX + targetWidth / 2;
           const targetCenterY = targetTopLeftY + targetHeight / 2;
@@ -76,15 +77,13 @@ const GalleryItem = ({
             ((offsetY - targetTopLeftY) / targetHeight) * 100
           );
           const calculatedTransform = `${transformPercentageX}% ${transformPercentageY}%`;
-
+          console.log(calculatedTransform);
           set({
-            scale: scaleAmount,
+            scale: 2,
             zIndex: 5,
             transformOrigin: calculatedTransform,
           });
           setIsHovered(true);
-        } else {
-          console.log('click');
         }
       }}
       onMouseLeave={() => {
@@ -98,19 +97,31 @@ const GalleryItem = ({
       }}
       gridarea={gridArea}
       ishovered={isHovered ? 'true' : ''}
+      id='selectMe'
     >
-      <h5>{date}</h5>
-      <i className='far fa-comment-dots'></i>
-      <div />
+      <div className='container'>
+        <i
+          className='fas fa-times fa-2x'
+          onTouchEnd={(e) => {
+            console.log(e);
+            e.preventDefault();
+            setIsHovered(false);
+          }}
+        />
+        <h5>{date}</h5>
+        <i
+          className='far fa-comment-dots'
+          onClick={(e) =>
+            e.target.nextSibling.scrollIntoView({
+              behavior: 'smooth',
+              block: 'center',
+            })
+          }
+        />
+        <div className='story'>{story}</div>
+      </div>
+      <div className='story-overlay' />
       <img src={urlSrc} alt={altSrc} />
-      <i
-        className='fas fa-times'
-        onTouchEnd={(e) => {
-          console.log(e);
-          e.preventDefault();
-          setIsHovered(false);
-        }}
-      ></i>
     </FloatStyled>
   );
 };

@@ -13,17 +13,19 @@ const Gallery = () => {
         story={
           <>
             <p>
-              Georgia: This was a pretty awkward day for me. I had been asked to
-              make a cake and write a song of congratulations to this boy in my
-              hall I barely knew! I asked various times to confirm It wouldn’t
-              give the wrong impression. Nevertheless, the party went smoothly
-              and it allowed me and Alan to become friends
+              Georgia: <br />
+              This was a pretty awkward day for me. I had been asked to make a
+              cake and write a song of congratulations to this boy in my hall I
+              barely knew! I asked various times to confirm It wouldn’t give the
+              wrong impression. Nevertheless, the party went smoothly and it
+              allowed me and Alan to become friends
             </p>
             <p>
-              Alan: My friends in the congregation threw me a surprise 5 year
-              Bethel anniversary party. I knew Georgia from the hall, but I
-              didn’t realize how talented she was with cakes and music!… She
-              definitely wrote me a song on purpose…
+              Alan: <br />
+              My friends in the congregation threw me a surprise 5 year Bethel
+              anniversary party. I knew Georgia from the hall, but I didn’t
+              realize how talented she was with cakes and music!… She definitely
+              wrote me a song on purpose…
             </p>
           </>
         }
@@ -37,22 +39,22 @@ const Gallery = () => {
         story={
           <>
             <p>
-              Georgia: Alan had really impressed me with his hospitality and
-              diligence. After a long summer, I felt Jehovah was helping me to
-              clear my thoughts and weigh my decision carefully. When Alan asked
-              to meet and talk I knew what my answer would be. Yes! I would like
-              to get to know you better.
+              Georgia: <br /> Alan had really impressed me with his hospitality
+              and diligence. After a long summer, I felt Jehovah was helping me
+              to clear my thoughts and weigh my decision carefully. When Alan
+              asked to meet and talk I knew what my answer would be. Yes! I
+              would like to get to know you better.
             </p>
             <p>
-              Alan: Some months after that 5 year party, Georgia’s beautiful
-              qualities hit me like a ton of bricks. I was conflicted! I knew
-              she didn’t move near Bethel for a courtship, but I really wanted
-              to leave the decision in her hands… After all, it’s just a
+              Alan: <br /> Some months after that 5 year party, Georgia’s
+              beautiful qualities hit me like a ton of bricks. I was conflicted!
+              I knew she didn’t move near Bethel for a courtship, but I really
+              wanted to leave the decision in her hands… After all, it’s just a
               question. Right?
             </p>
           </>
         }
-        scaleAmount={1.4}
+        scaleAmount={1.6}
         transformOrigin='50% -10%'
       />
       <GalleryItem
@@ -63,12 +65,12 @@ const Gallery = () => {
         story={
           <>
             <p>
-              Georgia: My first family day was a privilege and a blast! Though
-              we didn’t spend the entire day together, it was nice to get to
-              meet up through the days activities.
+              Georgia: <br /> My first family day was a privilege and a blast!
+              Though we didn’t spend the entire day together, it was nice to get
+              to meet up through the days activities.
             </p>
             <p>
-              Alan: It couldn’t have been a more beautiful day to spend…
+              Alan: <br /> It couldn’t have been a more beautiful day to spend…
               pretending that Georgia and I were just casual friends. It was
               month 1 of the courtship, and we had every intention of taking it
               seriously. Rumors can spread fast. Nonetheless we sneaked in a
@@ -86,19 +88,19 @@ const Gallery = () => {
         story={
           <>
             <p>
-              Georgia: I knew of Alan’s history giving MET tours but this was my
-              first one with him and I had a front row view. I enjoyed watching
-              how good he was with the group and how he brought the bible
-              information to life. Definitely a keeper!
+              Georgia: <br /> I knew of Alan’s history giving MET tours but this
+              was my first one with him and I had a front row view. I enjoyed
+              watching how good he was with the group and how he brought the
+              bible information to life. Definitely a keeper!
             </p>
             <p>
-              Alan: I’m so glad Georgia joined me on that Bible tour. I was
-              hoping she’d think that I was more knowledgeable than I really
+              Alan: <br /> I’m so glad Georgia joined me on that Bible tour. I
+              was hoping she’d think that I was more knowledgeable than I really
               was… I think it worked…
             </p>
           </>
         }
-        scaleAmount={1.4}
+        scaleAmount={1.6}
       />
       <GalleryItem
         gridArea={'五'}
@@ -108,17 +110,17 @@ const Gallery = () => {
         story={
           <>
             <p>
-              Georgia: I knew I was dating a Chinese guy… but when I went to
-              queens with Alan for his cantonese talk and explored his home
+              Georgia: <br /> I knew I was dating a Chinese guy… but when I went
+              to queens with Alan for his cantonese talk and explored his home
               neighborhood a bit, what that actually meant finally hit me. I
               like to call this day “a pleasant culture shock”.
             </p>
             <p>
-              Alan: Georgia was so supportive to join me on an outgoing talk in
-              the city! I was excited to show her my home area and its delicious
-              asian foods. It was still month one, so it was nice to enjoy each
-              other’s company while still maintaining our new courtship
-              relatively private.
+              Alan: <br /> Georgia was so supportive to join me on an outgoing
+              talk in the city! I was excited to show her my home area and its
+              delicious asian foods. It was still month one, so it was nice to
+              enjoy each other’s company while still maintaining our new
+              courtship relatively private.
             </p>
           </>
         }
@@ -132,15 +134,15 @@ const Gallery = () => {
         story={
           <>
             <p>
-              Georgia: Being only 2 months into our courtship, I was very sad to
-              have to say goodbye to Alan for a whole entire month as he left
-              for Argentina. Despite it being a farewell, we really enjoyed our
-              day in the city with friends.
+              Georgia: <br /> Being only 2 months into our courtship, I was very
+              sad to have to say goodbye to Alan for a whole entire month as he
+              left for Argentina. Despite it being a farewell, we really enjoyed
+              our day in the city with friends.
             </p>
             <p>
-              Alan: The day I was going to fly to Argentina for a month for
-              International Convention. Back then it felt like a month apart was
-              going to be forever. (If only we actually knew about 2020)… We
+              Alan: <br /> The day I was going to fly to Argentina for a month
+              for International Convention. Back then it felt like a month apart
+              was going to be forever. (If only we actually knew about 2020)… We
               decided to spend that day in the city to see me off.
             </p>
           </>
@@ -155,21 +157,21 @@ const Gallery = () => {
         story={
           <>
             <p>
-              Georgia: After celebrating his 6 year Bethelversary I got to enjoy
-              tagging along with him to his meeting. Despite not being able to
-              get around so well, we got to take a few pictures and enjoy a
-              celebratory Taco Bell run!
+              Georgia: <br /> After celebrating his 6 year Bethelversary I got
+              to enjoy tagging along with him to his meeting. Despite not being
+              able to get around so well, we got to take a few pictures and
+              enjoy a celebratory Taco Bell run!
             </p>
             <p>
-              Alan: She had surprised me earlier with some gifts for making 6
-              years of Bethel on that very day! I was going through a rough
-              patch with a foot injury, but Georgia was so loving and attentive
-              the whole time. She swept me off my feet! But that’s okay, I
-              couldn’t walk on them anyway.
+              Alan: <br /> She had surprised me earlier with some gifts for
+              making 6 years of Bethel on that very day! I was going through a
+              rough patch with a foot injury, but Georgia was so loving and
+              attentive the whole time. She swept me off my feet! But that’s
+              okay, I couldn’t walk on them anyway.
             </p>
           </>
         }
-        scaleAmount={1.4}
+        scaleAmount={1.6}
         transformOrigin='50% -10%'
       />
       <GalleryItem
@@ -180,17 +182,17 @@ const Gallery = () => {
         story={
           <>
             <p>
-              Georgia: What a crazy day! I thank Jehovah I got to see Alan right
-              before Bethel lockdown started. When the news got to us, we knew
-              we had to savor a few final moments with each other before we
-              spent an unknown period of time apart. Little did we know it would
-              be so long.
+              Georgia: <br /> What a crazy day! I thank Jehovah I got to see
+              Alan right before Bethel lockdown started. When the news got to
+              us, we knew we had to savor a few final moments with each other
+              before we spent an unknown period of time apart. Little did we
+              know it would be so long.
             </p>
             <p>
-              Alan: This was the last time we hugged. Bethel had just sent the
-              urgent text message, and we were spending time at a friend’s
-              house. We thought it would be a few weeks or months. Frankly, at
-              that moment is was probably better that way.
+              Alan: <br /> This was the last time we hugged. Bethel had just
+              sent the urgent text message, and we were spending time at a
+              friend’s house. We thought it would be a few weeks or months.
+              Frankly, at that moment is was probably better that way.
             </p>
           </>
         }
@@ -204,19 +206,19 @@ const Gallery = () => {
         story={
           <>
             <p>
-              Georgia: We really made the best of our Zoom dating period. I
-              appreciate how much it helped us focus on spiritual matters
+              Georgia: <br /> We really made the best of our Zoom dating period.
+              I appreciate how much it helped us focus on spiritual matters
               together. Watching the “Always Rejoice!” convention together was
               definitely a highlight. This was the closest thing to a couple
               selfie we were gonna get!
             </p>
             <p>
-              Alan: The abrupt transition into long distance had its challenges.
-              Yet, our newfound means of courting had its benefits too. It was
-              encouraging to know that the brothers, Branch Committee, and
-              Jehovah were so supportive and understanding of our predicament.
-              With a lot of the “fluff” of dating out of the way, we were able
-              to really focus on the “secret person of the heart”.
+              Alan: <br /> The abrupt transition into long distance had its
+              challenges. Yet, our newfound means of courting had its benefits
+              too. It was encouraging to know that the brothers, Branch
+              Committee, and Jehovah were so supportive and understanding of our
+              predicament. With a lot of the “fluff” of dating out of the way,
+              we were able to really focus on the “secret person of the heart”.
             </p>
           </>
         }
@@ -230,8 +232,8 @@ const Gallery = () => {
         story={
           <>
             <p>
-              Georgia: Getting to fully understand Alan’s sense of humor has
-              been a blast! We always have a great time together. Humor has
+              Georgia: <br /> Getting to fully understand Alan’s sense of humor
+              has been a blast! We always have a great time together. Humor has
               served as a useful tool for us to endure these tough times. I am
               so happy that we have been able to have such an awesome courtship
               even despite the crazy circumstances. All thanks goes to Jehovah!
@@ -239,8 +241,8 @@ const Gallery = () => {
               going.
             </p>
             <p>
-              Alan: Creativity has been a must in keeping things fun in our
-              courtship. We’ve learned to be flexible and adaptable to our
+              Alan: <br /> Creativity has been a must in keeping things fun in
+              our courtship. We’ve learned to be flexible and adaptable to our
               living situations with other roommates whilst carrying out our
               courtship. From the closet to kitchen, computer desk to bathroom,
               laying on the ground or walking the trails, Georgia has seen it
@@ -248,7 +250,7 @@ const Gallery = () => {
             </p>
           </>
         }
-        scaleAmount={1.4}
+        scaleAmount={1.6}
         transformOrigin='50% 110%'
       />
       <GalleryItem gridArea={'十一'} scaleAmount={1.15} />

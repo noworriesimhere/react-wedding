@@ -7,7 +7,6 @@ import Footer from './components/footer/footer.component';
 import { handleResize } from './utils/util-functions';
 
 import { AppWrapper, ScrollWrapper } from './App.styles';
-
 export const appRef = React.createRef();
 
 function App() {
@@ -21,12 +20,17 @@ function App() {
     const el = appRef.current;
     if (el && window.innerWidth > 780) {
       const onWheel = (event) => {
-        const toLeft = event.deltaY < 0 && el.scrollLeft > 0;
-        const toRight =
-          event.deltaY > 0 && el.scrollLeft < el.scrollWidth - el.clientWidth;
+        const dontScroll = event
+          .composedPath()
+          .some((e) => e.className === 'container');
+        if (!dontScroll) {
+          const toLeft = event.deltaY < 0 && el.scrollLeft > 0;
+          const toRight =
+            event.deltaY > 0 && el.scrollLeft < el.scrollWidth - el.clientWidth;
 
-        if (toLeft || toRight) {
-          el.scrollLeft += event.deltaY;
+          if (toLeft || toRight) {
+            el.scrollLeft += event.deltaY;
+          }
         }
       };
       el.addEventListener('wheel', onWheel);
