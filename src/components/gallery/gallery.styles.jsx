@@ -12,7 +12,7 @@ export const GalleryContainer = styled.div`
     '二 二  四 五 七 七 九 十一 十一'
     '一 三  四 六 八 十 十 十一 十一';
 
-  @media screen and (max-width: 780px) {
+  @media screen and (max-width: 511px) {
     box-sizing: border-box;
     grid-template-columns: 41vw 41vw;
     grid-template-rows: repeat(9, 41vw);

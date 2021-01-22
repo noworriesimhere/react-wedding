@@ -23,7 +23,7 @@ const SignInOrSignUpCard = () => {
         <ContentsContainer ref={signInRef}>
           <SignInSuccess />
         </ContentsContainer>
-      ) : window.innerWidth > 780 ? (
+      ) : window.innerWidth > 511 ? (
         <ContentsContainer ref={signInRef}>
           <HeaderContainerTop>
             Sign Up <span>or</span> Log In

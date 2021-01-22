@@ -31,7 +31,7 @@ export const ScrollWrapper = styled.div`
     height: 100vh;
   }
 
-  @media screen and (max-width: 780px) {
+  @media screen and (max-width: 511px) {
     flex-direction: column;
     overflow-x: hidden;
     padding-top: 2rem;

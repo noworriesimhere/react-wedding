@@ -15,7 +15,7 @@ export const CardContainer = styled.div`
   height: 600px;
   box-sizing: border-box;
 
-  @media screen and (max-width: 780px) {
+  @media screen and (max-width: 511px) {
     width: 88vw !important;
     margin: 1.5rem 6vw !important;
     overflow-x: hidden;

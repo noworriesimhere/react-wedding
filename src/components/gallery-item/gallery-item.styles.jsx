@@ -170,7 +170,7 @@ export const FloatStyled = styled(animated.div)`
     ${getHoverState}
   }
 
-  @media screen and (max-width: 780px) {
+  @media screen and (max-width: 511px) {
     h5 {
       padding: 4rem 0 1rem 0;
     }
@@ -193,7 +193,7 @@ export const FloatStyled = styled(animated.div)`
     }
   }
 
-  @media screen and (min-width: 780px) {
+  @media screen and (min-width: 511px) {
     i {
       font-size: 2rem;
     }

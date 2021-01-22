@@ -6,7 +6,7 @@ export const ContentsContainer = styled(CardContainer)`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
 
-  @media screen and (max-width: 780px) {
+  @media screen and (max-width: 511px) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
   }
@@ -20,7 +20,7 @@ export const ImageContainer = styled.div`
   background-image: url('../../img/IMG_6369.jpg');
   z-index: -1;
 
-  @media screen and (max-width: 780px) {
+  @media screen and (max-width: 511px) {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     height: 300px;
@@ -36,7 +36,7 @@ export const ZoomContainer = styled.div`
   flex-direction: column;
   justify-content: center;
 
-  @media screen and (max-width: 780px) {
+  @media screen and (max-width: 511px) {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     height: 300px;
@@ -52,7 +52,7 @@ export const TextContainer = styled.div`
   grid-column: 1 / 2;
   grid-row: 1 / 2;
 
-  @media screen and (max-width: 780px) {
+  @media screen and (max-width: 511px) {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
   }
@@ -66,7 +66,7 @@ export const SideContainer = styled(CardContainer)`
   display: flex;
   flex-direction: column;
 
-  @media screen and (max-width: 780px) {
+  @media screen and (max-width: 511px) {
     justify-content: center;
     height: 600px;
     margin-bottom: 5rem;

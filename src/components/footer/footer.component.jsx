@@ -1,9 +1,8 @@
 import React from 'react';
-import HoverButton from '../hover-button/hover-button.component';
 import { FixedFooter, FooterContainer } from './footer.styles';
 import { scrollRef } from '../../App.js';
 
-const Footer = () => {
+const Footer = ({ children }) => {
   return (
     <FooterContainer>
       <i
@@ -16,7 +15,7 @@ const Footer = () => {
         }
       />
 
-      <HoverButton big>See Our Guestbook</HoverButton>
+      {children}
       <i
         className='fas fa-chevron-circle-right fa-4x'
         onClick={() => {

@@ -22,7 +22,7 @@ export const FooterContainer = styled.div`
     margin-right: 10vw;
   }
 
-  @media screen and (max-width: 780px) {
+  @media screen and (max-width: 511px) {
     display: none;
   }
 `;

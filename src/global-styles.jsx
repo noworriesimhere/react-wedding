@@ -57,7 +57,7 @@ a {
   }
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 511px) {
   h1 { 
     font-size: 2.8rem;
     margin: 0 auto;
@@ -90,7 +90,7 @@ a {
   }
 }
 
-@media (min-width: 780px) and (max-height: 900px) {
+@media (min-width: 511px) and (max-height: 900px) {
   a {
     font-size: 1rem;
   }

@@ -6,7 +6,7 @@ export const ContentsContainer = styled.div`
   display: grid;
   grid-template-columns: 400px 1fr 450px;
 
-  @media screen and (max-width: 780px) {
+  @media screen and (max-width: 511px) {
     height: calc(429vw + 600px);
     width: 88vw;
     margin: 2rem 6vw;
@@ -33,7 +33,7 @@ export const TextContainerLeft = styled.div`
   box-sizing: border-box;
   margin: 0;
 
-  @media screen and (max-width: 780px) {
+  @media screen and (max-width: 511px) {
     grid-row: 1 / 2;
     background-position: -80px 0px;
     background-size: 150%;
@@ -47,7 +47,7 @@ export const TextContainerLeft = styled.div`
 
 export const MiddleContainer = styled.div`
   grid-column: 2 / 3;
-  @media screen and (max-width: 780px) {
+  @media screen and (max-width: 511px) {
     grid-row: 2 / 3;
     grid-column: 1 / 2;
   }
@@ -78,7 +78,7 @@ export const TextContainerRight = styled.div`
     line-height: 3.5rem;
   }
 
-  @media screen and (max-width: 780px) {
+  @media screen and (max-width: 511px) {
     grid-row: 3 / 4;
     padding: 0 1rem;
     height: 400px;

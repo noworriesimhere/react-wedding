@@ -18,7 +18,7 @@ export const NavContainer = styled.nav`
     font-size: 1rem;
   }
 
-  @media screen and (max-width: 780px) {
+  @media screen and (max-width: 511px) {
     display: none;
   }
 `;

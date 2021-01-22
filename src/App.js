@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Main from './pages/main/main.component';
-import Header from './components/header/header.component';
-import Footer from './components/footer/footer.component';
 
 import { handleResize } from './utils/util-functions';
 
 import { AppWrapper, ScrollWrapper } from './App.styles';
+import Guestbook from './pages/guestbook/guestbook.component';
 export const appRef = React.createRef();
 export const scrollRef = React.createRef();
 
@@ -44,13 +43,12 @@ function App() {
 
   return (
     <AppWrapper ref={appRef}>
-      <Header />
       <ScrollWrapper ref={scrollRef}>
         <Router>
-          <Route path='/' component={Main} />
+          <Route path='/guestbook' component={Guestbook} exact />
+          <Route path='/' component={Main} exact />
         </Router>
       </ScrollWrapper>
-      <Footer />
     </AppWrapper>
   );
 }

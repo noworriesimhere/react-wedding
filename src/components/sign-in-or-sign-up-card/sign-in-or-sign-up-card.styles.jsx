@@ -5,7 +5,7 @@ export const ContentsContainer = styled(CardContainer)`
   width: 1000px;
   grid-template-rows: 1fr 3fr;
 
-  @media screen and (max-width: 780px) {
+  @media screen and (max-width: 511px) {
     grid-template-rows: 1fr 6fr;
     height: 33rem;
   }

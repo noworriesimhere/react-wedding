@@ -1,7 +1,9 @@
 import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const bigButtonStyles = css`
   font-size: 50px;
+  font-family: 'Sacramento', cursive;
 
   @media screen and (max-height: 900px) {
     font-size: 30px;
@@ -23,7 +25,10 @@ const getButtonStyles = ({ big, guestbook }) => {
   }
 };
 
-export const HoverButtonContainer = styled.span`
+export const HoverButtonContainer = styled(Link)`
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  text-decoration: none;
   cursor: pointer;
   position: relative;
   padding: 10px 10px;

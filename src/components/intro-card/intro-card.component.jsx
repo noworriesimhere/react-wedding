@@ -9,16 +9,14 @@ import FloatWrapper from '../float-wrapper/float-wrapper.component';
 
 export const homeRef = React.createRef();
 
-const IntroCard = () => {
+const IntroCard = ({ children, src, alt }) => {
   return (
     <FloatWrapper>
       <ContentsContainer>
-        <ImageContainer ref={homeRef} />
-        <TextContainer>
-          <h1>Georgia & Alan</h1>
-          <p>Are Getting Married On</p>
-          <h3>June (something) 2021</h3>
-        </TextContainer>
+        <ImageContainer ref={homeRef}>
+          <img src={src} alt={alt} />
+        </ImageContainer>
+        <TextContainer>{children}</TextContainer>
       </ContentsContainer>
     </FloatWrapper>
   );

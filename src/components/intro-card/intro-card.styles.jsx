@@ -7,7 +7,7 @@ export const ContentsContainer = styled(CardContainer)`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
 
-  @media screen and (max-width: 780px) {
+  @media screen and (max-width: 511px) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
   }
@@ -16,11 +16,14 @@ export const ContentsContainer = styled(CardContainer)`
 export const ImageContainer = styled.div`
   grid-column: 1 / 2;
   grid-row: 1 / 2;
-  background-size: cover;
-  background-position: -180px 0px;
-  background-image: url('../../img/IMG_6922.jpg');
+  overflow: hidden;
 
-  @media screen and (max-width: 780px) {
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+  @media screen and (max-width: 511px) {
     background-position: -40px 0px;
   }
 `;
