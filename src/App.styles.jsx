@@ -4,6 +4,13 @@ export const AppWrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+  background: rgb(212, 223, 216);
+  background: linear-gradient(
+    58deg,
+    var(--color-pink) 2%,
+    var(--color-burgundy) 70%,
+    var(--color-darkbrown) 100%
+  );
 `;
 
 export const ScrollWrapper = styled.div`
@@ -13,13 +20,6 @@ export const ScrollWrapper = styled.div`
   flex-direction: row;
   align-items: center;
 
-  background: rgb(212, 223, 216);
-  background: linear-gradient(
-    58deg,
-    var(--color-pink) 2%,
-    var(--color-burgundy) 70%,
-    var(--color-darkbrown) 100%
-  );
   ::-webkit-scrollbar {
     display: none;
   }

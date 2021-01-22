@@ -27,7 +27,8 @@ const hoveredState = css`
     opacity: 1;
   }
   .fa-chevron-circle-down,
-  .fa-chevron-circle-up {
+  .fa-chevron-circle-up,
+  .fa-times-circle {
     display: block;
   }
 `;
@@ -55,7 +56,7 @@ export const FloatStyled = styled(animated.div)`
   }
 
   h5 {
-    padding-top: 6rem;
+    padding: 8rem 0 2rem 0;
     margin-top: 0;
     text-align: center;
     transition: all 0.5s ease-in-out;
@@ -79,7 +80,7 @@ export const FloatStyled = styled(animated.div)`
   .story {
     max-width: 285px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 1.4rem;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     opacity: 0;
@@ -103,23 +104,23 @@ export const FloatStyled = styled(animated.div)`
     z-index: 1;
     transition: all 0.5s ease-in-out;
     cursor: pointer;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: none;
   }
 
   p {
     font-size: 0.9rem;
-    line-height: 1.5rem;
+    line-height: 1.4rem;
   }
 
-  .fa-chevron-circle-down,
+  .fa-chevron-circle-down {
+    transform: translate(400%, 0);
+  }
   .fa-chevron-circle-up {
-    width: 100%;
-    text-align: center;
-    padding-bottom: 15px;
-    display: none;
-  }
-
-  .fa-times {
-    display: none;
+    transform: translate(400%, -100%);
   }
 
   .story {
@@ -143,8 +144,8 @@ export const FloatStyled = styled(animated.div)`
       }
       .fa-chevron-circle-down,
       .fa-chevron-circle-up {
-        display: block;
         opacity: 1;
+        display: block;
       }
     }
   }
@@ -153,22 +154,25 @@ export const FloatStyled = styled(animated.div)`
     i {
       font-size: 1.5rem;
     }
-    .fa-times {
-      display: block;
-      position: absolute;
-      top: 5%;
-      left: 5%;
+    .fa-times-circle {
+      transform: translate(400%, -150%);
     }
+    .fa-chevron-circle-up {
+      transform: translate(400%, -50%);
+    }
+    .fa-chevron-circle-down {
+      transform: translate(400%, 50%);
+    }
+
     .container {
       opacity: 1;
-      position: relative;
     }
     ${getHoverState}
   }
 
   @media screen and (max-width: 780px) {
     h5 {
-      padding-top: 3rem;
+      padding: 4rem 0 1rem 0;
     }
     .container {
       height: 41vw;
@@ -176,13 +180,22 @@ export const FloatStyled = styled(animated.div)`
     }
     p {
       font-size: 0.6rem;
-      line-height: 1.1rem;
+      line-height: 1rem;
+    }
+    .fa-times-circle {
+      transform: translate(300%, -150%);
+    }
+    .fa-chevron-circle-up {
+      transform: translate(300%, -50%);
+    }
+    .fa-chevron-circle-down {
+      transform: translate(300%, 50%);
     }
   }
 
   @media screen and (min-width: 780px) {
     i {
-      font-size: 3rem;
+      font-size: 2rem;
     }
   }
 `;

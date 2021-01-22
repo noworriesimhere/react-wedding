@@ -1,7 +1,7 @@
 import React from 'react';
 import HoverButton from '../hover-button/hover-button.component';
 import { FixedFooter, FooterContainer } from './footer.styles';
-import { appRef } from '../../App.js';
+import { scrollRef } from '../../App.js';
 
 const Footer = () => {
   return (
@@ -9,7 +9,7 @@ const Footer = () => {
       <i
         className='fas fa-chevron-circle-left fa-4x'
         onClick={() =>
-          appRef.current.scrollBy({
+          scrollRef.current.scrollBy({
             left: -800,
             behavior: 'smooth',
           })
@@ -19,12 +19,13 @@ const Footer = () => {
       <HoverButton big>See Our Guestbook</HoverButton>
       <i
         className='fas fa-chevron-circle-right fa-4x'
-        onClick={() =>
-          appRef.current.scrollBy({
+        onClick={() => {
+          scrollRef.current.scrollBy({
             left: 900,
             behavior: 'smooth',
-          })
-        }
+          });
+          console.log('clicked!');
+        }}
       />
       <FixedFooter>
         Designed and Developed by Alan Tran 2021 &copy;{' '}

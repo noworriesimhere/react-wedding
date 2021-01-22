@@ -101,7 +101,7 @@ const GalleryItem = ({
     >
       <div className='container'>
         <i
-          className='fas fa-times'
+          className='fas fa-times-circle'
           onTouchEnd={(e) => {
             console.log(e);
             e.preventDefault();
@@ -120,7 +120,7 @@ const GalleryItem = ({
         />
         <div className='story'>{story}</div>
         <i
-          class='fas fa-chevron-circle-up'
+          className='fas fa-chevron-circle-up'
           onClick={(e) =>
             e.target.parentElement.scrollTo({
               top: 0,
