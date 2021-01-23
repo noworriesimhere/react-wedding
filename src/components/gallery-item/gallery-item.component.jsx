@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FloatStyled } from './gallery-item.styles';
 import { useSpring } from 'react-spring';
-import { isMobile } from 'react-device-detect';
 
 export const storyContainerRef = React.createRef();
 
