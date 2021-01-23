@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FloatStyled } from './gallery-item.styles';
 import { useSpring } from 'react-spring';
+import { isMobile } from 'react-device-detect';
 
 export const storyContainerRef = React.createRef();
 
@@ -49,7 +50,7 @@ const GalleryItem = ({
           .composedPath()
           .find((e) => e.id === 'selectMe').lastChild;
 
-        if (navigator.maxTouchPoints > 0 && !isHovered) {
+        if (isMobile && !isHovered) {
           const targetCenterX = targetTopLeftX + targetWidth / 2;
           const targetCenterY = targetTopLeftY + targetHeight / 2;
 

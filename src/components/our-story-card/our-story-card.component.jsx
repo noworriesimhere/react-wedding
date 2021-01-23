@@ -1,6 +1,7 @@
 import React from 'react';
 import Gallery from '../gallery/gallery.component';
 import FloatWrapper from '../float-wrapper/float-wrapper.component';
+import { isMobile } from 'react-device-detect';
 import {
   ContentsContainer,
   TextContainerRight,
@@ -10,7 +11,7 @@ import {
 
 export const ourStoryRef = React.createRef();
 let instructions;
-if (navigator.maxTouchPoints > 0) {
+if (isMobile) {
   instructions = 'Tap and Swipe';
 } else {
   instructions = 'Hover and Scroll';
