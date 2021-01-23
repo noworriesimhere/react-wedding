@@ -14,7 +14,7 @@ let instructions;
 if (isMobile) {
   instructions = 'Tap and Swipe';
 } else {
-  instructions = 'Hover and Scroll';
+  instructions = 'Click and Scroll';
 }
 const OurStoryCard = () => {
   return (

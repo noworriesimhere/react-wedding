@@ -6,7 +6,7 @@ import { isMobile } from 'react-device-detect';
 export const storyContainerRef = React.createRef();
 
 const trans = (scale) => `scale(${scale})`;
-
+let calculatedTransform = '50% 50%';
 const GalleryItem = ({
   gridArea,
   scaleAmount = 2,
@@ -29,17 +29,15 @@ const GalleryItem = ({
   if (!isHovered) {
     set({ scale: 1, zIndex: 0 });
   } else {
-    console.log(isHovered);
+    set({
+      scale: scaleAmount,
+      zIndex: 5,
+      transformOrigin: calculatedTransform,
+    });
   }
 
   return (
     <FloatStyled
-      onMouseMove={() => {
-        set({
-          scale: scaleAmount,
-          zIndex: 5,
-        });
-      }}
       onClick={({ view: { innerHeight, innerWidth }, nativeEvent }) => {
         const {
           x: targetTopLeftX,
@@ -50,7 +48,7 @@ const GalleryItem = ({
           .composedPath()
           .find((e) => e.id === 'selectMe').lastChild;
 
-        if (isMobile && !isHovered) {
+        if (!isHovered) {
           const targetCenterX = targetTopLeftX + targetWidth / 2;
           const targetCenterY = targetTopLeftY + targetHeight / 2;
 
@@ -77,19 +75,10 @@ const GalleryItem = ({
           const transformPercentageY = Math.floor(
             ((offsetY - targetTopLeftY) / targetHeight) * 100
           );
-          const calculatedTransform = `${transformPercentageX}% ${transformPercentageY}%`;
-          console.log(calculatedTransform);
-          set({
-            scale: scaleAmount,
-            zIndex: 5,
-            transformOrigin: calculatedTransform,
-          });
+          calculatedTransform = `${transformPercentageX}% ${transformPercentageY}%`;
+
           setIsHovered(true);
         }
-      }}
-      onMouseLeave={() => {
-        setIsHovered(false);
-        set({ scale: 1, zIndex: 0 });
       }}
       style={{
         transform: props.scale.to(trans),
@@ -103,7 +92,7 @@ const GalleryItem = ({
       <div className='container'>
         <i
           className='fas fa-times-circle'
-          onTouchEnd={(e) => {
+          onClick={(e) => {
             console.log(e);
             e.preventDefault();
             setIsHovered(false);
@@ -131,6 +120,7 @@ const GalleryItem = ({
         />
       </div>
       <div className='story-overlay' />
+
       <img src={urlSrc} alt={altSrc} />
     </FloatStyled>
   );

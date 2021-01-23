@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Main from './pages/main/main.component';
-
+import { isMobile } from 'react-device-detect';
 import { handleResize } from './utils/util-functions';
 
 import { AppWrapper, ScrollWrapper } from './App.styles';
@@ -19,9 +19,8 @@ function App() {
 
     const el = appRef.current;
     const scroll = scrollRef.current;
-    if (el && navigator.maxTouchPoints === 0) {
+    if (el && !isMobile) {
       const onWheel = (event) => {
-        console.log(event);
         const dontScroll = event
           .composedPath()
           .some((e) => e.className === 'container');
@@ -42,7 +41,7 @@ function App() {
   }, []);
 
   return (
-    <AppWrapper ref={appRef}>
+    <AppWrapper ref={appRef} onClick={(e) => console.log(e)}>
       <ScrollWrapper ref={scrollRef}>
         <Router>
           <Route path='/guestbook' component={Guestbook} exact />

@@ -23,7 +23,6 @@ const Footer = ({ children }) => {
             left: 900,
             behavior: 'smooth',
           });
-          console.log('clicked!');
         }}
       />
       <FixedFooter>

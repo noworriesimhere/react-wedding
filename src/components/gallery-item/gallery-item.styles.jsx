@@ -14,6 +14,7 @@ const getHoverState = ({ ishovered }) => {
 };
 
 const hoveredState = css`
+  cursor: initial;
   .story-overlay {
     opacity: 1 !important;
   }
@@ -30,6 +31,7 @@ const hoveredState = css`
   .fa-chevron-circle-up,
   .fa-times-circle {
     display: block;
+    opacity: 1;
   }
 `;
 
@@ -44,6 +46,8 @@ export const FloatStyled = styled(animated.div)`
   justify-content: center;
   align-items: center;
   box-shadow: -17px 26px 50px 10px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  ${getHoverState}
 
   img {
     position: fixed;
@@ -116,11 +120,14 @@ export const FloatStyled = styled(animated.div)`
     line-height: 1.4rem;
   }
 
-  .fa-chevron-circle-down {
-    transform: translate(400%, 0);
+  .fa-times-circle {
+    transform: translate(400%, -150%);
   }
   .fa-chevron-circle-up {
-    transform: translate(400%, -100%);
+    transform: translate(400%, -50%);
+  }
+  .fa-chevron-circle-down {
+    transform: translate(400%, 50%);
   }
 
   .story {
@@ -142,11 +149,6 @@ export const FloatStyled = styled(animated.div)`
       h5 {
         opacity: 1;
       }
-      .fa-chevron-circle-down,
-      .fa-chevron-circle-up {
-        opacity: 1;
-        display: block;
-      }
     }
   }
 
@@ -154,20 +156,10 @@ export const FloatStyled = styled(animated.div)`
     i {
       font-size: 1.5rem;
     }
-    .fa-times-circle {
-      transform: translate(400%, -150%);
-    }
-    .fa-chevron-circle-up {
-      transform: translate(400%, -50%);
-    }
-    .fa-chevron-circle-down {
-      transform: translate(400%, 50%);
-    }
 
     .container {
       opacity: 1;
     }
-    ${getHoverState}
   }
 
   @media screen and (max-width: 511px) {
