@@ -10,6 +10,7 @@ const Gallery = () => {
         urlSrc='img/5yearparty.jpg'
         altSrc="Alan's 5 year Bethel Party"
         date='January 25, 2019'
+        chapter='Chapter One'
         story={
           <>
             <p>
@@ -36,6 +37,7 @@ const Gallery = () => {
         urlSrc='img/firstdate.jpg'
         altSrc='First Date!'
         date='October 1st, 2019'
+        chapter='Chapter Two'
         story={
           <>
             <p>
@@ -61,6 +63,7 @@ const Gallery = () => {
         urlSrc='img/familyday2019.jpg'
         altSrc='Family Day 2019'
         date='October 19th, 2019'
+        chapter='Chapter Three'
         story={
           <>
             <p>
@@ -81,30 +84,10 @@ const Gallery = () => {
       />
       <GalleryItem
         gridArea={'四'}
-        urlSrc='img/bibletourday.jpg'
-        altSrc='Day in the city with the Met Bible Tour'
-        date='November 16th, 2019'
-        story={
-          <>
-            <p>
-              Georgia: <br /> I knew of Alan’s history giving MET tours but this
-              was my first one with him and I had a front row view. I enjoyed
-              watching how good he was with the group and how he brought the
-              bible information to life. Definitely a keeper!
-            </p>
-            <p>
-              Alan: <br /> I’m so glad Georgia joined me on that Bible tour. I
-              was hoping she’d think that I was more knowledgeable than I really
-              was… I think it worked…
-            </p>
-          </>
-        }
-      />
-      <GalleryItem
-        gridArea={'五'}
         urlSrc='img/queensday.jpg'
         altSrc='Georgia accompanying Alan for a public talk in Queens'
         date='October 27th, 2019'
+        chapter='Chapter Four'
         story={
           <>
             <p>
@@ -125,10 +108,34 @@ const Gallery = () => {
         transformOrigin='50% -10%'
       />
       <GalleryItem
+        gridArea={'五'}
+        urlSrc='img/bibletourday.jpg'
+        altSrc='Day in the city with the Met Bible Tour'
+        date='November 16th, 2019'
+        chapter='Chapter Five'
+        story={
+          <>
+            <p>
+              Georgia: <br /> I knew of Alan’s history giving MET tours but this
+              was my first one with him and I had a front row view. I enjoyed
+              watching how good he was with the group and how he brought the
+              bible information to life. Definitely a keeper!
+            </p>
+            <p>
+              Alan: <br /> I’m so glad Georgia joined me on that Bible tour. I
+              was hoping she’d think that I was more knowledgeable than I really
+              was… I think it worked…
+            </p>
+          </>
+        }
+      />
+
+      <GalleryItem
         gridArea={'六'}
         urlSrc='img/momaday.jpg'
         altSrc='Another city day at the MoMA, before Alan went to Argentina International'
         date='December 4th, 2019'
+        chapter='Chapter Six'
         story={
           <>
             <p>
@@ -152,6 +159,7 @@ const Gallery = () => {
         urlSrc='img/outsidekh.jpg'
         altSrc='Georgia at Alans meeting ... with crutches!!'
         date='January 23rd, 2020'
+        chapter='Chapter Seven'
         story={
           <>
             <p>
@@ -176,6 +184,7 @@ const Gallery = () => {
         urlSrc='img/lastday.png'
         altSrc='The day of lockdown... Last time hanging out at the Saenz'
         date='March 13, 2020'
+        chapter='Chapter Eight'
         story={
           <>
             <p>
@@ -200,6 +209,7 @@ const Gallery = () => {
         urlSrc='img/zoomconvention.png'
         altSrc='Watching 2020 regional convention together'
         date='August 2nd, 2020'
+        chapter='Chapter Nine'
         story={
           <>
             <p>
@@ -226,6 +236,7 @@ const Gallery = () => {
         urlSrc='img/zoomshenanigans.png'
         altSrc='Dressing up'
         date='January 8th, 2021'
+        chapter='Chapter Ten'
         story={
           <>
             <p>
@@ -249,7 +260,11 @@ const Gallery = () => {
         }
         transformOrigin='50% 110%'
       />
-      <GalleryItem gridArea={'十一'} scaleAmount={1.15} />
+      <GalleryItem
+        gridArea={'十一'}
+        scaleAmount={1.15}
+        chapter='Chapter Eleven'
+      />
     </GalleryContainer>
   );
 };

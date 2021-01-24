@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FloatStyled } from './gallery-item.styles';
 import { useSpring } from 'react-spring';
+import { isMobile } from 'react-device-detect';
 
 export const storyContainerRef = React.createRef();
 
@@ -13,6 +14,7 @@ const GalleryItem = ({
   urlSrc,
   altSrc,
   date,
+  chapter,
   story,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -25,14 +27,14 @@ const GalleryItem = ({
     immediate: (key) => key === 'zIndex',
   }));
 
-  if (!isHovered) {
-    set({ scale: 1, zIndex: 0 });
-  } else {
+  if (isHovered) {
     set({
       scale: scaleAmount,
       zIndex: 5,
       transformOrigin: calculatedTransform,
     });
+  } else {
+    set({ scale: 1, zIndex: 0 });
   }
 
   return (
@@ -41,11 +43,12 @@ const GalleryItem = ({
         const {
           x: targetTopLeftX,
           y: targetTopLeftY,
-          clientWidth: targetWidth,
-          clientHeight: targetHeight,
+          width: targetWidth,
+          height: targetHeight,
         } = nativeEvent
           .composedPath()
-          .find((e) => e.id === 'selectMe').lastChild;
+          .find((e) => e.id === 'selectMe')
+          .lastChild.getBoundingClientRect();
 
         if (!isHovered) {
           const targetCenterX = targetTopLeftX + targetWidth / 2;
@@ -75,8 +78,12 @@ const GalleryItem = ({
             ((offsetY - targetTopLeftY) / targetHeight) * 100
           );
           calculatedTransform = `${transformPercentageX}% ${transformPercentageY}%`;
-
           setIsHovered(true);
+        }
+      }}
+      onMouseLeave={({ nativeEvent }) => {
+        if (isMobile) {
+          setIsHovered(false);
         }
       }}
       style={{
@@ -92,12 +99,19 @@ const GalleryItem = ({
         <i
           className='fas fa-times-circle'
           onClick={(e) => {
-            console.log(e);
-            e.preventDefault();
             setIsHovered(false);
+            const target = e.target.parentElement;
+            setTimeout(() => {
+              target.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+              });
+            }, 300);
           }}
         />
+        <h2>{chapter}</h2>
         <h5>{date}</h5>
+
         <i
           className='fas fa-chevron-circle-down'
           onClick={(e) =>
@@ -107,6 +121,7 @@ const GalleryItem = ({
             })
           }
         />
+
         <div className='story'>{story}</div>
         <i
           className='fas fa-chevron-circle-up'

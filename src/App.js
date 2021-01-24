@@ -41,7 +41,7 @@ function App() {
   }, []);
 
   return (
-    <AppWrapper ref={appRef} onClick={(e) => console.log(e)}>
+    <AppWrapper ref={appRef}>
       <ScrollWrapper ref={scrollRef}>
         <Router>
           <Route path='/guestbook' component={Guestbook} exact />

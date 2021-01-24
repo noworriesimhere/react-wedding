@@ -18,6 +18,10 @@ const hoveredState = css`
   .story-overlay {
     opacity: 1 !important;
   }
+  .container {
+    opacity: 1 !important;
+    overflow: scroll !important;
+  }
   h5 {
     opacity: 1 !important;
   }
@@ -25,7 +29,7 @@ const hoveredState = css`
     opacity: 1 !important;
   }
   .story {
-    opacity: 1;
+    opacity: 1 !important;
   }
   .fa-chevron-circle-down,
   .fa-chevron-circle-up,
@@ -59,13 +63,20 @@ export const FloatStyled = styled(animated.div)`
     z-index: -2;
   }
 
+  h2 {
+    text-align: center;
+    padding: 4rem 0 0 0;
+    margin-bottom: 0;
+  }
+
   h5 {
-    padding: 8rem 0 2rem 0;
+    padding: 0 0 2rem 0;
     margin-top: 0;
     text-align: center;
     transition: all 0.5s ease-in-out;
     opacity: 0;
     z-index: 1;
+    font-family: 'Montserrat', sans-serif;
   }
 
   .story-overlay {
@@ -79,6 +90,7 @@ export const FloatStyled = styled(animated.div)`
     opacity: 0;
     border-radius: 30px;
     z-index: -1;
+    margin: auto;
   }
 
   .story {
@@ -91,13 +103,13 @@ export const FloatStyled = styled(animated.div)`
   }
 
   .container {
-    overflow: scroll;
+    overflow: hidden;
     max-height: 285px;
     max-width: 285px;
     opacity: 0;
     transition: all 0.5s ease-in-out;
     -ms-overflow-style: none;
-    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
     ::-webkit-scrollbar {
       display: none;
     }
