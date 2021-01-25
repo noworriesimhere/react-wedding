@@ -23,7 +23,7 @@ function App() {
       const onWheel = (event) => {
         const dontScroll = event
           .composedPath()
-          .some((e) => e.className === 'container');
+          .some((e) => e.className === 'container scrolled');
         if (!dontScroll) {
           const toLeft = event.deltaY < 0 && scroll.scrollLeft > 0;
           const toRight =

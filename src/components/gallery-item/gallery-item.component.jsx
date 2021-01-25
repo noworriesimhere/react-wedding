@@ -98,7 +98,7 @@ const GalleryItem = ({
         ishovered={isHovered ? 'true' : ''}
         id='selectMe'
       >
-        <div className='container'>
+        <div className={isHovered ? 'container scrolled' : 'container'}>
           <i
             className='fas fa-times-circle'
             onClick={(e) => {
