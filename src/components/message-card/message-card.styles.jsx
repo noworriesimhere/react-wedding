@@ -16,7 +16,7 @@ export const ContentsContainer = styled(CardContainer)`
 export const ImageContainerLeft = styled.div`
   grid-column: 1 / 2;
   background-size: cover;
-  background-position: -60px 1px;
+  background-position: -60px 0px;
   background-image: url('../../img/alanwave.jpeg');
 
   @media screen and (max-width: 511px) {

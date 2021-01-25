@@ -1,12 +1,6 @@
 import styled, { css } from 'styled-components';
 import { animated } from 'react-spring';
 
-const getGridArea = (props) => {
-  if (props.gridarea) {
-    return props.gridarea;
-  }
-};
-
 const getHoverState = ({ ishovered }) => {
   if (ishovered === 'true') {
     return hoveredState;
@@ -22,6 +16,7 @@ const hoveredState = css`
     opacity: 1 !important;
     overflow: scroll !important;
   }
+  h2,
   h5 {
     opacity: 1 !important;
   }
@@ -40,7 +35,6 @@ const hoveredState = css`
 `;
 
 export const FloatStyled = styled(animated.div)`
-  grid-area: ${getGridArea};
   position: relative;
   height: 100%;
   width: 100%;
@@ -67,11 +61,13 @@ export const FloatStyled = styled(animated.div)`
     text-align: center;
     padding: 4rem 0 0 0;
     margin-bottom: 0;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
   }
 
   h5 {
-    padding: 0 0 2rem 0;
     margin-top: 0;
+    margin-bottom: 4rem;
     text-align: center;
     transition: all 0.5s ease-in-out;
     opacity: 0;
@@ -103,6 +99,7 @@ export const FloatStyled = styled(animated.div)`
   }
 
   .container {
+    margin: auto;
     overflow: hidden;
     max-height: 285px;
     max-width: 285px;
@@ -158,6 +155,7 @@ export const FloatStyled = styled(animated.div)`
         opacity: 1;
       }
 
+      h2,
       h5 {
         opacity: 1;
       }
@@ -175,9 +173,16 @@ export const FloatStyled = styled(animated.div)`
   }
 
   @media screen and (max-width: 511px) {
-    h5 {
-      padding: 4rem 0 1rem 0;
+    h2 {
+      padding: 1rem 0;
+      margin-top: 2rem;
+      font-size: 1.4rem;
     }
+
+    h5 {
+      margin-bottom: 1.5rem;
+    }
+
     .container {
       height: 41vw;
       width: 41vw;

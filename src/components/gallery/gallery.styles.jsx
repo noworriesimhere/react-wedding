@@ -23,10 +23,10 @@ export const GalleryContainer = styled.div`
     grid-template-areas:
       '一 二'
       '三 三'
-      '六 四'
-      '五 四'
-      '八 七'
-      '九 七'
+      '四 五'
+      '四 六'
+      '七 八'
+      '七 九'
       '十 十'
       '十一 十一'
       '十一 十一';

@@ -76,7 +76,7 @@ a {
   }
 
   h5{
-    font-size: .9rem;
+    font-size: .7rem;
   }
   
   p {
