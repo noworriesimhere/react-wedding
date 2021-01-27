@@ -41,7 +41,7 @@ const GalleryItem = ({
   }
 
   return (
-    <FloatWrapper gridarea={gridArea} zindex={zIndex}>
+    <FloatWrapper gridarea={gridArea} zindex={zIndex} hovered={isHovered}>
       <FloatStyled
         onClick={({ view: { innerHeight, innerWidth }, nativeEvent }) => {
           const {

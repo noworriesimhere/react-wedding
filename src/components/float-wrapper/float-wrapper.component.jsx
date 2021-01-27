@@ -11,7 +11,7 @@ const calc = (x, y) => [
 const trans = (x, y, s) =>
   `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
-const FloatWrapper = ({ children, gridarea, zindex }) => {
+const FloatWrapper = ({ children, gridarea, zindex, hovered }) => {
   const [props, set] = useSpring(() => ({
     xys: [0, 0, 1],
     zIndex: 0,
