@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom';
 
 const bigButtonStyles = css`
   font-size: 50px;
@@ -25,7 +24,7 @@ const getButtonStyles = ({ big, guestbook }) => {
   }
 };
 
-export const HoverButtonContainer = styled(Link)`
+export const HoverButtonContainer = styled.div`
   font-family: 'Montserrat', sans-serif;
   color: white;
   text-decoration: none;

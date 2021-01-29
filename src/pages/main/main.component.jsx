@@ -18,6 +18,7 @@ import { rsvpRef } from '../../components/rsvp/rsvp.component';
 import { handleRefClick } from '../../utils/util-functions';
 
 import HoverButton from '../../components/hover-button/hover-button.component';
+import { Link } from 'react-router-dom';
 
 const Main = () => {
   const { currentUser } = useContext(CurrentUserContext);
@@ -56,9 +57,11 @@ const Main = () => {
         </FixedFooter>
       ) : (
         <Footer>
-          <HoverButton big to='/guestbook'>
-            {currentUser ? 'Sign' : 'See'} Our Guestbook
-          </HoverButton>
+          <Link to='/guestbook' style={{ textDecoration: 'none' }}>
+            <HoverButton big>
+              {currentUser ? 'Sign' : 'See'} Our Guestbook
+            </HoverButton>
+          </Link>
         </Footer>
       )}
     </>

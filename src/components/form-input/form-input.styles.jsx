@@ -56,6 +56,7 @@ export const TextAreaContainer = styled.textarea`
   margin: 2rem 0;
   box-sizing: border-box;
   font-family: Montserrat;
+  resize: none;
 
   &:hover ~ label {
     ${shrinkLabelStyles}

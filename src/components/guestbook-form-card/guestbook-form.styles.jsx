@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { CardContainer } from '../card/card.styles';
 
 const getSelectedHover = (props) => {
-  if (props.selected) {
+  if (props.selected !== 'Upload Pic!') {
     return '-24px';
   } else {
     return '10px';
@@ -10,7 +10,7 @@ const getSelectedHover = (props) => {
 };
 
 const getOpacity = (props) => {
-  if (props.selected) {
+  if (props.selected !== 'Upload Pic!') {
     return '1';
   } else {
     return '0';
@@ -22,6 +22,7 @@ export const FormContainer = styled(CardContainer)`
   padding: 2rem 2rem 3rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   margin: auto 2rem;
   text-align: center;
 

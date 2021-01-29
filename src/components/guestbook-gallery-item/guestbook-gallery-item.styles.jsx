@@ -16,8 +16,8 @@ const hoveredState = css`
     opacity: 1 !important;
     overflow: scroll !important;
   }
-  h2,
-  h5 {
+  h5,
+  h6 {
     opacity: 1 !important;
   }
   i {
@@ -57,22 +57,24 @@ export const FloatStyled = styled(animated.div)`
     z-index: -2;
   }
 
-  h2 {
+  h5 {
     text-align: center;
-    padding: 4rem 0 0 0;
+    padding-top: 1rem;
     margin-bottom: 0;
     opacity: 0;
     transition: all 0.5s ease-in-out;
+    font-size: 2rem;
   }
 
-  h5 {
+  h6 {
     margin-top: 0;
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
     text-align: center;
     transition: all 0.5s ease-in-out;
     opacity: 0;
     z-index: 1;
     font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
   }
 
   .story-overlay {
@@ -90,12 +92,10 @@ export const FloatStyled = styled(animated.div)`
   }
 
   .story {
-    z-index: 2;
-
     max-width: 285px;
     max-height: 285px;
     margin: 0 auto;
-    padding: 0 0.75rem;
+    padding: 1rem;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     opacity: 0;
@@ -129,18 +129,18 @@ export const FloatStyled = styled(animated.div)`
   }
 
   p {
-    font-size: 0.8rem;
-    line-height: 1.4rem;
+    font-size: 0.6rem;
+    line-height: 1rem;
   }
 
   .fa-times-circle {
-    transform: translate(400%, -150%);
+    transform: translate(350%, -150%);
   }
   .fa-chevron-circle-up {
-    transform: translate(400%, -50%);
+    transform: translate(350%, -50%);
   }
   .fa-chevron-circle-down {
-    transform: translate(400%, 50%);
+    transform: translate(350%, 50%);
   }
 
   @media (pointer: fine) {
@@ -155,8 +155,8 @@ export const FloatStyled = styled(animated.div)`
         opacity: 1;
       }
 
-      h2,
-      h5 {
+      h5,
+      h6 {
         opacity: 1;
       }
     }
@@ -173,23 +173,29 @@ export const FloatStyled = styled(animated.div)`
   }
 
   @media screen and (max-width: 511px) {
-    h2 {
-      padding: 1rem 0;
-      margin-top: 2rem;
-      font-size: 1.4rem;
-    }
-
     h5 {
-      margin-bottom: 2.5rem;
+      margin-top: 1.5rem;
+      font-size: 1rem;
     }
 
+    h6 {
+      margin-bottom: 2.5rem;
+      font-size: 0.4rem;
+    }
+    .story {
+      padding: 0 0.5rem;
+    }
     .container {
-      height: 41vw;
-      width: 41vw;
+      height: 28vw;
+      width: 28vw;
     }
     p {
-      font-size: 0.5rem;
-      line-height: 0.9rem;
+      font-size: 7px;
+      line-height: 0.75rem;
+    }
+
+    i {
+      font-size: 1rem;
     }
     .fa-times-circle {
       transform: translate(280%, -150%);
@@ -204,7 +210,7 @@ export const FloatStyled = styled(animated.div)`
 
   @media screen and (min-width: 511px) {
     i {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
   }
 `;
