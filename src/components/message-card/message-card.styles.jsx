@@ -9,7 +9,7 @@ export const ContentsContainer = styled(CardContainer)`
   @media screen and (max-width: 511px) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 225px 5fr;
-    height: 700px !important;
+    height: 550px !important;
   }
 `;
 

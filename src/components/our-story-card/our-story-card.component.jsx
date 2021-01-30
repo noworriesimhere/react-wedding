@@ -34,7 +34,7 @@ const OurStoryCard = () => {
             <h1>To Be Continued...</h1>
             <p>We'd love for you to attend the wedding</p>
             <p>
-              Please sign up to RSVP, access Zoom details, and sign our
+              Please register to RSVP, access Zoom details, and sign our
               guestbook
             </p>
           </TextContainerRight>

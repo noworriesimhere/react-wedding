@@ -26,7 +26,7 @@ const SignInOrSignUpCard = () => {
       ) : window.innerWidth > 511 ? (
         <ContentsContainer ref={signInRef}>
           <HeaderContainerTop>
-            Sign Up <span>or</span> Log In
+            Register <span>or</span> Log In
           </HeaderContainerTop>
           <DoubleFormContainer>
             <SignUp />
@@ -35,8 +35,8 @@ const SignInOrSignUpCard = () => {
         </ContentsContainer>
       ) : (
         <ContentsContainer ref={signInRef}>
-          <Radio option1='Log In' option2='Sign Up' />
-          {isLogIn ? <SignIn /> : <SignUp />}
+          <Radio option1='Log In' option2='Register' />
+          {!isLogIn ? <SignIn /> : <SignUp />}
         </ContentsContainer>
       )}
     </FloatWrapper>

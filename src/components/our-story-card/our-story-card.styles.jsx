@@ -7,7 +7,7 @@ export const ContentsContainer = styled.div`
   grid-template-columns: 400px 1fr 450px;
 
   @media screen and (max-width: 511px) {
-    height: calc(429vw + 600px);
+    height: calc(429vw + 500px);
     width: 88vw;
     margin: 2rem 6vw;
     grid-template-columns: 88vw;
@@ -81,6 +81,15 @@ export const TextContainerRight = styled.div`
   @media screen and (max-width: 511px) {
     grid-row: 3 / 4;
     padding: 0 1rem;
-    height: 400px;
+    height: 300px;
+
+    h1 {
+      margin: 1.5rem 0;
+      line-height: 2.5rem;
+    }
+
+    p {
+      margin: 0.25rem;
+    }
   }
 `;

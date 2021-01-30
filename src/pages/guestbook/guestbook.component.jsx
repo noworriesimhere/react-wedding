@@ -7,14 +7,26 @@ import Header from '../../components/header/header.component';
 import HoverButton from '../../components/hover-button/hover-button.component';
 import IntroCard from '../../components/intro-card/intro-card.component';
 import { CurrentUserContext } from '../../providers/user/user.provider';
+import {
+  MainPageLink,
+  MobileLink,
+  MobileLinkBackground,
+} from './guestbook.styles';
 
 const Guestbook = () => {
   const { currentUser } = useContext(CurrentUserContext);
   return (
     <>
+      <MobileLinkBackground>
+        <MobileLink to='/'>
+          <HoverButton guestbook>Go To Main Page</HoverButton>
+        </MobileLink>
+      </MobileLinkBackground>
       <Header>
-        <HoverButton>Home</HoverButton>
-        <HoverButton>Map</HoverButton>
+        <HoverButton>Intro</HoverButton>
+        <HoverButton guestbook>
+          <MainPageLink to='/'>Main Page </MainPageLink>
+        </HoverButton>
         <HoverButton>Sign Book</HoverButton>
       </Header>
       <IntroCard src='img/georgiabook.jpg' alt='Welcome to our Guest Book!'>

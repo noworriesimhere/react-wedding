@@ -7,7 +7,12 @@ import RsvpCard from '../../components/rsvp/rsvp.component';
 
 import { CurrentUserContext } from '../../providers/user/user.provider';
 
-import { FixedFooter } from './main.styles';
+import {
+  FixedFooter,
+  GuestbookLink,
+  MobileLink,
+  MobileLinkBackground,
+} from './main.styles';
 import Header from '../../components/header/header.component';
 import Footer from '../../components/footer/footer.component';
 
@@ -24,12 +29,20 @@ const Main = () => {
   const { currentUser } = useContext(CurrentUserContext);
   return (
     <>
+      <MobileLinkBackground>
+        <MobileLink to='/guestbook'>
+          <HoverButton guestbook>Go To Guestbook</HoverButton>
+        </MobileLink>
+      </MobileLinkBackground>
       <Header>
+        <HoverButton guestbook>
+          <GuestbookLink to='/guestbook'>Guestbook</GuestbookLink>
+        </HoverButton>
         <HoverButton onClick={handleRefClick(homeRef)}>Home</HoverButton>
         <HoverButton onClick={handleRefClick(ourStoryRef)}>
           Our Story
         </HoverButton>
-        <HoverButton guestbook>Guestbook</HoverButton>
+
         <HoverButton onClick={handleRefClick(signInRef)}>
           {currentUser ? 'Log Out' : 'Sign Up / Log In'}
         </HoverButton>

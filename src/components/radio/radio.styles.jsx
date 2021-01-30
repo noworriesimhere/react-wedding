@@ -23,7 +23,7 @@ export const ToggleSwitchContainer = styled.div`
     padding: 16px 0;
     text-align: center;
     position: relative;
-    z-index: 999;
+    z-index: 9;
     -webkit-transition: color 0.5s ease-in-out;
     -moz-transition: color 0.5s ease-in-out;
     transition: color 0.5s ease-in-out;
