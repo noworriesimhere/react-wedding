@@ -27,6 +27,7 @@ import { Link } from 'react-router-dom';
 
 const Main = () => {
   const { currentUser } = useContext(CurrentUserContext);
+
   return (
     <>
       <MobileLinkBackground>
