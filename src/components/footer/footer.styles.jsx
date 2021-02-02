@@ -28,12 +28,29 @@ export const FooterContainer = styled.div`
 
   @media screen and (max-height: 900px) {
     background-color: var(--color-burgundy-transparent);
-    padding: 1rem 0;
-    bottom: -25px;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    top: 0;
+    width: 150px;
+    height: 100vh;
 
     .fa-chevron-circle-left,
     .fa-chevron-circle-right {
       font-size: 2.6rem;
+      margin: 0;
+      padding: 0.5rem;
+    }
+
+    .fa-chevron-circle-left {
+      order: 1;
+      align-self: flex-start;
+    }
+
+    .fa-chevron-circle-right {
+      order: 2;
+      align-self: flex-end;
+      transform: translateY(-3.5rem);
     }
   }
 `;
@@ -47,8 +64,17 @@ export const FixedFooter = styled.p`
   transition: all 1s ease;
 
   @media screen and (max-height: 900px) {
-    font-size: 0.85rem;
-    top: 0px;
+    font-size: 0.75rem;
+    height: 200px;
+    width: 110px;
+    margin: 0;
+    top: 0;
     color: white;
+    padding-top: 1rem;
+    line-height: 1.25;
+
+    a {
+      color: white;
+    }
   }
 `;
