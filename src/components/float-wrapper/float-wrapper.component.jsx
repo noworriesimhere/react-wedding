@@ -10,9 +10,9 @@ let yOffset;
 let xOffset;
 if (window.innerWidth < 511) {
   yOffset = 0;
-  xOffset = -100;
+  xOffset = -75;
 } else {
-  yOffset = 100;
+  yOffset = 75;
   xOffset = 0;
 }
 
@@ -24,10 +24,10 @@ const calc = (x, y) => [
 const trans = (x, y, s) =>
   `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
-const FloatWrapper = ({ children, gridarea, zindex = 15 }) => {
+const FloatWrapper = ({ children, gridarea, zindex }) => {
   const [props, set] = useSpring(() => ({
     xys: [0, 0, 1],
-    zIndex: 0,
+    zIndex: 6,
     config: { mass: 5, tension: 350, friction: 40 },
   }));
 
@@ -36,23 +36,23 @@ const FloatWrapper = ({ children, gridarea, zindex = 15 }) => {
   const intersection = useIntersection(floatRefDesktop, {
     root: null,
     rootMargin: '0px',
-    threshold: 0.3,
+    threshold: 0.45,
   });
 
   const fadeIn = (el) => {
-    gsap.to(el, 1, {
+    gsap.to(el, {
+      duration: 1,
       opacity: 1,
       y: 0,
       x: 0,
       ease: 'power4.out',
-      stagger: {
-        amount: 0.3,
-      },
+      zIndex: zindex,
     });
   };
 
   const fadeOut = (el) => {
-    gsap.to(el, 1, {
+    gsap.to(el, {
+      duration: 1,
       opacity: 0,
       y: yOffset,
       x: xOffset,
@@ -60,21 +60,30 @@ const FloatWrapper = ({ children, gridarea, zindex = 15 }) => {
     });
   };
 
-  intersection && intersection.intersectionRatio < 0.3
-    ? fadeOut(floatRefDesktop.current)
-    : fadeIn(floatRefDesktop.current);
+  intersection && intersection.isIntersecting
+    ? fadeIn(floatRefDesktop.current)
+    : fadeOut(floatRefDesktop.current);
 
   if (!isMobile) {
     return (
       <FloatContainer
         onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
         onMouseLeave={() => set({ xys: [0, 0, 1] })}
-        style={{ transform: props.xys.to(trans) }}
+        style={{
+          transform: props.xys.to(trans),
+        }}
         gridarea={gridarea}
         zindex={zindex}
-        ref={floatRefDesktop}
       >
-        {children}
+        <div
+          ref={floatRefDesktop}
+          style={{
+            height: '100%',
+            opacity: 0,
+          }}
+        >
+          {children}
+        </div>
       </FloatContainer>
     );
   } else {
