@@ -15,7 +15,7 @@ export const GuestbookLink = styled(Link)`
 
 export const MobileLinkBackground = styled.div`
   position: fixed;
-  background-color: var(--color-burgundy);
+  background-color: var(--color-burgundy-transparent);
   width: 100%;
   top: 0;
   padding: 0.75rem;

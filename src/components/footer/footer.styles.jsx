@@ -25,6 +25,17 @@ export const FooterContainer = styled.div`
   @media screen and (max-width: 511px) {
     display: none;
   }
+
+  @media screen and (max-height: 900px) {
+    background-color: var(--color-burgundy-transparent);
+    padding: 1rem 0;
+    bottom: -25px;
+
+    .fa-chevron-circle-left,
+    .fa-chevron-circle-right {
+      font-size: 2.6rem;
+    }
+  }
 `;
 
 export const FixedFooter = styled.p`
@@ -37,7 +48,7 @@ export const FixedFooter = styled.p`
 
   @media screen and (max-height: 900px) {
     font-size: 0.85rem;
-    text-align: center;
-    width: 100vw;
+    top: 0px;
+    color: white;
   }
 `;

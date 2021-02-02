@@ -10,9 +10,9 @@ let yOffset;
 let xOffset;
 if (window.innerWidth < 511) {
   yOffset = 0;
-  xOffset = -75;
+  xOffset = -50;
 } else {
-  yOffset = 75;
+  yOffset = 50;
   xOffset = 0;
 }
 
@@ -36,7 +36,7 @@ const FloatWrapper = ({ children, gridarea, zindex }) => {
   const intersection = useIntersection(floatRefDesktop, {
     root: null,
     rootMargin: '0px',
-    threshold: 0.45,
+    threshold: 0.3,
   });
 
   const fadeIn = (el) => {

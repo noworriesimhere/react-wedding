@@ -5,8 +5,7 @@ const bigButtonStyles = css`
   font-family: 'Sacramento', cursive;
 
   @media screen and (max-height: 900px) {
-    font-size: 30px;
-    display: none;
+    font-size: 20px;
   }
 `;
 

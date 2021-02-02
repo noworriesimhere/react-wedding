@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { CardContainer } from '../card/card.styles';
 
 export const ContentsContainer = styled(CardContainer)`
-  width: 1000px;
-  grid-template-columns: 3fr 6fr 3fr;
+  width: 850px;
+  grid-template-columns: 3fr 4fr 3fr;
   grid-template-rows: 1fr;
 
   @media screen and (max-width: 511px) {
