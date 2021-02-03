@@ -3,13 +3,14 @@ import { FloatStyled } from './guestbook-gallery-item.styles';
 import { useSpring } from 'react-spring';
 import { isMobile } from 'react-device-detect';
 import FloatWrapper from '../float-wrapper/float-wrapper.component';
-import { auth } from '../../firebase/firebase.utils';
+import { auth, firestore, storage } from '../../firebase/firebase.utils';
 
 export const storyContainerRef = React.createRef();
 
 const trans = (scale) => `scale(${scale})`;
 let calculatedTransform = '50% 50%';
 const scaleAmount = 3;
+
 const GuestbookGalleryItem = ({
   gridArea,
   transformOrigin = '50% 50%',
@@ -18,7 +19,8 @@ const GuestbookGalleryItem = ({
   date,
   chapter,
   story,
-  uid = undefined,
+  uid,
+  id,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -41,9 +43,27 @@ const GuestbookGalleryItem = ({
     set({ scale: 1, zIndex: 0 });
     zIndex = 0;
   }
+
+  const docRef = firestore.collection('posts').doc(id);
+  const storageRef = storage.refFromURL(urlSrc);
+
   let deleteButton;
   if (auth.currentUser && uid === auth.currentUser.uid) {
-    deleteButton = <i className='fas fa-minus-circle' />;
+    deleteButton = (
+      <i
+        className='fas fa-minus-circle'
+        onClick={async () => {
+          if (window.confirm('Delete the item?'))
+            try {
+              await docRef.delete();
+              await storageRef.delete();
+              alert('it worked!');
+            } catch (err) {
+              console.log(err);
+            }
+        }}
+      />
+    );
   } else {
     deleteButton = '';
   }

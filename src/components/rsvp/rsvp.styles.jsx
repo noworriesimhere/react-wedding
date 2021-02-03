@@ -2,34 +2,29 @@ import styled from 'styled-components';
 import { CardContainer } from '../card/card.styles';
 
 export const ContentsContainer = styled(CardContainer)`
-  width: 850px;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 400px;
 
   @media screen and (max-width: 511px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    width: 100%;
   }
 `;
 
 export const ImageContainer = styled.div`
-  grid-column: 2 / 3;
+  grid-column: 1 / 2;
   grid-row: 1 / 2;
   background-size: cover;
-  background-position: -150px 0px;
   background-image: url('../../img/IMG_6369.jpg');
-  z-index: -1;
 
   @media screen and (max-width: 511px) {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
     height: 300px;
     background-position: 0px 0px;
   }
 `;
 
 export const ZoomContainer = styled.div`
-  grid-column: 2 / 3;
+  grid-column: 1 / 2;
   grid-row: 1 / 2;
   text-align: center;
   display: flex;
@@ -37,8 +32,6 @@ export const ZoomContainer = styled.div`
   justify-content: center;
 
   @media screen and (max-width: 511px) {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
     height: 300px;
   }
 `;
@@ -50,12 +43,7 @@ export const TextContainer = styled.div`
   justify-content: center;
   text-align: center;
   grid-column: 1 / 2;
-  grid-row: 1 / 2;
-
-  @media screen and (max-width: 511px) {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-  }
+  grid-row: 2 / 3;
 `;
 
 export const SideContainer = styled(CardContainer)`

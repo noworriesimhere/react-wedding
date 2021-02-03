@@ -19,6 +19,13 @@ import Radio from '../radio/radio.component';
 import SignIn from '../sign-in/sign-in.component';
 import SignUp from '../sign-up/sign-up.component';
 
+let handPointer;
+if (window.innerWidth < 511) {
+  handPointer = <i className='far fa-hand-point-down fa-3x' />;
+} else {
+  handPointer = <i className='far fa-hand-point-right fa-3x' />;
+}
+
 export const guestFormRef = React.createRef();
 
 const GuestbookForm = () => {
@@ -129,8 +136,10 @@ const GuestbookForm = () => {
         <FormContainer>
           <h1>Thank You</h1>
           <p>You've sucessfully signed our Guest Book.</p>
+          {handPointer}
+          <p>See all the messages!</p>
           <CustomButton onClick={() => setIsPosted(false)}>
-            I want to leave another message!
+            I wanna leave another message!
           </CustomButton>
         </FormContainer>
       </FloatWrapper>

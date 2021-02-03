@@ -19,7 +19,7 @@ const getOpacity = (props) => {
 
 export const FormContainer = styled(CardContainer)`
   width: 400px;
-  padding: 2rem 2rem 3rem;
+  padding: 2rem 1.5rem 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
