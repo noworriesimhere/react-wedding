@@ -13,6 +13,7 @@ import {
 } from './rsvp.styles';
 
 export const rsvpRef = React.createRef();
+export const registryRef = React.createRef();
 
 const RsvpCard = () => {
   const { currentUser } = useContext(CurrentUserContext);
@@ -38,7 +39,7 @@ const RsvpCard = () => {
         </ContentsContainer>
       </FloatWrapper>
       <FloatWrapper>
-        <SideContainer>
+        <SideContainer ref={registryRef}>
           <h1>Registry?</h1>
           <p>Things are hard for everyone right now. </p>{' '}
           <p>

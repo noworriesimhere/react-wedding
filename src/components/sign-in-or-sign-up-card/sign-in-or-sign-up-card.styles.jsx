@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { CardContainer } from '../card/card.styles';
 
 export const ContentsContainer = styled(CardContainer)`
-  width: 1000px;
+  width: 850px;
   grid-template-rows: 1fr 3fr;
 
   @media screen and (max-width: 511px) {
@@ -22,7 +22,7 @@ export const HeaderContainerTop = styled.h1`
 
 export const DoubleFormContainer = styled.div`
   grid-row: 2 / 3;
-  padding: 1rem 2rem;
+  padding: 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
 `;

@@ -19,7 +19,7 @@ import Footer from '../../components/footer/footer.component';
 import { homeRef } from '../../components/intro-card/intro-card.component';
 import { ourStoryRef } from '../../components/our-story-card/our-story-card.component';
 import { signInRef } from '../../components/sign-in-or-sign-up-card/sign-in-or-sign-up-card.component';
-import { rsvpRef } from '../../components/rsvp/rsvp.component';
+import { rsvpRef, registryRef } from '../../components/rsvp/rsvp.component';
 import { handleRefClick } from '../../utils/util-functions';
 
 import HoverButton from '../../components/hover-button/hover-button.component';
@@ -39,7 +39,7 @@ const Main = () => {
         <HoverButton guestbook>
           <GuestbookLink to='/guestbook'>Guestbook</GuestbookLink>
         </HoverButton>
-        <HoverButton onClick={handleRefClick(homeRef)}>Home</HoverButton>
+        <HoverButton onClick={handleRefClick(homeRef)}>Intro</HoverButton>
         <HoverButton onClick={handleRefClick(ourStoryRef)}>
           Our Story
         </HoverButton>
@@ -49,6 +49,13 @@ const Main = () => {
         </HoverButton>
         {currentUser ? (
           <HoverButton onClick={handleRefClick(rsvpRef)}>RSVP</HoverButton>
+        ) : (
+          ''
+        )}
+        {currentUser ? (
+          <HoverButton onClick={handleRefClick(registryRef)}>
+            Registry
+          </HoverButton>
         ) : (
           ''
         )}

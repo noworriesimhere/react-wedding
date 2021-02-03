@@ -17,6 +17,7 @@ const GuestbookGallery = () => {
             chapter={doc.name}
             story={doc.comment}
             date={doc.location}
+            uid={doc.uid}
           />
         ))}
     </GalleryContainer>

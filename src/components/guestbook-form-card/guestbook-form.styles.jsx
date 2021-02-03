@@ -30,6 +30,10 @@ export const FormContainer = styled(CardContainer)`
     margin: 0.1rem 0;
   }
 
+  div {
+    width: 100%;
+  }
+
   @media screen and (max-width: 511px) {
     width: 80vw;
   }

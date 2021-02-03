@@ -4,6 +4,7 @@ export const handleRefClick = (ref) => {
       ref.current.scrollIntoView({
         behavior: 'smooth',
         block: 'center',
+        inline: 'center',
       });
     }
   };

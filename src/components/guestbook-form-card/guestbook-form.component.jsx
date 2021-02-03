@@ -15,11 +15,14 @@ import {
   FileInputContainer,
 } from './guestbook-form.styles';
 import FloatWrapper from '../float-wrapper/float-wrapper.component';
-import HoverButton from '../hover-button/hover-button.component';
-import { Link } from 'react-router-dom';
+import Radio from '../radio/radio.component';
+import SignIn from '../sign-in/sign-in.component';
+import SignUp from '../sign-up/sign-up.component';
+
+export const guestFormRef = React.createRef();
 
 const GuestbookForm = () => {
-  const { currentUser } = useContext(CurrentUserContext);
+  const { currentUser, isLogIn } = useContext(CurrentUserContext);
   const [postDetails, setPostDetails] = useState({
     location: '',
     comment: '',
@@ -70,19 +73,19 @@ const GuestbookForm = () => {
   if (!currentUser) {
     return (
       <FloatWrapper>
-        <FormContainer>
-          <h1>Hold On!</h1>
-          <p>Doesn't look like you're logged in yet...</p>
-          <Link to='/' style={{ textDecoration: 'none' }}>
-            <HoverButton>Back to Main Page</HoverButton>
-          </Link>
+        <FormContainer ref={guestFormRef}>
+          <p>Please Log in or Register to leave a message</p>
+          <div>
+            <Radio option1='Log In' option2='Register' />
+            {!isLogIn ? <SignIn /> : <SignUp />}
+          </div>
         </FormContainer>
       </FloatWrapper>
     );
   } else if (!isPosted) {
     return (
       <FloatWrapper>
-        <FormContainer>
+        <FormContainer ref={guestFormRef}>
           <h2>Leave a Message</h2>
           <form onSubmit={handleSubmit}>
             <FormInput

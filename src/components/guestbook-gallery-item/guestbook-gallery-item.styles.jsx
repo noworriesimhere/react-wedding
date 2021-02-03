@@ -28,7 +28,8 @@ const hoveredState = css`
   }
   .fa-chevron-circle-down,
   .fa-chevron-circle-up,
-  .fa-times-circle {
+  .fa-times-circle,
+  .fa-minus-circle {
     display: block;
     opacity: 1;
   }
@@ -143,6 +144,10 @@ export const FloatStyled = styled(animated.div)`
     transform: translate(350%, 50%);
   }
 
+  .fa-minus-circle {
+    transform: translate(350%, 150%);
+  }
+
   @media (pointer: fine) {
     :hover {
       .story-overlay {
@@ -205,6 +210,9 @@ export const FloatStyled = styled(animated.div)`
     }
     .fa-chevron-circle-down {
       transform: translate(280%, 50%);
+    }
+    .fa-minus-circle {
+      transform: translate(280%, 150%);
     }
   }
 

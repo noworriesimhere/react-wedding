@@ -3,6 +3,7 @@ import { FloatStyled } from './guestbook-gallery-item.styles';
 import { useSpring } from 'react-spring';
 import { isMobile } from 'react-device-detect';
 import FloatWrapper from '../float-wrapper/float-wrapper.component';
+import { auth } from '../../firebase/firebase.utils';
 
 export const storyContainerRef = React.createRef();
 
@@ -17,6 +18,7 @@ const GuestbookGalleryItem = ({
   date,
   chapter,
   story,
+  uid = undefined,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -38,6 +40,12 @@ const GuestbookGalleryItem = ({
   } else {
     set({ scale: 1, zIndex: 0 });
     zIndex = 0;
+  }
+  let deleteButton;
+  if (auth.currentUser && uid === auth.currentUser.uid) {
+    deleteButton = <i className='fas fa-minus-circle' />;
+  } else {
+    deleteButton = '';
   }
 
   return (
@@ -138,6 +146,7 @@ const GuestbookGalleryItem = ({
               })
             }
           />
+          {deleteButton}
         </div>
         <div className='story-overlay' />
 

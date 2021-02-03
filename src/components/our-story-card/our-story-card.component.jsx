@@ -21,12 +21,12 @@ const OurStoryCard = () => {
     <>
       <ContentsContainer>
         <FloatWrapper>
-          <TextContainerLeft ref={ourStoryRef}>
+          <TextContainerLeft>
             <h1>Our Story</h1>
             <p>{`${instructions}`} Each Chapter</p>
           </TextContainerLeft>
         </FloatWrapper>
-        <MiddleContainer>
+        <MiddleContainer ref={ourStoryRef}>
           <Gallery />
         </MiddleContainer>
         <FloatWrapper>
