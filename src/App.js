@@ -1,13 +1,18 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Main from './pages/main/main.component';
+import React, { useEffect, lazy, Suspense } from 'react';
+import { BrowserRouter as Switch, Route } from 'react-router-dom';
+
 import { isMobile } from 'react-device-detect';
 import { handleResize } from './utils/util-functions';
 
 import { AppWrapper, ScrollWrapper } from './App.styles';
-import Guestbook from './pages/guestbook/guestbook.component';
+import Spinner from './components/spinner/spinner.component';
+import ErrorBoundary from './components/error-boundary/error-boundary.component';
+
 export const appRef = React.createRef();
 export const scrollRef = React.createRef();
+
+const Main = lazy(() => import('./pages/main/main.component'));
+const Guestbook = lazy(() => import('./pages/guestbook/guestbook.component'));
 
 function App() {
   useEffect(() => {
@@ -43,10 +48,14 @@ function App() {
   return (
     <AppWrapper ref={appRef}>
       <ScrollWrapper ref={scrollRef}>
-        <Router>
-          <Route path='/guestbook' component={Guestbook} exact />
-          <Route path='/' component={Main} exact />
-        </Router>
+        <Switch>
+          <ErrorBoundary>
+            <Suspense fallback={<Spinner />}>
+              <Route path='/' component={Main} exact />
+              <Route path='/guestbook' component={Guestbook} exact />
+            </Suspense>
+          </ErrorBoundary>
+        </Switch>
       </ScrollWrapper>
     </AppWrapper>
   );

@@ -49,7 +49,7 @@ export const FloatStyled = styled(animated.div)`
   ${getHoverState}
 
   img {
-    position: fixed;
+    position: absolute;
     top: 0;
     object-fit: cover;
     width: 100%;
