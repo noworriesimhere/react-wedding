@@ -7,6 +7,7 @@ import { handleResize } from './utils/util-functions';
 import { AppWrapper, ScrollWrapper } from './App.styles';
 import Spinner from './components/spinner/spinner.component';
 import ErrorBoundary from './components/error-boundary/error-boundary.component';
+import NotFound from './components/not-found/not-found.component';
 
 export const appRef = React.createRef();
 export const scrollRef = React.createRef();
@@ -53,6 +54,7 @@ function App() {
             <Suspense fallback={<Spinner />}>
               <Route path='/' component={Main} exact />
               <Route path='/guestbook' component={Guestbook} exact />
+              <Route component={NotFound} />
             </Suspense>
           </ErrorBoundary>
         </Switch>
