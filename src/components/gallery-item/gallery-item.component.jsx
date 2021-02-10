@@ -136,7 +136,6 @@ const GalleryItem = ({
             }
           />
         </div>
-        <div className='story-overlay' />
 
         <img src={urlSrc} alt={altSrc} />
       </FloatStyled>

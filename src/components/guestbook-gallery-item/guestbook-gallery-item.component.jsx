@@ -168,7 +168,6 @@ const GuestbookGalleryItem = ({
           />
           {deleteButton}
         </div>
-        <div className='story-overlay' />
 
         <img src={urlSrc} alt={altSrc} />
       </FloatStyled>

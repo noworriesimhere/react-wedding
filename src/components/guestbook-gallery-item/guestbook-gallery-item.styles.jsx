@@ -9,8 +9,9 @@ const getHoverState = ({ ishovered }) => {
 
 const hoveredState = css`
   cursor: initial;
-  .story-overlay {
-    opacity: 1 !important;
+  img {
+    opacity: 0.2;
+    filter: grayscale(100%);
   }
   .container {
     opacity: 1 !important;
@@ -19,13 +20,12 @@ const hoveredState = css`
   h5,
   h6 {
     opacity: 1 !important;
+    transform: scale(1) !important;
   }
   i {
     opacity: 1 !important;
   }
-  .story {
-    opacity: 1 !important;
-  }
+
   .fa-chevron-circle-down,
   .fa-chevron-circle-up,
   .fa-times-circle,
@@ -36,7 +36,7 @@ const hoveredState = css`
 `;
 
 export const FloatStyled = styled(animated.div)`
-  position: relative;
+  background-color: var(--color-burgundy);
   height: 100%;
   width: 100%;
   border-radius: 30px;
@@ -49,57 +49,43 @@ export const FloatStyled = styled(animated.div)`
   ${getHoverState}
 
   img {
-    position: absolute;
+    position: fixed;
     top: 0;
     object-fit: cover;
     width: 100%;
     height: 100%;
     border-radius: 30px;
     z-index: -2;
+    transition: all 0.5s ease-in-out;
+  }
+
+  h5,
+  h6 {
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+    transform: scale(0);
+    transition: transform 400ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.4);
   }
 
   h5 {
-    text-align: center;
     padding-top: 1rem;
     margin-bottom: 0;
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
     font-size: 2rem;
   }
 
   h6 {
     margin-top: 0;
     margin-bottom: 3rem;
-    text-align: center;
-    transition: all 0.5s ease-in-out;
-    opacity: 0;
     z-index: 1;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.9rem;
   }
 
-  .story-overlay {
-    background-color: var(--color-burgundy-transparent);
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    transition: all 0.5s ease-in-out;
-    opacity: 0;
-    border-radius: 30px;
-    z-index: -1;
-    margin: auto;
-  }
-
   .story {
-    max-width: 285px;
-    max-height: 285px;
     margin: 0 auto;
     padding: 1rem;
-    font-family: 'Montserrat', sans-serif;
     text-align: center;
-    opacity: 0;
   }
 
   .container {
@@ -150,11 +136,9 @@ export const FloatStyled = styled(animated.div)`
 
   @media (pointer: fine) {
     :hover {
-      .story-overlay {
-        opacity: 1;
-      }
-      .story {
-        opacity: 1;
+      img {
+        opacity: 0.2;
+        filter: grayscale(100%);
       }
       .container {
         opacity: 1;
@@ -163,6 +147,7 @@ export const FloatStyled = styled(animated.div)`
       h5,
       h6 {
         opacity: 1;
+        transform: scale(1);
       }
     }
   }
