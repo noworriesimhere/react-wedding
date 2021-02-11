@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FloatStyled } from './guestbook-gallery-item.styles';
 import { useSpring } from 'react-spring';
-import { isMobile } from 'react-device-detect';
+
 import FloatWrapper from '../float-wrapper/float-wrapper.component';
 import { auth, firestore, storage } from '../../firebase/firebase.utils';
 
@@ -21,7 +21,15 @@ const GuestbookGalleryItem = ({
   story,
   uid,
   id,
+  setActiveChild,
+  activeChild,
 }) => {
+  useEffect(() => {
+    if (activeChild !== id) {
+      setIsHovered(false);
+    }
+  }, [activeChild, id]);
+
   const [isHovered, setIsHovered] = useState(false);
 
   const [props, set] = useSpring(() => ({
@@ -111,12 +119,7 @@ const GuestbookGalleryItem = ({
             );
             calculatedTransform = `${transformPercentageX}% ${transformPercentageY}%`;
             setIsHovered(true);
-            console.log(calculatedTransform);
-          }
-        }}
-        onMouseLeave={() => {
-          if (isMobile) {
-            setIsHovered(false);
+            setActiveChild(id);
           }
         }}
         style={{

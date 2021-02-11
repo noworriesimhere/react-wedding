@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FloatStyled } from './gallery-item.styles';
 import { useSpring } from 'react-spring';
-import { isMobile } from 'react-device-detect';
 import FloatWrapper from '../float-wrapper/float-wrapper.component';
 
 export const storyContainerRef = React.createRef();
@@ -17,7 +16,15 @@ const GalleryItem = ({
   date,
   chapter,
   story,
+  setActiveChild,
+  activeChild,
 }) => {
+  useEffect(() => {
+    if (activeChild !== chapter) {
+      setIsHovered(false);
+    }
+  }, [activeChild, chapter]);
+
   const [isHovered, setIsHovered] = useState(false);
 
   const [props, set] = useSpring(() => ({
@@ -83,11 +90,7 @@ const GalleryItem = ({
             );
             calculatedTransform = `${transformPercentageX}% ${transformPercentageY}%`;
             setIsHovered(true);
-          }
-        }}
-        onMouseLeave={() => {
-          if (isMobile) {
-            setIsHovered(false);
+            setActiveChild(chapter);
           }
         }}
         style={{

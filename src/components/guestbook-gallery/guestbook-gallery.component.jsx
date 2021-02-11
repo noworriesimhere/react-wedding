@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useFirestore from '../../hooks/useFirestore';
 import GuestbookGalleryItem from '../guestbook-gallery-item/guestbook-gallery-item.component';
 import { GalleryContainer } from './guestbook-gallery.styles';
 
 const GuestbookGallery = () => {
+  const [activeChild, setActiveChild] = useState(undefined);
+
   const { docs } = useFirestore('posts');
   const columns = Math.ceil(docs.length / 3) + 1;
   return (
@@ -11,6 +13,8 @@ const GuestbookGallery = () => {
       {docs &&
         docs.map((doc) => (
           <GuestbookGalleryItem
+            setActiveChild={setActiveChild}
+            activeChild={activeChild}
             key={doc.id}
             urlSrc={doc.url}
             altSrc='uploaded pic'

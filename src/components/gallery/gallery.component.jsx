@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import GalleryItem from '../gallery-item/gallery-item.component.jsx';
 import { GalleryContainer } from './gallery.styles.jsx';
 
 const Gallery = () => {
+  const [activeChild, setActiveChild] = useState(undefined);
+
   return (
     <GalleryContainer>
       <GalleryItem
+        setActiveChild={setActiveChild}
+        activeChild={activeChild}
         gridArea={'一'}
         urlSrc='img/5yearparty.jpg'
         altSrc="Alan's 5 year Bethel Party"
@@ -33,6 +37,8 @@ const Gallery = () => {
         transformOrigin='50% 110%'
       />
       <GalleryItem
+        setActiveChild={setActiveChild}
+        activeChild={activeChild}
         gridArea={'二'}
         urlSrc='img/firstdate.jpg'
         altSrc='First Date!'
@@ -59,6 +65,8 @@ const Gallery = () => {
         transformOrigin='50% -10%'
       />
       <GalleryItem
+        setActiveChild={setActiveChild}
+        activeChild={activeChild}
         gridArea={'三'}
         urlSrc='img/familyday2019.jpg'
         altSrc='Family Day 2019'
@@ -83,6 +91,8 @@ const Gallery = () => {
         transformOrigin='50% 110%'
       />
       <GalleryItem
+        setActiveChild={setActiveChild}
+        activeChild={activeChild}
         gridArea={'四'}
         urlSrc='img/queensday.jpg'
         altSrc='Georgia accompanying Alan for a public talk in Queens'
@@ -108,6 +118,8 @@ const Gallery = () => {
         transformOrigin='50% -10%'
       />
       <GalleryItem
+        setActiveChild={setActiveChild}
+        activeChild={activeChild}
         gridArea={'五'}
         urlSrc='img/bibletourday.jpg'
         altSrc='Day in the city with the Met Bible Tour'
@@ -131,6 +143,8 @@ const Gallery = () => {
       />
 
       <GalleryItem
+        setActiveChild={setActiveChild}
+        activeChild={activeChild}
         gridArea={'六'}
         urlSrc='img/momaday.jpg'
         altSrc='Another city day at the MoMA, before Alan went to Argentina International'
@@ -155,6 +169,8 @@ const Gallery = () => {
         transformOrigin='50% 110%'
       />
       <GalleryItem
+        setActiveChild={setActiveChild}
+        activeChild={activeChild}
         gridArea={'七'}
         urlSrc='img/outsidekh.jpg'
         altSrc='Georgia at Alans meeting ... with crutches!!'
@@ -180,6 +196,8 @@ const Gallery = () => {
         transformOrigin='50% -10%'
       />
       <GalleryItem
+        setActiveChild={setActiveChild}
+        activeChild={activeChild}
         gridArea={'八'}
         urlSrc='img/lastday.png'
         altSrc='The day of lockdown... Last time hanging out at the Saenz'
@@ -205,6 +223,8 @@ const Gallery = () => {
         transformOrigin='50% 110%'
       />
       <GalleryItem
+        setActiveChild={setActiveChild}
+        activeChild={activeChild}
         gridArea={'九'}
         urlSrc='img/zoomconvention.png'
         altSrc='Watching 2020 regional convention together'
@@ -232,6 +252,8 @@ const Gallery = () => {
         transformOrigin='50% -10%'
       />
       <GalleryItem
+        setActiveChild={setActiveChild}
+        activeChild={activeChild}
         gridArea={'十'}
         urlSrc='img/zoomshenanigans.png'
         altSrc='Dressing up'
@@ -261,6 +283,8 @@ const Gallery = () => {
         transformOrigin='50% 110%'
       />
       <GalleryItem
+        setActiveChild={setActiveChild}
+        activeChild={activeChild}
         gridArea={'十一'}
         scaleAmount={1.15}
         chapter='Chapter Eleven'
