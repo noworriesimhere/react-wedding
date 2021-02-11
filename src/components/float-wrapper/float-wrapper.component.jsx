@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useSpring } from 'react-spring';
 import { FloatContainer, OtherContainer } from './float-wrapper.styles';
 import { isMobile } from 'react-device-detect';
@@ -24,7 +24,7 @@ const calc = (x, y) => [
 const trans = (x, y, s) =>
   `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
-const FloatWrapper = ({ children, gridarea, zindex }) => {
+const FloatWrapper = ({ children, gridarea, zindex, setIsHovered }) => {
   const [props, set] = useSpring(() => ({
     xys: [0, 0, 1],
     zIndex: 6,
@@ -58,6 +58,7 @@ const FloatWrapper = ({ children, gridarea, zindex }) => {
       x: xOffset,
       ease: 'power4.out',
     });
+    setIsHovered && setIsHovered(false);
   };
 
   intersection && intersection.isIntersecting
