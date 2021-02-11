@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { useSpring } from 'react-spring';
 import { FloatContainer, OtherContainer } from './float-wrapper.styles';
 import { isMobile } from 'react-device-detect';

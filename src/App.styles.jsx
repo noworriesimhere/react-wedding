@@ -14,7 +14,7 @@ export const AppWrapper = styled.div`
 `;
 
 export const ScrollWrapper = styled.div`
-  overflow-y: scroll;
+  overflow-y: hidden;
   width: 100vw;
   display: flex;
   flex-direction: row;
