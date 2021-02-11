@@ -34,6 +34,7 @@ export const ScrollWrapper = styled.div`
   @media screen and (max-width: 511px) {
     flex-direction: column;
     overflow-x: hidden;
+    overflow-y: scroll;
     padding-top: 2rem;
 
     background: linear-gradient(
