@@ -1,4 +1,7 @@
 import React, { useContext } from 'react';
+
+import useFirestore from '../../hooks/useFirestore';
+
 import { Link } from 'react-router-dom';
 import Footer from '../../components/footer/footer.component';
 import GuestbookForm, {
@@ -16,6 +19,9 @@ import { MobileLink, MobileLinkBackground } from './guestbook.styles';
 
 const Guestbook = () => {
   const { currentUser } = useContext(CurrentUserContext);
+
+  const { docs } = useFirestore('posts');
+
   return (
     <>
       <MobileLinkBackground>
@@ -38,6 +44,13 @@ const Guestbook = () => {
           <br />
           😊
         </p>
+        {!docs.length && (
+          <p>
+            Wait a second... <br /> Looks like you might be the first to leave a
+            comment in the guestbook! <br />
+            😱
+          </p>
+        )}
       </IntroCard>
 
       <GuestbookForm />

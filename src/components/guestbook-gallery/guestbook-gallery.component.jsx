@@ -7,7 +7,7 @@ const GuestbookGallery = () => {
   const [activeChild, setActiveChild] = useState(undefined);
 
   const { docs } = useFirestore('posts');
-  const columns = Math.ceil(docs.length / 3) + 1;
+  const columns = Math.ceil(docs.length / 3) + 2;
   return (
     <GalleryContainer columns={columns}>
       {docs &&

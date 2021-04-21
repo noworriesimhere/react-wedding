@@ -63,7 +63,7 @@ const Main = () => {
       <IntroCard src='img/IMG_6922.jpg' alt='intro pic'>
         <h1>Georgia & Alan</h1>
         <p>Are Getting Married On</p>
-        <h3>sometime in 2021</h3>
+        <h3>September 4th, 2021</h3>
       </IntroCard>
       <MessageCard />
       <OurStoryCard />
