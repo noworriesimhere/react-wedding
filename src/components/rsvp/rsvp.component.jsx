@@ -25,9 +25,10 @@ const RsvpCard = () => {
           {currentUser && currentUser.isRsvpd ? (
             <ZoomContainer>
               <h2>Zoom Credentials</h2>
-              <p>Meeting ID: 123 4567 1234</p>
+              <p>To Be Determined!!</p>
+              {/* <p>Meeting ID: 123 4567 1234</p>
               <p>Password: 123456</p>
-              <a href={'https://google.com'}>Direct Link</a>
+              <a href={'https://google.com'}>Direct Link</a> */}
             </ZoomContainer>
           ) : (
             <ImageContainer />

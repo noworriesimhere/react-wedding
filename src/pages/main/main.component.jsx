@@ -36,9 +36,6 @@ const Main = () => {
         </MobileLink>
       </MobileLinkBackground>
       <Header>
-        <HoverButton guestbook>
-          <GuestbookLink to='/guestbook'>Guestbook</GuestbookLink>
-        </HoverButton>
         <HoverButton onClick={handleRefClick(homeRef)}>Intro</HoverButton>
         <HoverButton onClick={handleRefClick(ourStoryRef)}>
           Our Story
@@ -62,8 +59,9 @@ const Main = () => {
       </Header>
       <IntroCard src='img/IMG_6922.jpg' alt='intro pic'>
         <h1>Georgia & Alan</h1>
-        <p>Are Getting Married On</p>
-        <h3>September 4th, 2021</h3>
+        <p>Are Getting Married In</p>
+        <h3>Early September</h3>
+        <p>We'll keep you updated 😊</p>
       </IntroCard>
       <MessageCard />
       <OurStoryCard />
