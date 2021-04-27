@@ -25,6 +25,7 @@ export const ScrollWrapper = styled.div`
   }
   @supports (-webkit-touch-callout: none) {
     height: calc(var(--vh, 1vh) * 100);
+    max-height: -webkit-fill-available;
   }
 
   @supports not (-webkit-touch-callout: none) {

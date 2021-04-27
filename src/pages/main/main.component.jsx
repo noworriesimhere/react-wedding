@@ -7,12 +7,7 @@ import RsvpCard from '../../components/rsvp/rsvp.component';
 
 import { CurrentUserContext } from '../../providers/user/user.provider';
 
-import {
-  FixedFooter,
-  GuestbookLink,
-  MobileLink,
-  MobileLinkBackground,
-} from './main.styles';
+import { FixedFooter, MobileLink, MobileLinkBackground } from './main.styles';
 import Header from '../../components/header/header.component';
 import Footer from '../../components/footer/footer.component';
 

@@ -2,7 +2,6 @@ import React, { useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter as Switch, Route } from 'react-router-dom';
 
 import { isMobile } from 'react-device-detect';
-import { handleResize } from './utils/util-functions';
 
 import { AppWrapper, ScrollWrapper } from './App.styles';
 import Spinner from './components/spinner/spinner.component';
@@ -17,12 +16,6 @@ const Guestbook = lazy(() => import('./pages/guestbook/guestbook.component'));
 
 function App() {
   useEffect(() => {
-    handleResize();
-    window.addEventListener('orientationchange', () => {
-      handleResize();
-      return () => window.removeEventListener('resize', handleResize);
-    });
-
     const el = appRef.current;
     const scroll = scrollRef.current;
     if (el && !isMobile) {

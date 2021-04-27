@@ -6,13 +6,6 @@ export const FixedFooter = styled.div`
   margin-bottom: 4rem;
 `;
 
-export const GuestbookLink = styled(Link)`
-  font-family: Montserrat, sans-serif;
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: white;
-`;
-
 export const MobileLinkBackground = styled.div`
   position: fixed;
   background-color: var(--color-burgundy-transparent);
