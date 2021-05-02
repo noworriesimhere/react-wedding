@@ -19,6 +19,7 @@ export const ScrollWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  overscroll-behavior-y: none;
 
   ::-webkit-scrollbar {
     display: none;
