@@ -4,7 +4,7 @@ export const ContentsContainer = styled.div`
   height: 600px;
   margin: auto 2rem;
   display: grid;
-  grid-template-columns: 400px 1fr 400px;
+  grid-template-columns: 500px 1fr 500px;
 
   @media screen and (max-width: 511px) {
     height: calc(429vw + 500px);

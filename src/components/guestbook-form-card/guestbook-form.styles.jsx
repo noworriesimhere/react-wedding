@@ -26,6 +26,9 @@ export const FormContainer = styled(CardContainer)`
   margin: auto 2rem;
   text-align: center;
 
+  p {
+    margin: 0;
+  }
   h2 {
     margin: 0.1rem 0;
   }

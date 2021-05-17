@@ -31,12 +31,10 @@ const OurStoryCard = () => {
         </MiddleContainer>
         <FloatWrapper>
           <TextContainerRight>
-            <h1>To Be Continued...</h1>
-            <p>We'd love for you to attend the wedding</p>
-            <p>
-              Please register to RSVP, access Zoom details, and sign our
-              guestbook
-            </p>
+            <h1>Just One More Thing...</h1>
+            <p>We want you to be a part of our story!</p>
+            <p>Keep scrolling to see Zoom and other details.</p>
+            <p>We also have a virtual guestbook, we'd love to have you sign it!</p>
           </TextContainerRight>
         </FloatWrapper>
       </ContentsContainer>

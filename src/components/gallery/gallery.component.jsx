@@ -294,10 +294,10 @@ const Gallery = () => {
         story={
           <>
             <p>
-              Alan: <br /> After a whole year and seven months of dating, on top of having worked through so many things together, there was no longer an ounce of doubt in my mind. We've been seeing Jehovah's hand through every single of the way... The only question was: How would a virtual engagement be made special for a very, very special girl?
+              Alan: <br /> After a whole year and seven months of dating, on top of having worked through so many things together, there was no longer an ounce of doubt in my mind. We've been seeing Jehovah's hand through every single of the way... The only question was: How would a virtual engagement be made special for a very, very special girl? <br/> Her roommates and friends saved the day.
             </p>
             <p>
-              Georgia: <br /> Finally! This was such a sweet surprise. I never ever could have imagined his zoom proposal to be so nice. Everyone made it the best day ever. 
+              Georgia: <br /> Finally! This was such a sweet surprise. I never ever could have imagined his zoom proposal to be so nice. Everyone made it the best day ever. I felt like the most special girl in the world. Jehovah has blessed me with my shepherd boy! 
             </p>
           </>
         }

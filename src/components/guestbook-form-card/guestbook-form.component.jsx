@@ -81,7 +81,7 @@ const GuestbookForm = () => {
     return (
       <FloatWrapper>
         <FormContainer ref={guestFormRef}>
-          <p>Please Log in or Register to leave a message</p>
+          <p>Hey there! Your personal email stays with us. We'll use it for anouncements for our event 😊</p>
           <div>
             <Radio option1='Log In' option2='Register' />
             {!isLogIn ? <SignIn /> : <SignUp />}
