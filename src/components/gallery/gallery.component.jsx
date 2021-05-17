@@ -286,8 +286,21 @@ const Gallery = () => {
         setActiveChild={setActiveChild}
         activeChild={activeChild}
         gridArea={'十一'}
-        scaleAmount={1.15}
-        chapter='Chapter Eleven'
+        scaleAmount={1.4}
+        chapter='The Proposal'
+        urlSrc='img/proposal.jpeg'
+        altSrc='proposal'
+        date='May 2nd, 2021'
+        story={
+          <>
+            <p>
+              Alan: <br /> After a whole year and seven months of dating, on top of having worked through so many things together, there was no longer an ounce of doubt in my mind. We've been seeing Jehovah's hand through every single of the way... The only question was: How would a virtual engagement be made special for a very, very special girl?
+            </p>
+            <p>
+              Georgia: <br /> Finally! This was such a sweet surprise. I never ever could have imagined his zoom proposal to be so nice. Everyone made it the best day ever. 
+            </p>
+          </>
+        }
       />
     </GalleryContainer>
   );
