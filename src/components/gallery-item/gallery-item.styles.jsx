@@ -162,14 +162,21 @@ export const FloatStyled = styled(animated.div)`
   }
 
   @media screen and (max-width: 511px) {
+    .chapter-text {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
     h2 {
-      padding: 1rem 0;
-      margin-top: 2.2rem;
+      padding: 0;
+      margin: 0;
       font-size: 1.5rem;
     }
 
     h5 {
-      margin-bottom: 2.5rem;
+      margin-bottom: 0;
     }
 
     .container {
@@ -181,13 +188,13 @@ export const FloatStyled = styled(animated.div)`
       line-height: 0.9rem;
     }
     .fa-times-circle {
-      transform: translate(280%, -150%);
+      transform: translate(18vw, -150%);
     }
     .fa-chevron-circle-up {
-      transform: translate(280%, -50%);
+      transform: translate(18vw, -50%);
     }
     .fa-chevron-circle-down {
-      transform: translate(280%, 50%);
+      transform: translate(18vw, 50%);
     }
   }
 

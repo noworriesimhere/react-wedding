@@ -119,8 +119,11 @@ const GalleryItem = ({
               }, 300);
             }}
           />
-          <h2>{chapter}</h2>
-          <h5>{date}</h5>
+          <div className="chapter-text">
+            <h2>{chapter}</h2>
+            <h5>{date}</h5>
+
+          </div>
 
           <i
             className='fas fa-chevron-circle-down'
