@@ -3,13 +3,15 @@ import useFirestore from '../../hooks/useFirestore';
 import GuestbookGalleryItem from '../guestbook-gallery-item/guestbook-gallery-item.component';
 import { GalleryContainer } from './guestbook-gallery.styles';
 
+export const galleryRef = React.createRef();
+
 const GuestbookGallery = () => {
   const [activeChild, setActiveChild] = useState(undefined);
 
   const { docs } = useFirestore('posts');
   const columns = Math.ceil(docs.length / 3) + 2;
   return (
-    <GalleryContainer columns={columns}>
+    <GalleryContainer columns={columns} ref={galleryRef}>
       {docs &&
         docs.map((doc) => (
           <GuestbookGalleryItem

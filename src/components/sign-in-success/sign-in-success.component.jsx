@@ -20,7 +20,7 @@ const SignInSuccess = () => {
       <h2>Hello {currentUser.displayName}!</h2>
       <p>You're signed in</p>
       {handPointer}
-      <p>Please proceed to RSVP and sign our Guestbook</p>
+      <p>Please proceed to sign our Guestbook</p>
       <CustomButton
         onClick={async () => {
           await auth.signOut();

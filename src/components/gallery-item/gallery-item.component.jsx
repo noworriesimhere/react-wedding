@@ -45,6 +45,15 @@ const GalleryItem = ({
   } else {
     set({ scale: 1, zIndex: 0 });
     zIndex = 0;
+    document.querySelectorAll('container') && 
+      document.querySelectorAll('.container')
+        .forEach(thing => {
+          setTimeout(() => {
+            thing.scrollTo({
+            top: 0,
+            behavior: 'smooth',})
+          }, 300)
+          })
   }
 
   return (
@@ -110,13 +119,13 @@ const GalleryItem = ({
             className='fas fa-times-circle'
             onClick={(e) => {
               setIsHovered(false);
-              const target = e.target.parentElement;
-              setTimeout(() => {
-                target.scrollTo({
-                  top: 0,
-                  behavior: 'smooth',
-                });
-              }, 300);
+              // const target = e.target.parentElement;
+              // setTimeout(() => {
+              //   target.scrollTo({
+              //     top: 0,
+              //     behavior: 'smooth',
+              //   });
+              // }, 300);
             }}
           />
           <div className="chapter-text">

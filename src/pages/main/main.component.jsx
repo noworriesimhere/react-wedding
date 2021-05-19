@@ -13,12 +13,12 @@ import Footer from '../../components/footer/footer.component';
 
 import { homeRef } from '../../components/intro-card/intro-card.component';
 import { ourStoryRef } from '../../components/our-story-card/our-story-card.component';
-import { signInRef } from '../../components/sign-in-or-sign-up-card/sign-in-or-sign-up-card.component';
-import { rsvpRef, registryRef } from '../../components/rsvp/rsvp.component';
+import { zoomRef, registryRef } from '../../components/details/details.component';
 import { handleRefClick } from '../../utils/util-functions';
 
 import HoverButton from '../../components/hover-button/hover-button.component';
 import { Link } from 'react-router-dom';
+import Details from '../../components/details/details.component';
 
 const Main = () => {
   const { currentUser } = useContext(CurrentUserContext);
@@ -32,25 +32,10 @@ const Main = () => {
       </MobileLinkBackground>
       <Header>
         <HoverButton onClick={handleRefClick(homeRef)}>Intro</HoverButton>
-        <HoverButton onClick={handleRefClick(ourStoryRef)}>
-          Our Story
-        </HoverButton>
-
-        <HoverButton onClick={handleRefClick(signInRef)}>
-          {currentUser ? 'Log Out' : 'Sign Up / Log In'}
-        </HoverButton>
-        {currentUser ? (
-          <HoverButton onClick={handleRefClick(rsvpRef)}>RSVP</HoverButton>
-        ) : (
-          ''
-        )}
-        {currentUser ? (
-          <HoverButton onClick={handleRefClick(registryRef)}>
-            Registry
-          </HoverButton>
-        ) : (
-          ''
-        )}
+        <HoverButton onClick={handleRefClick(ourStoryRef)}>Our Story</HoverButton>
+        <HoverButton onClick={handleRefClick(zoomRef)}>Zoom Info</HoverButton>
+        <HoverButton onClick={handleRefClick(registryRef)}>Registry</HoverButton>
+        
       </Header>
       <IntroCard src='img/IMG_6922.jpg' alt='intro pic'>
         <h1>Georgia & Alan</h1>
@@ -59,8 +44,7 @@ const Main = () => {
       </IntroCard>
       <MessageCard />
       <OurStoryCard />
-      <SignInOrSignUpCard />
-      {currentUser ? <RsvpCard /> : ''}
+      <Details />
       {window.innerWidth < 511 ? (
         <FixedFooter>
           <p>Designed and Developed by Alan Tran 2021 &copy; </p>
