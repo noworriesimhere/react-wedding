@@ -86,8 +86,7 @@ export const ListItem = styled.div`
 `;
 
 export const MobileLink = styled(Link)`
-  font-family: Montserrat, sans-serif;
-  font-size: 1.5rem;
+
   text-decoration: none;
   color: white;
   text-align: center;

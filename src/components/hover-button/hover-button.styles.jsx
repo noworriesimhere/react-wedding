@@ -15,6 +15,11 @@ const guestbookStyles = css`
   @media screen and (min-height: 900px) {
     display: none;
   }
+  @media screen and (max-width: 511px) {
+    font-family: 'Sacramento',cursive;
+    font-size: 2.1rem;
+  }
+
 `;
 
 const getButtonStyles = ({ big, guestbook }) => {

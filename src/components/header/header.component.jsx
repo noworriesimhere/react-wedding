@@ -40,23 +40,23 @@ const Header = ({ location }) => {
       <ListContainer setClick={setClick}>
         {location === '/guestbook' &&
         <>
-        <HoverButton onClick={handleRefClick(homeRef, true, setClick)}>Intro</HoverButton>
-        <HoverButton onClick={handleRefClick(signInRef, true, setClick)}>Sign Book</HoverButton>
-        <HoverButton onClick={handleRefClick(galleryRef, true, setClick)}>Messages</HoverButton>
-        <MobileLink to='/'>
-          <HoverButton guestbook>Go To Main Page</HoverButton>
-        </MobileLink>
+          <MobileLink to='/'>
+            <HoverButton guestbook>Go To Main Page</HoverButton>
+          </MobileLink>
+          <HoverButton onClick={handleRefClick(homeRef, true, setClick)}>Intro</HoverButton>
+          <HoverButton onClick={handleRefClick(signInRef, true, setClick)}>Sign Book</HoverButton>
+          <HoverButton onClick={handleRefClick(galleryRef, true, setClick)}>Messages</HoverButton>
         </>
         }
         {location === '/' &&
         <>
-        <HoverButton onClick={handleRefClick(homeRef, true, setClick)}>Intro</HoverButton>
-        <HoverButton onClick={handleRefClick(ourStoryRef, true, setClick)}>Our Story</HoverButton>
-        <HoverButton onClick={handleRefClick(zoomRef, true, setClick)}>Zoom Info</HoverButton>
-        <HoverButton onClick={handleRefClick(registryRef, true, setClick)}>Registry</HoverButton>
-        <MobileLink to='/guestbook'>
-          <HoverButton guestbook>Go To Guestbook</HoverButton>
-        </MobileLink>
+          <MobileLink to='/guestbook'>
+            <HoverButton guestbook>Go To Guestbook</HoverButton>
+          </MobileLink>
+          <HoverButton onClick={handleRefClick(homeRef, true, setClick)}>Intro</HoverButton>
+          <HoverButton onClick={handleRefClick(ourStoryRef, true, setClick)}>Our Story</HoverButton>
+          <HoverButton onClick={handleRefClick(zoomRef, true, setClick)}>Zoom Info</HoverButton>
+          <HoverButton onClick={handleRefClick(registryRef, true, setClick)}>Registry</HoverButton>
         </>
         }
 
