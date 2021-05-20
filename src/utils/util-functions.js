@@ -1,4 +1,4 @@
-export const handleRefClick = (ref) => {
+export const handleRefClick = (ref, mobileButton = false, setClick) => {
   return () => {
     if (ref.current) {
       ref.current.scrollIntoView({
@@ -6,6 +6,9 @@ export const handleRefClick = (ref) => {
         block: 'center',
         inline: 'center',
       });
+    }
+    if(mobileButton) {
+      setClick(false);
     }
   };
 };

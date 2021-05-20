@@ -5,36 +5,22 @@ import OurStoryCard from '../../components/our-story-card/our-story-card.compone
 
 import { CurrentUserContext } from '../../providers/user/user.provider';
 
-import { FixedFooter, MobileLink, MobileLinkBackground } from './main.styles';
+import { FixedFooter } from './main.styles';
 import Header from '../../components/header/header.component';
 import Footer from '../../components/footer/footer.component';
 
-import { homeRef } from '../../components/intro-card/intro-card.component';
-import { ourStoryRef } from '../../components/our-story-card/our-story-card.component';
-import { zoomRef, registryRef } from '../../components/details/details.component';
-import { handleRefClick } from '../../utils/util-functions';
 
 import HoverButton from '../../components/hover-button/hover-button.component';
 import { Link } from 'react-router-dom';
 import Details from '../../components/details/details.component';
 
-const Main = () => {
+const Main = ({location}) => {
   const { currentUser } = useContext(CurrentUserContext);
 
   return (
     <>
-      <MobileLinkBackground>
-        <MobileLink to='/guestbook'>
-          <HoverButton guestbook>Go To Guestbook</HoverButton>
-        </MobileLink>
-      </MobileLinkBackground>
-      <Header>
-        <HoverButton onClick={handleRefClick(homeRef)}>Intro</HoverButton>
-        <HoverButton onClick={handleRefClick(ourStoryRef)}>Our Story</HoverButton>
-        <HoverButton onClick={handleRefClick(zoomRef)}>Zoom Info</HoverButton>
-        <HoverButton onClick={handleRefClick(registryRef)}>Registry</HoverButton>
-        
-      </Header>
+      <Header location={location.pathname}/>
+
       <IntroCard src='img/IMG_6922.jpg' alt='intro pic'>
         <h1>Georgia & Alan</h1>
         <p>Are Getting Married On</p>
