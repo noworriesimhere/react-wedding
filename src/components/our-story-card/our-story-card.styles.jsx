@@ -78,6 +78,10 @@ export const TextContainerRight = styled.div`
     line-height: 3.5rem;
   }
 
+  a {
+    text-decoration: underline;
+  }
+
   @media screen and (max-width: 511px) {
     grid-row: 3 / 4;
     padding: 0 1rem;

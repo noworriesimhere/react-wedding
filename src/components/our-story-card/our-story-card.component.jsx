@@ -33,8 +33,8 @@ const OurStoryCard = () => {
           <TextContainerRight>
             <h1>Just One More Thing...</h1>
             <p>We want you to be a part of our story!</p>
-            <p>Keep scrolling to see Zoom and other details.</p>
-            <p>We also have a virtual guestbook, we'd love to have you sign it!</p>
+            <a to="/guestbook">Sign Our Guestbook</a>
+            <p>Also, keep scrolling to see Zoom and other details.</p>
           </TextContainerRight>
         </FloatWrapper>
       </ContentsContainer>

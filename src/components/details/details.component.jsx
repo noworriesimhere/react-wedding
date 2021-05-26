@@ -23,7 +23,7 @@ const Details = () => {
       </FloatWrapper>
       <FloatWrapper>
         <ContentsContainer ref={registryRef}>
-          <h1>Registry?</h1>
+          <h1>Registry</h1>
           <p>
             We don't want to "impose an expensive burden on any one of you" (2
             Thess 3:8). Yet, we gratefully recognize the joy that results from
