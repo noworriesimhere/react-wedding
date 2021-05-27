@@ -8,6 +8,7 @@ import {
   TextContainerLeft,
   MiddleContainer,
 } from './our-story-card.styles';
+import { Link } from 'react-router-dom';
 
 export const ourStoryRef = React.createRef();
 let instructions;
@@ -33,7 +34,7 @@ const OurStoryCard = () => {
           <TextContainerRight>
             <h1>Just One More Thing...</h1>
             <p>We want you to be a part of our story!</p>
-            <a to="/guestbook">Sign Our Guestbook</a>
+            <Link to="/guestbook">Sign Our Guestbook</Link>
             <p>Also, keep scrolling to see Zoom and other details.</p>
           </TextContainerRight>
         </FloatWrapper>
