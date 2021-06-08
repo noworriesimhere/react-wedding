@@ -78,6 +78,12 @@ export const FixedFooter = styled.p`
       color: white;
     }
   }
+
+  @media (min-width: 511px) and (max-height: 900px) {
+    a {
+      font-size: 1rem;
+    }
+  }
 `;
 
 export const MenuContainer = styled.div`

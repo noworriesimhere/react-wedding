@@ -89,10 +89,4 @@ a {
     font-size: 1.5rem;
   }
 }
-
-@media (min-width: 511px) and (max-height: 900px) {
-  a {
-    font-size: 1rem;
-  }
-}
 `;
