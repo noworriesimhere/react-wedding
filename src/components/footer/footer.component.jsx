@@ -1,10 +1,42 @@
 import React from 'react';
-import { FixedFooter, FooterContainer } from './footer.styles';
+import { FixedFooter, FooterContainer, MenuContainer } from './footer.styles';
 import { scrollRef } from '../../App.js';
 
-const Footer = ({ children }) => {
+import HoverButton from '../../components/hover-button/hover-button.component';
+
+import { homeRef } from '../../components/intro-card/intro-card.component';
+import { ourStoryRef } from '../../components/our-story-card/our-story-card.component';
+import { zoomRef, registryRef } from '../../components/details/details.component';
+
+import {signInRef } from '../../components/sign-in-or-sign-up-card/sign-in-or-sign-up-card.component';
+import {galleryRef} from '../../components/guestbook-gallery/guestbook-gallery.component';
+
+import { handleRefClick } from '../../utils/util-functions';
+
+
+const Footer = ({ children, location }) => {
+  console.log(location)
   return (
     <FooterContainer>
+
+      <MenuContainer>
+      {location === '/guestbook' &&
+        <>
+          <HoverButton onClick={handleRefClick(homeRef)}>Intro</HoverButton>
+          <HoverButton onClick={handleRefClick(signInRef)}>Sign Book</HoverButton>
+          <HoverButton onClick={handleRefClick(galleryRef)}>Messages</HoverButton>
+        </>
+        }
+        {location === '/' &&
+        <>
+          <HoverButton onClick={handleRefClick(homeRef)}>Intro</HoverButton>
+          <HoverButton onClick={handleRefClick(ourStoryRef)}>Our Story</HoverButton>
+          <HoverButton onClick={handleRefClick(zoomRef)}>Zoom Info</HoverButton>
+          <HoverButton onClick={handleRefClick(registryRef)}>Registry</HoverButton>
+        </>
+        }
+      </MenuContainer>
+
       <i
         className='fas fa-chevron-circle-left fa-4x'
         onClick={() =>

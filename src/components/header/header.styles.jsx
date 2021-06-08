@@ -64,6 +64,10 @@ export const ListContainer = styled.ul`
   display: flex;
   justify-content: space-evenly;
 
+  @media screen and (max-height: 900px) and (min-width: 512px) {
+    display: none;
+  }
+
   @media screen and (max-width: 511px) {
     flex-direction: column;
     padding: 1rem 2.5rem;

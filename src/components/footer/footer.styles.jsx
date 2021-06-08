@@ -53,6 +53,7 @@ export const FooterContainer = styled.div`
       transform: translateY(-3.5rem);
     }
   }
+
 `;
 
 export const FixedFooter = styled.p`
@@ -78,3 +79,13 @@ export const FixedFooter = styled.p`
     }
   }
 `;
+
+export const MenuContainer = styled.div`
+  div {
+    margin: 1rem .5rem;
+    text-align: center;
+  }
+  @media screen and (min-height: 901px) {
+    display: none;
+  }
+`

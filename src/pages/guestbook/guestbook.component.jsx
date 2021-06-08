@@ -32,7 +32,7 @@ console.log(location.pathname)
       <SignInOrSignUpCard />
       <GuestbookGallery />
 
-      <Footer>
+      <Footer location={location.pathname}>
         <Link to='/' style={{ textDecoration: 'none' }}>
           <HoverButton big>Return to Main Page</HoverButton>
         </Link>

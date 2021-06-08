@@ -37,7 +37,7 @@ const Main = ({location}) => {
           </a>
         </FixedFooter>
       ) : (
-        <Footer>
+        <Footer location={location.pathname}>
           <Link to='/guestbook' style={{ textDecoration: 'none' }}>
             <HoverButton big>
               {currentUser ? 'Sign' : 'See'} Our Guestbook
