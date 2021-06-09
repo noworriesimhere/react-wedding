@@ -17,7 +17,7 @@ export const ImageContainerLeft = styled.div`
   grid-column: 1 / 2;
   background-size: cover;
   background-position: -60px 0px;
-  background-image: url('../../img/alanwave.jpeg');
+  background-image: url('../../img/georgiawave.jpeg');
 
   @media screen and (max-width: 511px) {
     grid-column: 1 / 2;
@@ -30,7 +30,7 @@ export const ImageContainerRight = styled.div`
   grid-column: 3 / 4;
   background-size: cover;
   background-position: -50px 0px;
-  background-image: url('../../img/georgiawave.jpeg');
+  background-image: url('../../img/alanwave.jpeg');
 
   @media screen and (max-width: 511px) {
     grid-column: 2 / 3;
