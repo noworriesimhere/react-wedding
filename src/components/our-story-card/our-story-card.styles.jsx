@@ -84,8 +84,8 @@ export const TextContainerRight = styled.div`
 
   @media screen and (max-width: 511px) {
     grid-row: 3 / 4;
-    padding: 0 1rem;
-    height: 300px;
+    padding: 1rem;
+    height: 350px;
 
     h1 {
       margin: 1.5rem 0;

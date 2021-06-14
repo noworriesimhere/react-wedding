@@ -8,15 +8,17 @@ export const ContentsContainer = styled(CardContainer)`
   justify-content: center;
   align-items: center;
   padding: 0 2rem;
+  text-align: center;
 
-  p {
-    text-align: center;
-  }
 
   @media screen and (max-width: 511px) {
 
     margin: 4rem auto 2rem !important;
     height: 500px;
+
+    h1 {
+      line-height: 1em;
+    }
   }
 `;
 
