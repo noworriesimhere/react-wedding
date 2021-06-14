@@ -14,11 +14,16 @@ const Details = () => {
     <>
       <FloatWrapper>
         <ContentsContainer ref={zoomRef}>
-          <h2>Zoom Information</h2>
-          <p>Meeting ID: 123 4567 1234 <br /> Password: 123456</p>
-          <a href={'https://google.com'}>Direct Zoom Link</a>
-          <p>As a fallback... Try connecting below</p>
-          <a href='https://google.com'>YouTube Live</a>
+          <h1>Zoom Information</h1>
+          <p>Meeting ID: 897 9730 4558 <br /> Password: WeLove</p>
+          <a href={'https://us02web.zoom.us/j/89797304558?pwd=T3kxbzZQUmRWSW1JZS9XcUQzYmZhQT09'} target="_blank" rel="noreferrer">Direct Zoom Link</a>
+
+          <p>
+            Saturday, September 4th at 3:30pm
+            <br />
+            The ceremony will start in a timely fashion
+          </p>
+
         </ContentsContainer>
       </FloatWrapper>
       <FloatWrapper>

@@ -4,8 +4,8 @@ import FloatWrapper from '../float-wrapper/float-wrapper.component';
 
 import {
   ContentsContainer,
-  ImageContainerLeft,
-  ImageContainerRight,
+  ImageContainerUp,
+  ImageContainerDown,
   TextContainer,
   TitleContainer,
 } from './message-card.styles';
@@ -15,7 +15,7 @@ const MessageCard = () => {
   return (
     <FloatWrapper>
       <ContentsContainer>
-        <ImageContainerLeft />
+
         <TextContainer>
           <TitleContainer>
             Hello{' '}
@@ -34,7 +34,8 @@ const MessageCard = () => {
             you, so we figured that we'd do it now!
           </p>
         </TextContainer>
-        <ImageContainerRight />
+        <ImageContainerUp />
+        <ImageContainerDown />
       </ContentsContainer>
     </FloatWrapper>
   );
