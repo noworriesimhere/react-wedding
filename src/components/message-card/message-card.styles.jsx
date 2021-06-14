@@ -33,7 +33,7 @@ export const ImageContainerDown = styled.div`
   grid-row: 2 / 3;
   background-size: cover;
   background-position: 0px -230px;
-  background-image: url('../../img/georgiawave.jpeg');
+  background-image: url('../../img/georgiawave1.jpeg');
 
   @media screen and (max-width: 511px) {
     grid-column: 2 / 3;
