@@ -8,9 +8,9 @@ import GuestbookGallery from '../../components/guestbook-gallery/guestbook-galle
 import Header from '../../components/header/header.component';
 import HoverButton from '../../components/hover-button/hover-button.component';
 
-import IntroCard, {
+import IntroCard from '../../components/intro-card/intro-card.component';
 
-} from '../../components/intro-card/intro-card.component';
+import GuestbookForm from '../../components/guestbook-form-card/guestbook-form.component';
 
 
 
@@ -30,6 +30,7 @@ console.log(location.pathname)
       </IntroCard>
 
       <SignInOrSignUpCard />
+      <GuestbookForm />
       <GuestbookGallery />
 
       <Footer location={location.pathname}>

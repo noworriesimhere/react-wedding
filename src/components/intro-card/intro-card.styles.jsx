@@ -26,7 +26,9 @@ export const ImageContainer = styled.div`
     width: 100%;
   }
   @media screen and (max-width: 511px) {
-    background-position: -40px 0px;
+    img {
+      object-position: 0px 0px;
+    }
   }
 `;
 

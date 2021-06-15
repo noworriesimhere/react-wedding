@@ -34,6 +34,16 @@ const hoveredState = css`
   }
 `;
 
+const isSecondPic = ({src}) => {
+  if (src === 'img/firstdate.jpg') {
+    return moveOverLeft;
+  }
+}
+
+const moveOverLeft = css`
+  object-position: -105px 0;
+`
+
 export const FloatStyled = styled(animated.div)`
   background-color: var(--color-burgundy);
   position: relative;
@@ -162,6 +172,10 @@ export const FloatStyled = styled(animated.div)`
   }
 
   @media screen and (max-width: 511px) {
+    img {
+      ${isSecondPic}
+    }
+
     .chapter-text {
       height: 100%;
       display: flex;

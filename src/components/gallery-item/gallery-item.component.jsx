@@ -113,6 +113,7 @@ const GalleryItem = ({
         }}
         ishovered={isHovered ? 'true' : ''}
         id='selectMe'
+        src={urlSrc}
       >
         <div className={isHovered ? 'container scrolled' : 'container'}>
           <i
