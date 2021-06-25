@@ -59,6 +59,14 @@ export const FloatStyled = styled(animated.div)`
     transition: all 0.5s ease-in-out;
   }
 
+  .chapter-text {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
   h5,
   h6 {
     text-align: center;
@@ -69,14 +77,12 @@ export const FloatStyled = styled(animated.div)`
   }
 
   h5 {
-    padding-top: 1rem;
-    margin-bottom: 0;
-    font-size: 2rem;
+    margin: 0;
+    font-size: 1.75rem;
   }
 
   h6 {
-    margin-top: 0;
-    margin-bottom: 3rem;
+    margin: 0;
     z-index: 1;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.9rem;
@@ -163,24 +169,33 @@ export const FloatStyled = styled(animated.div)`
   }
 
   @media screen and (max-width: 511px) {
+    border-radius: 20px;
+
     h5 {
-      margin-top: 1.5rem;
-      font-size: 1rem;
+  
+      font-size: .85rem;
     }
 
     h6 {
-      margin-bottom: 2.5rem;
-      font-size: 0.4rem;
+  
+      font-size: 0.35rem;
     }
     .story {
-      padding: 0 0.5rem;
+      padding: 0 0.25rem;
     }
+    
     .container {
       height: 28vw;
       width: 28vw;
+      border-radius: 20px;
     }
+
+    img {
+      border-radius: 20px;
+    }
+
     p {
-      font-size: 7px;
+      font-size: 6px;
       line-height: 0.75rem;
     }
 

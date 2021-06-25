@@ -144,8 +144,11 @@ const GuestbookGalleryItem = ({
               }, 300);
             }}
           />
-          <h5>{chapter}</h5>
-          <h6>{date}</h6>
+          <div className="chapter-text">
+            <h5>{chapter}</h5>
+            <h6>{date}</h6>
+
+          </div>
 
           <i
             className='fas fa-chevron-circle-down'

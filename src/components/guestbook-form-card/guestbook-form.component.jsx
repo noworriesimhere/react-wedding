@@ -42,13 +42,16 @@ const GuestbookForm = () => {
 
     const storageRef = storage.ref(file.name);
     const collectionRef = firestore.collection('posts');
-    storageRef.put(file).then(async () => {
-      const url = await storageRef.getDownloadURL();
-      const createdAt = timestamp();
-      const uid = auth.currentUser.uid;
-      const name = currentUser.displayName;
-      collectionRef.add({ url, createdAt, location, comment, name, uid });
-    });
+    storageRef
+      .put(file)
+      .then(async () => {
+        const url = await storageRef.getDownloadURL();
+        const createdAt = timestamp();
+        const uid = auth.currentUser.uid;
+        const name = currentUser.displayName;
+        collectionRef.add({ url, createdAt, location, comment, name, uid });
+        console.log(uid)
+      })
     setFile(null);
     setUploadMessage('Upload Pic!');
     setPostDetails({ location: '', comment: '' });

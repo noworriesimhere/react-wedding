@@ -66,7 +66,7 @@ export const FileInputContainer = styled.div`
 
   p {
     position: absolute;
-    top: -15px;
+    top: 2px;
     left: 5px;
     opacity: ${getOpacity};
     transition: all 0.5s ease-in-out;
