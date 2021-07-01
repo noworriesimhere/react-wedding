@@ -11,6 +11,8 @@ export const ContentsContainer = styled(CardContainer)`
   text-align: center;
 
 
+
+
   @media screen and (max-width: 511px) {
 
     margin: 4rem auto 2rem !important;
@@ -19,6 +21,8 @@ export const ContentsContainer = styled(CardContainer)`
     h1 {
       line-height: 1em;
     }
+
+
   }
 `;
 

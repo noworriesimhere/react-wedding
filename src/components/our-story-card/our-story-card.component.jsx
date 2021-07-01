@@ -24,7 +24,7 @@ const OurStoryCard = () => {
         <FloatWrapper>
           <TextContainerLeft>
             <h1>Our Story</h1>
-            <p>{`${instructions}`} Each Chapter</p>
+            <p>{`${instructions}`} the Following Chapters</p>
           </TextContainerLeft>
         </FloatWrapper>
         <MiddleContainer ref={ourStoryRef}>

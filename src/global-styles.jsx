@@ -50,11 +50,15 @@ p {
 a {
   font-family: 'Sacramento', cursive;
   color: var(--color-darkmint);
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   transition: color .5s ease;
   :hover {
     color: white;
   }
+}
+
+#footer-link {
+  font-size: 1.5rem;
 }
 
 @media screen and (max-width: 511px) {
@@ -86,7 +90,7 @@ a {
   }
   
   a {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 }
 `;

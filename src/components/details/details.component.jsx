@@ -29,12 +29,8 @@ const Details = () => {
       <FloatWrapper>
         <ContentsContainer ref={registryRef}>
           <h1>Registry</h1>
-          <p>
-            We don't want to "impose an expensive burden on any one of you" (2
-            Thess 3:8). Yet, we gratefully recognize the joy that results from
-            giving and don't wish to deny anyone that joy. (Acts 20:35)
-          </p>
-          <p>If you feel inclined to help us, please use the links below.</p>
+          <p>As we start our new life together at Wallkill Bethel, we recognize that the greatest gift we can receive from each of you is your loving friendship and support! (Luke 22:28)</p>
+          <p>Yet we don’t don’t wish to deny anyone the joy of giving. (Acts 20:35)</p>
           <LinksContainer>
             <a
               href='https://cash.app/$itsaniceday'
