@@ -50,6 +50,15 @@ const GuestbookGalleryItem = ({
   } else {
     set({ scale: 1, zIndex: 0 });
     zIndex = 0;
+    document.querySelectorAll('container') && 
+    document.querySelectorAll('.container')
+      .forEach(thing => {
+        setTimeout(() => {
+          thing.scrollTo({
+          top: 0,
+          behavior: 'smooth',})
+        }, 300)
+        })
   }
 
   const docRef = firestore.collection('posts').doc(id);
