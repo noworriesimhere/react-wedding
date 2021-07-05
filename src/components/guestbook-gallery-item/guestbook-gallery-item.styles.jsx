@@ -29,7 +29,7 @@ const hoveredState = css`
   .fa-chevron-circle-down,
   .fa-chevron-circle-up,
   .fa-times-circle,
-  .fa-minus-circle {
+  .fa-trash-alt {
     display: block;
     opacity: 1;
   }
@@ -136,8 +136,8 @@ export const FloatStyled = styled(animated.div)`
     transform: translate(350%, 50%);
   }
 
-  .fa-minus-circle {
-    transform: translate(350%, 150%);
+  .fa-trash-alt {
+    transform: translate(400%, 200%);
   }
 
   @media (pointer: fine) {
@@ -211,8 +211,8 @@ export const FloatStyled = styled(animated.div)`
     .fa-chevron-circle-down {
       transform: translate(280%, 50%);
     }
-    .fa-minus-circle {
-      transform: translate(280%, 150%);
+    .fa-trash-alt {
+      transform: translate(325%, 180%);
     }
   }
 

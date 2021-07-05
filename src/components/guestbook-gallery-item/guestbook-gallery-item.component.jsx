@@ -59,7 +59,7 @@ const GuestbookGalleryItem = ({
   if (auth.currentUser && uid === auth.currentUser.uid) {
     deleteButton = (
       <i
-        className='fas fa-minus-circle'
+        className='fas fa-trash-alt'
         onClick={async () => {
           if (window.confirm('Delete the item?'))
             try {

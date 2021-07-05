@@ -69,10 +69,10 @@ const GuestbookForm = () => {
         theBlob.name = fileName;
         return theBlob;
       }
-      console.log(selected)
+
       let photoBlob = await optimizePhoto(selected)
       let photoFile = blobToFile(photoBlob, selected.name)
-      console.log(photoFile)
+
       setFile(photoFile)
 
 
