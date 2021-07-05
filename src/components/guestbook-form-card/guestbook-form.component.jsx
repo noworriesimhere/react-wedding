@@ -16,6 +16,8 @@ import {
 } from './guestbook-form.styles';
 import FloatWrapper from '../float-wrapper/float-wrapper.component';
 
+import optimizePhoto from '../../utils/photoOptimizer'
+
 let handPointer;
 if (window.innerWidth < 511) {
   handPointer = <i className='far fa-hand-point-down fa-3x' />;
@@ -50,7 +52,7 @@ const GuestbookForm = () => {
         const uid = auth.currentUser.uid;
         const name = currentUser.displayName;
         collectionRef.add({ url, createdAt, location, comment, name, uid });
-        console.log(uid)
+        console.log(url)
       })
     setFile(null);
     setUploadMessage('Upload Pic!');
@@ -58,24 +60,41 @@ const GuestbookForm = () => {
     setIsPosted(true);
   };
 
-  const handlePictureSelect = (event) => {
+  const handlePictureSelect = async (event) => {
     let selected = event.target.files[0];
     if (selected && selected.type.includes('image/')) {
-      setFile(selected);
-      setUploadMessage('Picture selected! - ' + selected.name.substring(0, 18));
+      const blobToFile = (theBlob, fileName) => {
+        //A Blob() is almost a File() - it's just missing the two properties below which we will add
+        theBlob.lastModifiedDate = new Date();
+        theBlob.name = fileName;
+        return theBlob;
+      }
+      console.log(selected)
+      let photoBlob = await optimizePhoto(selected)
+      let photoFile = blobToFile(photoBlob, selected.name)
+      console.log(photoFile)
+      setFile(photoFile)
 
-      console.log(selected);
+
+
+    
+
+      // setFile(selected);
+      setUploadMessage('Picture selected! - ' + selected.name.substring(0, 18));
     } else {
       setFile(null);
-
       setUploadMessage(`Whoops! That's not a picture`);
     }
+
+
+
   };
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setPostDetails({ ...postDetails, [name]: value });
-  };
+
+     const handleChange = (event) => {
+      const { name, value } = event.target;
+      setPostDetails({ ...postDetails, [name]: value });
+    };
 
   if (currentUser && !isPosted) {
     return (

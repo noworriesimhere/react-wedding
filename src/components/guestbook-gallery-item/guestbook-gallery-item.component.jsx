@@ -65,7 +65,7 @@ const GuestbookGalleryItem = ({
             try {
               await docRef.delete();
               await storageRef.delete();
-              alert('it worked!');
+              alert('message deleted! you can try for another one :)');
             } catch (err) {
               console.log(err);
             }

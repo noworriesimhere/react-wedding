@@ -15,7 +15,6 @@ import { handleRefClick } from '../../utils/util-functions';
 
 
 const Footer = ({ children, location }) => {
-  console.log(location)
   return (
     <FooterContainer>
 
