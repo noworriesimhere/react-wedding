@@ -29,7 +29,7 @@ const Details = () => {
       <FloatWrapper>
         <ContentsContainer ref={registryRef}>
           <h1>Registry</h1>
-          <p>As we start our new life together at Wallkill Bethel, we recognize that the greatest gift we can receive from each of you is your loving friendship and support! (Luke 22:28)</p>
+          <p>As we start our new life together at Wallkill Bethel, we feel that the greatest gift we can receive from each of you is your loving friendship and support! (Luke 22:28)</p>
           <p>Yet we don’t wish to deny anyone the joy of giving. (Acts 20:35)</p>
           <LinksContainer>
             <a

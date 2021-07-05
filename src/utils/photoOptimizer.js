@@ -1,4 +1,5 @@
-const MAX_WIDTH = 350;
+const MAX_WIDTH = 220;
+const MAX_HEIGHT = 220;
 const QUALITY = 0.9;
 
 const readPhoto = async (photo) => {
@@ -38,13 +39,25 @@ const scaleCanvas = (canvas, scale) => {
 const optimizePhoto = async (photo) => {
   let canvas = await readPhoto(photo);
 
-  while (canvas.width >= 2 * MAX_WIDTH) {
-    canvas = scaleCanvas(canvas, .5);
+  if (canvas.width < canvas.height) {
+    while (canvas.width >= 2 * MAX_WIDTH) {
+      canvas = scaleCanvas(canvas, .5);
+    }
+  
+    if (canvas.width > MAX_WIDTH) {
+      canvas = scaleCanvas(canvas, MAX_WIDTH / canvas.width);
+    }
+  } else if (canvas.height < canvas.width) {
+    while (canvas.height >= 2 * MAX_HEIGHT) {
+      canvas = scaleCanvas(canvas, .5);
+    }
+  
+    if (canvas.height > MAX_HEIGHT) {
+      canvas = scaleCanvas(canvas, MAX_HEIGHT / canvas.height);
+    }
   }
 
-  if (canvas.width > MAX_WIDTH) {
-    canvas = scaleCanvas(canvas, MAX_WIDTH / canvas.width);
-  }
+
 
   return new Promise((resolve) => {
     canvas.toBlob(resolve, 'image/jpeg', QUALITY);
