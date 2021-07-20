@@ -58,7 +58,7 @@ const Footer = ({ children, location }) => {
       />
       <FixedFooter>
         Designed and Developed by Alan Tran 2021 &copy;{' '}
-        <a href='https://alantran.tech' target='blank' id="footer-link">
+        <a href='https://alantran.vercel.app' target='blank' id="footer-link">
           Learn More.
         </a>
       </FixedFooter>
