@@ -51,7 +51,7 @@ const RsvpCard = () => {
           <p>If you feel inclined to help us, please use the links below.</p>
           <LinksContainer>
             <a
-              href='https://cash.app/$itsaniceday'
+              href='https://cash.app/$contactalantran'
               rel='noreferrer'
               target='_blank'
             >

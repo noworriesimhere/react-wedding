@@ -33,7 +33,7 @@ const Details = () => {
           <p>Yet we don’t wish to deny anyone the joy of giving. (Acts 20:35)</p>
           <LinksContainer>
             <a
-              href='https://cash.app/$itsaniceday'
+              href='https://cash.app/$contactalantran'
               rel='noreferrer'
               target='_blank'
             >
